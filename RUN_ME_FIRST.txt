@@ -1,0 +1,62 @@
+═══════════════════════════════════════════════════════════════
+  APOLLO WEBSITE - INSTALLATION COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Copy and paste these commands ONE AT A TIME into your Terminal:
+
+───────────────────────────────────────────────────────────────
+STEP 1: Install Homebrew
+───────────────────────────────────────────────────────────────
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+(Follow the prompts - you may need to enter your password)
+
+───────────────────────────────────────────────────────────────
+STEP 2: Add Homebrew to your PATH (if needed)
+───────────────────────────────────────────────────────────────
+
+The installer will tell you the exact command, but usually it's:
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+───────────────────────────────────────────────────────────────
+STEP 3: Install PHP
+───────────────────────────────────────────────────────────────
+
+brew install php
+
+(This will take a few minutes)
+
+───────────────────────────────────────────────────────────────
+STEP 4: Verify PHP is installed
+───────────────────────────────────────────────────────────────
+
+php --version
+
+(You should see PHP version information)
+
+───────────────────────────────────────────────────────────────
+STEP 5: Start the website server
+───────────────────────────────────────────────────────────────
+
+cd /Users/lopes/Desktop/APOLLO/apollo-site-main
+./start-server.sh
+
+OR manually:
+php -S localhost:8000
+
+───────────────────────────────────────────────────────────────
+STEP 6: Open in your browser
+───────────────────────────────────────────────────────────────
+
+Open: http://localhost:8000
+
+═══════════════════════════════════════════════════════════════
+
+That's it! The website should now be running.
+
+To stop the server, press Ctrl+C in the Terminal.
+
+═══════════════════════════════════════════════════════════════

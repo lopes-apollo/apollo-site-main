@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: BelleStory;
+    src: url(FontsFree-Net-BelleStory-DisplayMedium.ttf);
+}
+@font-face {
+    font-family: BelleStory;
+    src: url(FontsFree-Net-BelleStory-DisplayMedium.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_semibold;
+    src: url(ltsuperiormono-semibold.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_regular;
+    src: url(ltsuperiormono-regular.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_medium;
+    src: url(ltsuperiormono-medium.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_bold;
+    src: url(ltsuperiormono-bold.ttf);
+}
+@font-face {
+    font-family: newyork;
+    src: url(../fonts/newyork.ttf);
+}
+@font-face {
+    font-family: superior_black;
+    src: url(../fonts/superior_black.ttf);
+}
+@font-face {
+    font-family: superior_bold;
+    src: url(../fonts/superior_bold.ttf);
+}
+@font-face {
+    font-family: superior_light;
+    src: url(../fonts/superior_light.ttf);
+}
+@font-face {
+    font-family: superior_medium;
+    src: url(../fonts/superior_medium.ttf);
+}
+@font-face {
+    font-family: superior_regular;
+    src: url(../fonts/superior_regular.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_medium;
+    src: url(../fonts/ltsuperiormono_medium.otf);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 45px;
+    position: relative;
+}
+
+header .menu ul {
+    display: flex;
+    gap: 25px;
+}
+
+header .logo a {
+}
+
+header .menu ul li a {
+    color: #fff;
+    text-decoration: unset;
+    font-size: 26px;
+    font-weight: 400;
+    opacity: 1;
+    transition: all 0.3s linear;
+    padding-bottom: 15px;
+    font-family: newyork;
+}
+
+header .menu ul li {
+    list-style-type: none;
+}
+
+body {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 100vh;
+    transition: all 0.3s linear;
+}
+
+header .menu ul li a:hover {
+    opacity: 1;
+}
+
+div.innerBody {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    padding: 60px 0px 60px;
+    position: relative;
+}
+
+div.innerBody ul.heading {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 15px;
+}
+
+div.innerBody ul.heading a {
+    color: #fff !important;
+    text-decoration: unset !important;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    transition: all 0.3s linear;
+    opacity: 0.6;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+div.innerBody ul.heading a.active,div.innerBody ul.heading a:hover {
+    opacity: 1;
+}
+
+div.innerBody .detailedBox ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+div.innerBody .detailedBox ul li {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    margin-bottom: 10px;
+}
+
+div.innerBody .detailedBox {
+    padding-top: 50px;
+}
+
+div.innerBody .detailedBox ul li a {
+    color: #fff;
+    text-decoration: unset;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    opacity: 0.6;
+    transition: all 0.3s linear;
+}
+
+div.innerBody .detailedBox ul li a:hover {
+    opacity: 1;
+    font-weight: bold;
+}
+
+div.innerBody .detailedBox ul li:nth-child(even) {
+    padding-left: 70px;
+}
+header .menu ul li {
+    position: relative;
+}
+
+header .menu ul li ol {
+    padding: 0px;
+    margin: 0px;
+    background: #00000038;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    transition: all 0.3s linear;
+    opacity: 0;
+    visibility: hidden;
+}
+
+header .menu ul li ol li a {
+    font-size: 18px;
+    display: block;
+    padding: 8px 15px;
+    transition: all 0.3s linear;
+    opacity: 0.6;
+}
+
+header .menu ul li:hover ol {
+    opacity: 1;
+    visibility: visible;
+}
+
+header .menu ul li ol.last {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    left: unset;
+    right: 80px;
+    width: max-content;
+    top: 0px;
+}
+
+header .menu ul li ol li:hover ol.last {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block;
+}
+div.contactPage {
+    text-align: center;
+    padding-top: 0px;
+    height: calc(100vh - 250px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.contactPage p {
+    color: #fff;
+    font-size: 19px;
+    line-height: 50px;
+    position: relative;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    font-family: ltsuperiormono_medium;
+}
+
+div.contactPage p.one:after,div.contactPage p.two:after {
+    content:"";
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    bottom: 0px;
+}
+
+div.contactPage p.one, div.contactPage p.two {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+header .logo a img {
+    width: 100px;
+}
+div.contactPage p a {
+    color: inherit;
+    text-decoration: unset;
+}
+@media (max-width:800px){
+    header {
+        position: relative !important;
+        background: #050505;
+        padding: 5px 20px;
+        display: block;
+    }
+    header .logo {
+        width: 100%;
+        text-align: center;
+    }
+    
+    header .menu ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    header .menu ul li:last-child {
+        left: unset;
+        right: 15px;
+    }
+    
+    header .menu ul li {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 15px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    header .menu ul li ol {
+        display: none;
+    }
+    div.contactPage {
+        padding-top: 0px;
+        height: calc(100vh - 160px);
+    }
+    
+    div.contactPage p {
+        margin-bottom: 0px;
+        font-size: 18px;
+        line-height: 40px;
+    }
+}

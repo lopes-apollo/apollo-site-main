@@ -1,0 +1,1019 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: BelleStory;
+    src: url(FontsFree-Net-BelleStory-DisplayMedium.ttf);
+}
+@font-face {
+    font-family: BelleStory;
+    src: url(FontsFree-Net-BelleStory-DisplayMedium.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_semibold;
+    src: url(ltsuperiormono-semibold.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_regular;
+    src: url(ltsuperiormono-regular.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_medium;
+    src: url(ltsuperiormono-medium.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_bold;
+    src: url(ltsuperiormono-bold.ttf);
+}
+
+@font-face {
+    font-family: newyork;
+    src: url(../fonts/newyork.ttf);
+}
+@font-face {
+    font-family: superior_black;
+    src: url(../fonts/superior_black.ttf);
+}
+@font-face {
+    font-family: superior_bold;
+    src: url(../fonts/superior_bold.ttf);
+}
+@font-face {
+    font-family: superior_light;
+    src: url(../fonts/superior_light.ttf);
+}
+@font-face {
+    font-family: superior_medium;
+    src: url(../fonts/superior_medium.ttf);
+}
+@font-face {
+    font-family: superior_regular;
+    src: url(../fonts/superior_regular.ttf);
+}
+@font-face {
+    font-family: ltsuperiormono_medium;
+    src: url(../fonts/ltsuperiormono_medium.otf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+section.videoCarouselMovePage {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone div.innerSidesSlide figure {
+    transform: perspective(500px) scaleZ(1) rotateX(-40deg);
+    top: -20px;
+    opacity:1;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone+div.bx-clone div.innerSidesSlide figure {
+    transform: unset;
+    bottom: 0px;
+    top:0px;
+    opacity:1;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone+div.bx-clone+div.bx-clone div.innerSidesSlide figure {
+    transform: perspective(500px) scaleZ(1) rotateX(40deg);
+    bottom: -20px;
+    opacity:1;
+}
+
+section.videoCarouselMovePage ul.editors {
+    writing-mode: tb-rl;
+    padding: 0px;
+    text-align: center;
+    display: flex;
+    transform: rotate(180deg) scale(0);
+    gap: 10px;
+    margin: auto;
+    transition: all 0.3s linear;
+    height: 250px;
+    overflow-y: scroll;
+    z-index: 999;
+    width: 50px;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+}
+
+section.videoCarouselMovePage ul.colorful-list {display: inline-flex;flex-direction: column;justify-content: center;position: absolute;top: 0px;bottom: 0px;right: 140px;padding: 0px;margin: 0px;}
+
+section.videoCarouselMovePage .bx-wrapper {
+    padding: 0px;
+    margin: 0px;
+    background: transparent;
+    border: unset;
+    box-shadow: unset;
+    height: 100%;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider {
+    margin: 0;
+    padding: 0;
+    -webkit-perspective: 1000;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.innerSidesSlide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.innerSidesSlide figure {
+    position: relative;
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    max-width: 1000px;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.innerSidesSlide figure h2.title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    position: absolute;
+    left: 0px;
+    bottom: 15px;
+    margin: 0px;
+    color: #fff;
+    opacity: 0;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.innerSidesSlide figure iframe {
+    height: 27vh;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 0s linear;
+}
+
+section.videoCarouselMovePage .bx-wrapper div.bx-controls {
+    display: none;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bx-viewport {height: 100vh !important;}
+
+.bx-wrapper .bx-loading {
+    background-color: transparent;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.innerSidesSlide figure div.poster {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: cover !important;
+    margin: 0 auto;
+    right: 0px;
+    transition: all 0s linear;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide div.innerSidesSlide figure {
+    opacity: 1;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide div.innerSidesSlide figure div.poster {
+    opacity: 0;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider .active-slide div.innerSidesSlide figure iframe {
+    opacity: 1;
+    height: 56vh;
+    width: 85%;
+    margin: -6em auto -5em;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider:before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: url("https://smartpay.pl/Content/loading2.gif") #000;
+    z-index: 9;
+    background-position: 50% 75%;
+    background-size: 4%;
+    background-repeat: no-repeat;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider:has(.active-slide-first):before {
+    display:none;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide div.innerSidesSlide figure h2.title {
+    opacity: 1;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide-first div.innerSidesSlide figure{
+    opacity: 1;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide-first div.innerSidesSlide figure {
+    transform: perspective(500px) scaleZ(1) rotateX(-40deg) !important;
+    top: -80px !important;
+    bottom: unset !important;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide div.innerSidesSlide figure {
+    transform: unset !important;
+    bottom: unset !important;
+    top: unset !important;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide-last div.innerSidesSlide figure{
+    opacity: 1;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide-last div.innerSidesSlide figure {
+    transform: perspective(500px) scaleZ(1) rotateX(40deg) !important;
+    bottom: -50px !important;
+    top: unset !important;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone:nth-child(2) div.innerSidesSlide figure div.poster,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone:nth-last-child(2) div.innerSidesSlide figure div.poster{
+    opacity:0;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone:nth-child(2) div.innerSidesSlide figure iframe,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone:nth-last-child(2) div.innerSidesSlide figure iframe{
+    opacity:1;
+}
+ 
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-first:nth-child(2) div.innerSidesSlide figure div.poster,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-first:nth-last-child(2) div.innerSidesSlide figure div.poster,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-last:nth-child(2) div.innerSidesSlide figure div.poster,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-last:nth-last-child(2) div.innerSidesSlide figure div.poster{
+    opacity:1;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-first:nth-child(2) div.innerSidesSlide figure iframe,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-first:nth-last-child(2) div.innerSidesSlide figure iframe,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-last:nth-child(2) div.innerSidesSlide figure iframe,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-last:nth-last-child(2) div.innerSidesSlide figure iframe{
+    opacity:0;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone:nth-child(2) div.innerSidesSlide figure h2,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide:nth-child(2) div.innerSidesSlide figure h2{
+    opacity:1;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone:nth-last-child(2) div.innerSidesSlide figure h2,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide:nth-last-child(2) div.innerSidesSlide figure h2{
+    opacity:1;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-first:nth-child(2) div.innerSidesSlide figure h2,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-last:nth-child(2) div.innerSidesSlide figure h2,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-first:nth-last-child(2) div.innerSidesSlide figure h2,
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-last:nth-last-child(2) div.innerSidesSlide figure h2{
+    opacity:0;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bx-loading:before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: url("https://smartpay.pl/Content/loading2.gif") #000;
+    z-index: 9;
+    background-position: 50% 50%;
+    background-size: 4%;
+    background-repeat: no-repeat;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider .active-slide div.innerSidesSlide {
+    overflow: visible;
+}
+section.videoCarouselMovePage ul.colorful-list li {
+    list-style-type: none;
+    width: 28px;
+    height: 35px;
+}
+
+section.videoCarouselMovePage .col-md-12 {
+    position: relative;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.innerSidesSlide figure div.iframe {
+    width: 100%;
+    /* transform: scale(0.5); */
+    transition: all 0.4s linear;
+    position: relative;
+}
+
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide div.innerSidesSlide figure div.iframe {
+    /* transform: scale(1); */
+    padding: 5vh 0px 6vh;
+}
+section.videoCarouselMovePage .col-md-12:has(.bx-loading) ul.colorful-list {
+    display: none;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.innerSidesSlide figure div.iframe:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+section.videoCarouselMovePage ul.editors {transform: rotate(180deg) scale(1);}
+
+section.videoCarouselMovePage ul.editors li {
+    display: inline-block;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    position: unset;
+}
+section.videoCarouselMovePage ul.editorsRight.editors {height: 300px;}
+section.videoCarouselMovePage div.editorsMain:after {
+    content: "";
+    box-shadow: 0px 0px 20px 40px #000000c7;
+    background: #000;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 35px;
+    z-index: 9999;
+}
+
+section.videoCarouselMovePage div.editorsMain:before {
+    content: "";
+    box-shadow: 0px 0px 20px 40px #000000c7;
+    background: #000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    z-index: 9999;
+}
+div#videoModalPopup {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                background: #000;
+            }
+#videoModalPopup ul.screenshots li img {
+    width: 100%;
+    max-height: 500px;
+    height: 100%;
+    object-fit: cover;
+}
+#videoModalPopup ul.screenshots li {
+                width: 49.5%;
+            }
+            div#videoModalPopup button.btn-close {
+                z-index: 999;
+                position: relative;
+                font-weight: 400;
+            }
+            div#videoModalPopup .modal-dialog .modal-content .modal-header {
+                top: 20px;
+                left: 25px;
+            }
+        
+            
+            #videoModalPopup ul.screenshots li {
+                width: 50%;
+                margin: 0px -2px;
+            }
+            #videoModalPopup ul.screenshots li img {
+                height: 400px;
+            }
+#videoModalPopup div.popupVideo iframe {
+                width: 100% !important;
+                height: 100vh !important;
+                background: #000;
+            }
+div#videoModalPopup .modal-dialog {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+div#videoModalPopup .modal-dialog .modal-content {
+    background: transparent;
+    border: unset;
+    position: relative;
+}
+div#videoModalPopup .modal-dialog .modal-content .modal-header {
+    position: absolute;
+    padding: 0px;
+    border: unset;
+}
+div#videoModalPopup .modal-dialog .modal-content .modal-body {
+    padding: 0px;
+}
+div#videoModalPopup .videoSupport {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+#videoModalPopup ul.screenshots {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+}
+#videoModalPopup ul.screenshots li {
+    display: inline-block;
+    vertical-align: top;
+}
+div#videoModalPopup .modal-dialog .modal-content .modal-header button.btn-close {
+    margin: 0px;
+    padding: 0px;
+    filter: invert(1);
+    opacity: 1;
+    font-size: 30px;
+    float: unset;
+    z-index: 9;
+    border: unset;
+    outline: unset;
+    box-shadow: unset;
+    position: relative;
+    font-weight: 400;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    --bs-btn-close-bg: unset;
+}
+div#videoModalPopup .modal-dialog .modal-content .modal-header label {
+    font-size: 42px;
+    font-weight: 600;
+    font-style: normal;
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 2px 1px black;
+    font-family: BelleStory;
+    padding-left: 25px;
+    display:none;
+}
+
+section.videoCarouselMovePage ul.editors::-webkit-scrollbar {
+  width: 0px;
+}
+section.videoCarouselMovePage  div.editorsMain {
+    position: absolute;
+    left: -40px;
+    top: 0px;
+    bottom: 0px;
+    display: inline-flex;
+    align-items: center;
+    height: fit-content;
+    margin: auto;
+}
+
+section.videoCarouselMovePage div.editorsRightMain {
+    left: unset;
+    right: -40px;
+}
+
+section.videoCarouselMovePage ul.editors li a {
+    cursor: pointer;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.active-slide-last+div[aria-hidden] {
+    opacity: 0;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone+div.bx-clone div.innerSidesSlide figure .iframe {
+    transform: scale(1);
+    padding: 5vh 0px 6vh;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone+div.bx-clone div.innerSidesSlide figure .iframe iframe {
+    opacity: 1;
+    height: 56vh;
+    width: 85%;
+    margin: -6em auto -5em;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone+div.bx-clone+div.bx-clone div.innerSidesSlide figure .iframe iframe {
+    height: 27vh;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+}
+section.videoCarouselMovePage .bx-wrapper .bxslider div.bx-clone.active-slide-last div.innerSidesSlide figure .iframe iframe {
+    height: 27vh !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    opacity: 0 !important;
+}
+section#roster {
+    min-height: 100vh;
+    display: flex;
+    background: #050505;
+}
+
+section#roster h3 {
+    font-size: 40px;
+    font-weight: 300;
+    font-style: normal;
+    text-align: left;
+    color: #ffffff;
+    margin: 0px 0px 35px;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    display: block;
+    width: max-content;
+    letter-spacing: 8px;
+    font-family: newyork;
+}
+
+section#roster p {
+    margin: 0px;
+    font-size: 20px;
+    font-style: normal;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+    width: max-content;
+    display: block;
+    font-weight: normal;
+    cursor:pointer;
+    opacity: 0.8;
+    font-weight: 400;
+    font-family: ltsuperiormono_medium;
+}
+
+section#roster p:hover {
+    opacity: 1;
+}
+section#roster .rightSide p {
+    font-family: "Londrina Shadow", sans-serif;
+    font-weight: normal;
+}
+
+section#roster .rightSide p:hover {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #8a8a8a;
+    letter-spacing: 0px;
+}
+
+section#roster div.content:first-child {
+    min-height: 220px;
+}   
+div#startingAnimationStart {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background: #000;
+    height: 100vh;
+    border-left: 40px solid #fff;
+    z-index:9999;
+    opacity:1;
+}
+section#roster div.content:last-child {
+    min-height: 130px;
+}
+section.videoCarouselMovePage .rosterParent.slideAppear {
+    transform: scale(1);
+}
+
+section.videoCarouselMovePage .rosterParent {
+    transform: scale(0.9);
+    overflow: hidden;
+    height: 100vh;
+    transition: all 0.4s;
+    transition-timing-function: ease-in-out;
+}
+/*section.videoCarouselMovePage:has(div.bx-loading):before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background: url(https://smartpay.pl/Content/loading2.gif) #000;*/
+/*    z-index: 9;*/
+/*    background-position: 50% 50%;*/
+/*    background-size: 2%;*/
+/*    background-repeat: no-repeat;*/
+/*    z-index: 99999;*/
+/*}*/
+@keyframes lineAnimation {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@media (max-width:1399){    
+    section.videoCarouselMovePage ul.colorful-list{
+        right: 6em;
+    }
+}
+
+/*new roster change start*/
+section.videoCarouselMovePage div.rosterSlider div.slick-active figure iframe {
+    height: 27vh;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 0 !important;
+    transition: all 0s linear;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.innerSidesSlide figure {
+    position: relative;
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    max-width: 1000px;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.innerSidesSlide figure div.poster {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: cover !important;
+    margin: 0 auto;
+    right: 0px;
+    transition: all 0s linear;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.innerSidesSlide figure div.iframe {
+    width: 100%;
+    transition: all 0.4s linear;
+    position: relative;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.innerSidesSlide figure div.iframe:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.innerSidesSlide figure h2.title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    position: absolute;
+    left: 0px;
+    bottom: 15px;
+    margin: 0px;
+    color: #fff;
+    opacity: 0;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.slide:nth-child(3n-2) figure {
+    transform: perspective(500px) scaleZ(1) rotateX(-40deg) !important;
+    top: -80px !important;
+    bottom: unset !important;
+}
+section.videoCarouselMovePage div.rosterSlider div.slide:nth-child(3n-2) figure iframe {
+    height: 27vh;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 0s linear;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.slide:nth-child(3n) figure {
+    transform: perspective(500px) scaleZ(1) rotateX(40deg) !important;
+    bottom: -50px !important;
+    top: unset !important;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.slide:nth-child(3n+2) figure {
+    transform: unset !important;
+    bottom: unset !important;
+    top: unset !important;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.slide:nth-child(3n+2) figure iframe {
+    opacity: 1;
+    height: 56vh;
+    width: 85%;
+    margin: -6em auto -5em;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.slide:nth-child(3n+2) figure div.poster {
+        opacity: 0;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active div.innerSidesSlide figure {
+    transform: perspective(500px) scaleZ(1) rotateX(-40deg) !important;
+    top: -80px !important;
+    bottom: unset !important;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active div.innerSidesSlide figure {
+    transform: unset !important;
+    bottom: unset !important;
+    top: unset !important;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active+div.slick-active div.innerSidesSlide figure {
+    transform: perspective(500px) scaleZ(1) rotateX(40deg) !important;
+    bottom: -50px !important;
+    top: unset !important;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active div.innerSidesSlide figure div.poster {
+        opacity: 0 !important;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active+div.slick-active div.innerSidesSlide figure div.poster {
+        opacity: 1 !important;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active div.innerSidesSlide figure div.iframe {
+        padding: 5vh 0px 6vh;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active+div.slick-active div.innerSidesSlide figure div.iframe {
+        padding: 0px;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active div.innerSidesSlide figure iframe {
+    opacity: 1;
+    height: 56vh;
+    width: 85%;
+    margin: -6em auto -5em;
+    opacity: 1 !important;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active+div.slick-active div.innerSidesSlide figure iframe {
+    height: 27vh;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 0 !important;
+    transition: all 0s linear;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active div.innerSidesSlide figure h2.title {
+        opacity: 1;
+}
+section.videoCarouselMovePage div.rosterSlider div.slick-active+div.slick-active+div.slick-active div.innerSidesSlide figure h2.title {
+        opacity: 0;
+}
+
+section.videoCarouselMovePage div.rosterSlider button.slick-arrow {
+    display: none !important;
+}
+
+section.videoCarouselMovePage .rosterParent .rosterSlider {
+    height: 100%;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.innerSidesSlide {
+    height: 100%;
+}
+
+section.videoCarouselMovePage .rosterParent .rosterSlider .slick-list {
+    height: auto !important;
+}
+
+section.videoCarouselMovePage div.rosterSlider:has(.slick-active) div.slide.slick-active {
+    opacity: 1;
+}
+
+section.videoCarouselMovePage div.rosterSlider:has(.slick-active) div.slide {
+    opacity: 0;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.slide {
+    opacity: 1;
+}
+
+section.videoCarouselMovePage div.rosterSlider div.slick-active figure div.poster {
+    opacity: 1 !important;
+}
+section.videoCarouselMovePage .rosterParent:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://smartpay.pl/Content/loading2.gif) transparent;
+    background-position: center;
+    background-size: 4%;
+    background-repeat: no-repeat;
+}
+section.videoCarouselMovePage div.rosterSlider div.slide {
+    background: #000;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 45px;
+    position: absolute;
+    z-index: 9999;
+    !i;!;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+}
+
+header .menu ul {
+    display: flex;
+    gap: 25px;
+}
+
+header .logo a {
+}
+
+header .menu ul li a {
+    color: #fff;
+    text-decoration: unset;
+    font-size: 22px;
+    font-weight: 500;
+    opacity: 1;
+    transition: all 0.3s linear;
+    padding-bottom: 15px;
+    font-family: newyork;
+}
+
+header .menu ul li {
+    list-style-type: none;
+    position: relative;
+}
+header .menu ul li a:hover {
+    opacity: 1;
+}
+header .menu ul li {
+    position: relative;
+}
+
+header .menu ul li ol {
+    padding: 0px;
+    margin: 0px;
+    background: #00000038;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    transition: all 0.3s linear;
+    opacity: 0;
+    visibility: hidden;
+}
+
+header .menu ul li ol li a {
+    font-size: 18px;
+    display: block;
+    padding: 4px 15px;
+    transition: all 0.3s linear;
+    opacity: 0.6;
+}
+
+header .menu ul li:hover ol {
+    opacity: 1;
+    visibility: visible;
+}
+
+header .menu ul li ol.last {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    left: unset;
+    right: 80px;
+    width: max-content;
+    top: 0px;
+}
+
+header .menu ul li ol li:hover ol.last {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block;
+}
+section#roster .allWorks {
+    display: flex;
+    padding-top: 0px;
+    justify-content: center;
+    gap: 80px;
+}
+
+section#roster .allWorks div.content {
+    width: max-content;
+}
+
+section#roster .col-md-12 {
+    padding: 0px;
+}
+header .logo a img {
+    width: 100px;
+}
+section#roster h3.active {
+    text-align: left;
+}
+section#roster .browseAllButton {
+    padding-top: 60px;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+section#roster .browseAllButton a {
+    letter-spacing: 2px;
+    font-family: newyork;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: unset;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 0px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+section#roster div.col-md-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+section#roster div.row {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+@media (max-width:800px){
+    section#roster .allWorks {
+        display: block;
+        padding: 60px 0px 40px;
+    }
+    section#roster {
+        height: 100%;
+        min-height: 100vh;
+    }
+    body {
+        overflow-y: visible !important;
+        height: 100%;
+        min-height: 100vh;
+    }
+    section#roster .allWorks div.content {
+        width: 100%;
+        min-height: unset;
+        padding: 0px 25px 0px;
+    }
+    section#roster h3 {
+        font-size: 35px;
+        margin: 0px 0px 20px;
+        text-align: center;
+        width: 100%;
+    }
+    section#roster .innerContent p {
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+    }
+    section#roster .innerContent {
+        display: none;
+        padding-bottom: 20px;
+    }
+    /*header set css*/
+    header {
+        position: relative !important;
+        background: #050505;
+        padding: 5px 20px;
+        display: block;
+    }
+    header .logo {
+        width: 100%;
+        text-align: center;
+    }
+    
+    header .menu ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    header .menu ul li:last-child {
+        left: unset;
+        right: 15px;
+    }
+    
+    header .menu ul li {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 15px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    header .menu ul li ol {
+        display: none;
+    }
+    #videoLoaderDiv video {
+        object-fit: contain;
+    }
+    section#roster div.col-md-12 {
+        height: 100%;
+    }
+}
