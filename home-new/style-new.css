@@ -69,12 +69,11 @@ header .logo a {
 header .menu ul li a {
     color: #fff;
     text-decoration: unset;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     opacity: 1;
     transition: all 0.3s linear;
-    padding-bottom: 15px;
-    font-family: ltsuperiormono_medium;
+    padding-bottom: 10px;
     font-family: newyork;
 }
 
@@ -109,8 +108,9 @@ div.innerBody ul.heading {
     padding: 0px 0px;
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style-type: none;
-    gap: 40px;
+    gap: 0px;
     width: 100%;
     position: relative;
     left: 0px;
@@ -120,22 +120,47 @@ div.innerBody ul.heading {
     z-index: 999;
 }
 
+div.innerBody ul.heading li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-out;
+}
+
 div.innerBody ul.heading a {
     color: #fff !important;
     text-decoration: unset !important;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    transition: all 0.3s linear;
-    opacity: 0.4;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, max-width 0.4s ease-out, padding 0.4s ease-out;
+    opacity: 0.25;
     font-size: 36px;
     cursor: pointer;
     font-family: newyork;
+    transform: scale(1);
+    transform-origin: center;
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 25px;
 }
 
 div.innerBody ul.heading a.active {
     opacity: 1;
     font-weight: 900;
+    transform: scale(1.08);
+    max-width: 200px;
+    padding: 0 30px;
+}
+
+/* When any category is active, collapse the inactive ones */
+div.innerBody ul.heading:has(a.active) a:not(.active) {
+    opacity: 0;
+    max-width: 0;
+    transform: scale(0.8);
+    padding: 0;
 }
 
 div.innerBody .detailedBox ul {
@@ -308,9 +333,9 @@ div#videoModalPopup {
         div#videoModalPopup .modal-dialog .modal-content .modal-header {
             top: 15px;
             left: 0px;
-            right: 0px;
-            margin: auto;
-            justify-content: center;
+            right: 30px;
+            margin: 0;
+            justify-content: flex-end;
         }
         #videoModalPopup ul.screenshots li {
             width: 50%;

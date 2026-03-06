@@ -442,7 +442,7 @@ $(document).on('mouseenter','div.innerBody div.detailedBox li a',function(){
     if(jQuery.inArray("EDIT", previewAuthor) !== -1){
         $('div.innerBody ul.heading a[data-author="EDIT"]').addClass('active');
     }
-    if(jQuery.inArray("COLOR", previewAuthor) !== -1){
+    if(jQuery.inArray("COLOR", previewAuthor) !== -1 || jQuery.inArray("COLORIST", previewAuthor) !== -1){
         $('div.innerBody ul.heading a[data-author="COLOR"]').addClass('active');
     }
     if(jQuery.inArray("SOUND", previewAuthor) !== -1){

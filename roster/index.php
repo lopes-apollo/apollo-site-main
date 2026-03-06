@@ -211,15 +211,95 @@
     <div class="video" data-longVideo="https://apollo.gosimian.com/share/v/TPBRLF-RNvz4AyMzX4KzRw/false/auto/auto/ffffff/000000/" data-title="Le Jumper" data-author="VFX" data-prev1="" data-prev2="" data-prev3="" data-prev4="" data-prev5="" data-prev6="" data-videoName="Shakira" data-videoSubName="Grammy's Short Film" data-credit="yes" data-credits="<h3>Apollo</h3><b>VFX: Le Jumper</b><br><br><h3>Production</h3><b>Production Company: Fulwell</b>"><video poster="videos/short/Shakira - Grammy's Short Film.png" src="videos/short/Shakira - Grammy's Short Film .mp4" muted autoplay loop></video><label>Shakira - Grammy's Short Film</label></div>
   </div> 
   
-  <div class="editorsMain editorsLeftMain">
-        <ul class="editorsLeft editors">
-            <li><a></a></li>
+  <div class="editorsMain editorsLeftMain" id="leftPanelContainer">
+        <ul class="editorsLeft editors" id="leftPanelList">
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
             <li class="active" data-start=00><a>EDIT</a></li>
             <li data-start=037><a>COLOR</a></li>
             <li data-start=052><a>SOUND</a></li>
             <li data-start=056><a>VFX</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
+            <li><a style="color:transparent;">&nbsp;</a></li>
         </ul>
     </div>
+    <script>
+    // Immediate scroll handler for left panel
+    (function() {
+        var leftContainer = document.getElementById('leftPanelContainer');
+        var leftList = document.getElementById('leftPanelList');
+        
+        if (!leftContainer || !leftList) return;
+        
+        leftList.style.overflowY = 'auto';
+        leftList.style.maxHeight = '100%';
+        leftList.style.height = '100%';
+        
+        var items = leftList.querySelectorAll('li[data-start]');
+        var currentIndex = 0;
+        var isScrolling = false;
+        
+        items.forEach(function(item, idx) {
+            if (item.classList.contains('active')) currentIndex = idx;
+        });
+        
+        function centerItem(item) {
+            var containerHeight = leftList.clientHeight;
+            var itemTop = item.offsetTop;
+            var itemHeight = item.offsetHeight;
+            var scrollTo = itemTop - (containerHeight / 2) + (itemHeight / 2);
+            leftList.scrollTop = scrollTo;
+        }
+        
+        if (items[currentIndex]) {
+            centerItem(items[currentIndex]);
+        }
+        
+        leftContainer.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (isScrolling) return;
+            isScrolling = true;
+            
+            if (e.deltaY > 0) {
+                if (currentIndex < items.length - 1) currentIndex++;
+            } else {
+                if (currentIndex > 0) currentIndex--;
+            }
+            
+            items.forEach(function(item) {
+                item.classList.remove('active');
+                item.classList.remove('scrollActive');
+            });
+            items[currentIndex].classList.add('active');
+            items[currentIndex].classList.add('scrollActive');
+            
+            var targetItem = items[currentIndex];
+            var containerHeight = leftList.clientHeight;
+            var itemTop = targetItem.offsetTop;
+            var itemHeight = targetItem.offsetHeight;
+            var scrollTo = itemTop - (containerHeight / 2) + (itemHeight / 2);
+            
+            leftList.scrollTo({
+                top: scrollTo,
+                behavior: 'smooth'
+            });
+            
+            setTimeout(function() {
+                isScrolling = false;
+            }, 300);
+        }, { passive: false });
+    })();
+    </script>
     
     <div class="editorsMain editorsRightMain">
         <ul class="editorsRight editors EditorGroupUL">

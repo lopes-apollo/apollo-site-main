@@ -1,0 +1,18 @@
+═══════════════════════════════════════════════════════════════
+  START PHP SERVER - COPY AND PASTE THIS COMMAND
+═══════════════════════════════════════════════════════════════
+
+Open Terminal in Cursor and run:
+
+cd /Users/lopes/Desktop/APOLLO/apollo-site-main && php -S localhost:8000
+
+Keep the terminal window open!
+
+Then open in browser:
+http://localhost:8000/admin/login.php
+
+Login:
+Username: admin
+Password: apollo2024!
+
+═══════════════════════════════════════════════════════════════

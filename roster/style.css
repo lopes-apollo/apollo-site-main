@@ -131,10 +131,10 @@ header div.insideHeader {
 }header div.menuRight ul li a {
     color: #fff;
     text-decoration: unset;
-    font-size: 20px;
+    font-size: 18px;
     opacity: 1;
     transition: all 0.3s linear;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     font-family: newyork;
 }header div.menuRight ul li ol {
     padding: 0px;
@@ -178,23 +178,29 @@ div.editorsMain {
     left: 2em;
     top: 50% !important;
     transform: translateY(-50%);
-    display: inline-flex;
-    align-items: center;
-    z-index: 9;
+    z-index: 100;
+    width: 280px;
+    height: 180px;
+    overflow: hidden;
 }
 div.editorsMain ul.editors {
-    padding: 0px;
+    padding: 0px 40px;
     text-align: center;
     display: flex;
     gap: 15px;
     margin: auto;
-    overflow-y: visible !important;
+    overflow: visible;
     z-index: 9;
-    width: 250px;
+    width: 100%;
+    box-sizing: border-box;
     align-items: center;
     white-space: nowrap;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
     flex-direction: column;
+    transition: transform 0.2s ease-out;
 }
 
 ::-webkit-scrollbar {
@@ -215,8 +221,8 @@ div.editorsMain ul.editors li {
 div.editorsMain ul.editors li a {
     cursor: pointer;
     color: #fff;
-    opacity: 0.6;
-    /* transition: all 0.2s linear; */
+    opacity: 1;
+    transition: opacity 0.2s ease;
     position: relative;
     font-family: newyork;
     font-size: 20px;
@@ -224,29 +230,70 @@ div.editorsMain ul.editors li a {
     font-weight: 500;
     text-decoration: unset;
 }
-div.editorsMain ul.editors li:before {
+
+/* Active item is fully visible, others fade based on distance */
+div.editorsMain ul.editors li.active a {
+    opacity: 1;
+}
+/* Fixed horizontal lines - centered in each panel */
+div.editorsMain.editorsLeftMain:before {
     content: "";
     position: absolute;
-    left: -30px;
-    top: 0px;
-    bottom: 0px;
-    margin: auto;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     height: 2px;
     width: 20px;
     background: #fff;
-    opacity: 0;
+    opacity: 1;
+    z-index: 10;
+    pointer-events: none;
+}
+div.editorsMain.editorsLeftMain:after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 20px;
+    background: #fff;
+    opacity: 1;
+    z-index: 10;
+    pointer-events: none;
+}
+div.editorsMain.editorsRightMain:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 20px;
+    background: #fff;
+    opacity: 1;
+    z-index: 10;
+    pointer-events: none;
+}
+div.editorsMain.editorsRightMain:after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 20px;
+    background: #fff;
+    opacity: 1;
+    z-index: 10;
+    pointer-events: none;
+}
+
+div.editorsMain ul.editors li:before {
+    display: none;
 }
 div.editorsMain ul.editors li:after {
-    content: "";
-    position: absolute;
-    right: -30px;
-    top: 0px;
-    bottom: 0px;
-    margin: auto;
-    height: 2px;
-    width: 20px;
-    background: #fff;
-    opacity: 0;
+    display: none;
 }
 div.editorsMain ul.editors li:hover a {
     opacity: 1;
@@ -274,38 +321,20 @@ div.editorsMain ul.editors li.active+li {
                 opacity: 0.3;
             }
 
-div.editorsMain ul.editors li.active:after, div.editorsMain ul.editors li.active:before {
-    opacity: 1;
-}
+/* Opacity is now controlled by JavaScript based on distance from center */
+/* Right sidebar inherits from .editorsMain above */
 div.editorsRightMain {
     left: unset;
     right: 3em;
-    transition: none !important;
 }
 
 ul.editorsRight.editors.EditorGroupUL {
-    height: 13.5rem;
-    /* padding-top: 1rem; */
-    transition: none !important;
+    /* Inherits from div.editorsMain ul.editors */
 }
 div.editorsMain.editorsLeftMain ul.editorsLeft.editors {
-    height: 13.5rem;
-    /* padding-top: 1rem; */
+    /* Inherits from div.editorsMain ul.editors */
 }
-div.editorsMain.editorsLeftMain:before {
-    content: none;
-}
-
-div.editorsMain.editorsLeftMain:after {
-    content: none;
-}
-div.editorsMain.editorsRightMain:before {
-    content: none;
-}
-
-div.editorsMain.editorsRightMain:after {
-    content: none;
-}
+/* Fixed lines are now defined above - these are overridden */
 div#videoModalPopup {
             top: 0px;  
             left: 0px;

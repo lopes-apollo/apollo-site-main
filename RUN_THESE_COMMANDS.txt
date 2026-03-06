@@ -1,0 +1,43 @@
+═══════════════════════════════════════════════════════════════
+  PUSH TO GITHUB - COPY AND PASTE THESE COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Step 1: Navigate to your project
+─────────────────────────────────
+cd /Users/lopes/Desktop/APOLLO/apollo-site-main
+
+Step 2: Add GitHub CLI to your PATH
+────────────────────────────────────
+export PATH="/opt/homebrew/bin:$PATH"
+
+Step 3: Authenticate with GitHub (if not already done)
+───────────────────────────────────────────────────────
+gh auth login
+# Follow the prompts:
+# - Choose "GitHub.com"
+# - Choose "HTTPS"
+# - Choose "Login with a web browser"
+# - Press Enter, then authenticate in your browser
+
+Step 4: Create repository and push (ONE COMMAND!)
+───────────────────────────────────────────────────
+gh repo create apollo-site --public --source=. --remote=origin --push
+
+═══════════════════════════════════════════════════════════════
+  ALTERNATIVE: If GitHub CLI doesn't work, use these:
+═══════════════════════════════════════════════════════════════
+
+1. First, create the repository on GitHub.com manually:
+   - Go to https://github.com/new
+   - Repository name: apollo-site
+   - Make it Public
+   - DO NOT initialize with README
+   - Click "Create repository"
+
+2. Then run these commands:
+   git remote add origin https://github.com/YOUR_USERNAME/apollo-site.git
+   git branch -M main
+   git push -u origin main
+   (Replace YOUR_USERNAME with your GitHub username)
+
+═══════════════════════════════════════════════════════════════

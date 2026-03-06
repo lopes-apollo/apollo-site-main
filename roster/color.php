@@ -76,33 +76,19 @@
     
   </div> 
   
-  <div class="editorsMain editorsLeftMain" style="padding-top: 2rem;">
+  <div class="editorsMain editorsLeftMain" id="leftPanel">
         <ul class="editorsLeft editors">
-            <li data-start=0><a href="/roster/edit">EDIT</a></li>
-            <li class="active" data-start=1><a href="/roster/color">COLOR</a></li>
-            <li data-start=2><a href="/roster/sound">SOUND</a></li>
-            <li data-start=3><a href="/roster/vfx">VFX</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
+            <li data-start=0><a href="/roster/edit.php">EDIT</a></li>
+            <li class="active" data-start=1><a href="/roster/color.php">COLOR</a></li>
+            <li data-start=2><a href="/roster/sound.php">SOUND</a></li>
+            <li data-start=3><a href="/roster/vfx.php">VFX</a></li>
         </ul>
     </div>
     
-    <div class="editorsMain editorsRightMain">
+    <div class="editorsMain editorsRightMain" id="rightPanel">
         <ul class="editorsRight editors EditorGroupUL">
-            <!--<li data-start=32><a href="/roster/brian-charles">Brian Charles</a></li>-->
             <li class="active" data-start=37><a href="/roster/avery-niles">Avery Niles</a></li>
-            <li  data-start=44><a href="/roster/wilhends-norvil">Wilhends Norvil</a></li>
-            
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li> 
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li> 
+            <li data-start=44><a href="/roster/wilhends-norvil">Wilhends Norvil</a></li>
         </ul>
     </div>
     <div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog"> 
@@ -234,6 +220,7 @@
                 hidePreloader();
             });
         }, 100);
+        var lastActiveArtist = null;
         window.addEventListener("scroll", handleScroll);
         function handleScroll() {
             const viewportHeight = window.innerHeight;
@@ -245,37 +232,29 @@
                 const opacity = Math.max(1.3 - distanceFromCenter / viewportHeight, 0.5);
                 video.style.transform = `scale(${scale})`;
                 video.style.opacity = opacity;
+                
+                // When video is in center (scale > 1.2), update right panel
                 if (scale > 1.2) {
-                    const currentAuthor = video.getAttribute("data-author");
                     const currentTitle = video.getAttribute("data-title");
                     
-                    if (currentTitle === 'Wilhends Norvil') {
-                        $('div.editorsMain ul.editorsRight li').removeClass('active');
-                        $('div.editorsMain ul.editorsRight li').removeClass('scrollActive');
-                        $('div.editorsMain ul.editorsRight li[data-start="44"]').addClass('active');
-                        var $scrollArea = $('ul.editorsRight.editors.EditorGroupUL');
-                        var $targetItem = $scrollArea.find('li.active');
-                        if ($targetItem.length) {
-                            var scrollTo = $targetItem.position().top + $scrollArea.scrollTop() - ($scrollArea.height() - $targetItem.height()) / 2;
-                            $scrollArea.scrollTop(scrollTo);
+                    // Only update if artist changed
+                    if (currentTitle && currentTitle !== lastActiveArtist) {
+                        lastActiveArtist = currentTitle;
+                        
+                        // Update header
+                        $('div.insideHeader div.menuRight h4.authorsNames').text(currentTitle);
+                        
+                        // Update right panel using scroll controller
+                        if (rightScrollController) {
+                            var items = document.querySelectorAll('#rightPanel ul.editorsRight li');
+                            for (var i = 0; i < items.length; i++) {
+                                var link = items[i].querySelector('a');
+                                if (link && link.textContent.trim() === currentTitle) {
+                                    rightScrollController.setIndex(i);
+                                    break;
+                                }
+                            }
                         }
-                        $('div.insideHeader div.menuRight h4.authorsNames').text('Wilhends Norvil');
-                        $('div.editorsRightMain').css('padding-top', '7.3rem');
-                        $('div.editorsRightMain').css('padding-bottom', '0');
-                    }
-                    if (currentTitle === 'Avery Niles') {
-                        $('div.editorsMain ul.editorsRight li').removeClass('active');
-                        $('div.editorsMain ul.editorsRight li').removeClass('scrollActive');
-                        $('div.editorsMain ul.editorsRight li[data-start="37"]').addClass('active');
-                        var $scrollArea = $('ul.editorsRight.editors.EditorGroupUL');
-                        var $targetItem = $scrollArea.find('li.active');
-                        if ($targetItem.length) {
-                            var scrollTo = $targetItem.position().top + $scrollArea.scrollTop() - ($scrollArea.height() - $targetItem.height()) / 2;
-                            $scrollArea.scrollTop(scrollTo);
-                        }
-                        $('div.insideHeader div.menuRight h4.authorsNames').text('Avery Niles');
-                        $('div.editorsRightMain').css('padding-top', '13rem');
-                        $('div.editorsRightMain').css('padding-bottom', '0');
                     }
                 }
             });
@@ -323,140 +302,126 @@
         });
     });
     
-    $(document).ready(function () {
-        var maxWidth = 0;
-        $('ul.editorsRight.editors li[data-start]').each(function() {
-            if ($(this).width() > maxWidth) {
-                maxWidth = $(this).width();
-            }
-        });
-        $('ul.editorsRight.editors li[data-start]').width(maxWidth + 10);
-        $('ul.editorsLeft.editors li[data-start]').each(function() {
-            if ($(this).width() > maxWidth) {
-                maxWidth = $(this).width();
-            }
-        });
-        $('ul.editorsLeft.editors li[data-start]').width(maxWidth / 2);
-
-        function setupScrollableList(selector) {
-            var $scrollArea = $(selector);
-            if ($scrollArea.length === 0) return;
-
-            var $items = $scrollArea.children('li[data-start]');
-            var currentIndex = $items.index($scrollArea.find('li.active'));
-            if (currentIndex === -1) currentIndex = 0;
-            var isScrolling = false;
+    // Snappy scroll controllers (initialized after fonts load)
+    var leftScrollController = null;
+    var rightScrollController = null;
+    
+    // Snappy scroll function for both panels using CSS transform
+    function setupScrollableList(panelId, listSelector) {
+        var panel = document.getElementById(panelId);
+        var list = panel.querySelector(listSelector);
+        if (!panel || !list) return null;
         
-            $scrollArea.on('wheel', function (e) {
-                if ($scrollArea.get(0).scrollHeight <= $scrollArea.get(0).clientHeight) {
+        var items = list.querySelectorAll('li[data-start]');
+        if (items.length === 0) return null;
+        
+        var currentIndex = Array.from(items).findIndex(function(item) {
+            return item.classList.contains('active');
+        });
+        if (currentIndex === -1) currentIndex = 0;
+        var isScrolling = false;
+        
+        function updatePosition() {
+            var itemHeight = items[0].getBoundingClientRect().height || 24;
+            var gap = 15;
+            var itemSpacing = itemHeight + gap;
+            var panelHeight = panel.getBoundingClientRect().height || 180;
+            var panelCenter = panelHeight / 2;
+            
+            // Calculate where the current item's center should be
+            var itemCenterFromTop = (currentIndex * itemSpacing) + (itemHeight / 2);
+            
+            // Offset to move that item's center to panel center
+            var offset = panelCenter - itemCenterFromTop;
+            
+            // Apply transform
+            list.style.transform = 'translateY(' + offset + 'px)';
+            
+            // Update active states and opacity
+            items.forEach(function(item, idx) {
+                item.classList.remove('active', 'scrollActive');
+                var distance = Math.abs(idx - currentIndex);
+                var opacity = Math.max(1 - (distance * 0.25), 0.3);
+                item.querySelector('a').style.opacity = opacity;
+            });
+            items[currentIndex].classList.add('active', 'scrollActive');
+            items[currentIndex].querySelector('a').style.opacity = 1;
+        }
+        
+        // Handle wheel events on the panel
+        panel.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (isScrolling) return;
+            isScrolling = true;
+            
+            if (e.deltaY > 0 && currentIndex < items.length - 1) {
+                currentIndex++;
+            } else if (e.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+            
+            updatePosition();
+            
+            setTimeout(function() {
+                isScrolling = false;
+            }, 200);
+        });
+        
+        // Handle click on items
+        items.forEach(function(item, idx) {
+            item.addEventListener('click', function(e) {
+                var link = item.querySelector('a');
+                var href = link ? link.getAttribute('href') : null;
+                
+                if (idx !== currentIndex) {
                     e.preventDefault();
-                    return;
-                }
-
-                e.preventDefault();
-                
-                if (isScrolling) return;
-                isScrolling = true;
-    
-                if (e.originalEvent.deltaY > 0) {
-                    if (currentIndex < $items.length - 1) {
-                        currentIndex++;
+                    currentIndex = idx;
+                    updatePosition();
+                    // Navigate after animation
+                    if (href) {
+                        setTimeout(function() {
+                            window.location.href = href;
+                        }, 300);
                     }
-                } else {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                    }
-                }
-    
-                var $targetItem = $items.eq(currentIndex);
-
-                if (selector === 'ul.editorsRight.editors') {
-                        var editorName = $targetItem.find('a').text();
-                        // $('div.insideHeader div.menuRight h4.authorsNames').text(editorName);
-
-                        $items.removeClass('active').removeClass('scrollActive');
-                        $targetItem.addClass('active').addClass('scrollActive');
-
-                        if (currentIndex === 0) { // Wilhends Norvil
-                            $('div.editorsRightMain').css('padding-bottom', '0').css('padding-top', '13rem');
-                        } else if (currentIndex === 1) { // Avery Niles
-                            $('div.editorsRightMain').css({
-                                'padding-top': '7.3rem',
-                                'padding-bottom': '0'
-                            });
-                        } else if (currentIndex === 2) {
-                            $('div.editorsRightMain').css({
-                                'padding-top': '1.6rem',
-                                'padding-bottom': '0'
-                            });
-                        } else if (currentIndex === 3) {
-                            $('div.editorsRightMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '4.1rem'
-                            });
-                        } else if (currentIndex === 4) {
-                            $('div.editorsRightMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '9.8rem'
-                            });
-                        } else if (currentIndex === 4) {
-                            $('div.editorsRightMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '2.5rem'
-                            });
-                        }
-                    } else if (selector === 'ul.editorsLeft.editors') {
-                        $items.removeClass('active').removeClass('scrollActive');
-                        $targetItem.addClass('active').addClass('scrollActive');
-
-                        $('div.editorsLeftMain').removeClass('padding-0 padding-1 padding-2 padding-3');
-                        
-                        if (currentIndex === 0) {
-                            $('div.editorsLeftMain').css('padding-bottom', '0').css('padding-top', '13rem');
-                        } else if (currentIndex === 1) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '7.3rem',
-                                'padding-bottom': '0'
-                            });
-                        } else if (currentIndex === 2) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '1.6rem',
-                                'padding-bottom': '0'
-                            });
-                        } else if (currentIndex === 3) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '4.1rem'
-                            });
-                        } else if (currentIndex === 4) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '9.8rem'
-                            });
-                        } else if (currentIndex === 4) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '2.5rem'
-                            });
-                        }
-                    }
-                
-                if ($targetItem.length > 0) {
-                    var scrollTo = $targetItem.position().top + $scrollArea.scrollTop() - ($scrollArea.height() - $targetItem.height()) / 2;
-                    
-                    $scrollArea.stop().scrollTop(scrollTo);
-                    
-                    setTimeout(function () {
-                        isScrolling = false;
-                    }, 200);
-                } else {
-                    isScrolling = false;
                 }
             });
-        }
-        setupScrollableList('ul.editorsRight.editors');
-        setupScrollableList('ul.editorsLeft.editors');
-    });
+        });
+        
+        // Initial position
+        updatePosition();
+        
+        // Show list after positioning (add .positioned class for CSS transition)
+        list.classList.add('positioned');
+        
+        // Return controller for external use
+        return {
+            updatePosition: updatePosition,
+            setIndex: function(idx) {
+                if (idx >= 0 && idx < items.length) {
+                    currentIndex = idx;
+                    updatePosition();
+                }
+            },
+            getIndex: function() { return currentIndex; }
+        };
+    }
+    
+    // Initialize panels after fonts load
+    function initPanels() {
+        leftScrollController = setupScrollableList('leftPanel', 'ul.editorsLeft.editors');
+        rightScrollController = setupScrollableList('rightPanel', 'ul.editorsRight.editors');
+    }
+    
+    // Wait for fonts and layout to be ready
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function() {
+            setTimeout(initPanels, 150);
+        });
+    } else {
+        setTimeout(initPanels, 300);
+    }
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function(){

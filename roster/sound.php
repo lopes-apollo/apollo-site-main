@@ -66,28 +66,18 @@
     <div class="video" data-longVideo='<div style="width:100%;height:0;position: relative;padding-bottom:68.60656%;margin-bottom:10px;"><iframe src="https://apollo.gosimian.com/share/v/fdQaDNVceuLYzuAgd77ANA/false/auto/auto/ffffff/000000/" name="SimianEmbed" scrolling="no" style="position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000" frameborder="0" allowFullScreen webkitAllowFullScreen></iframe></div>' data-title="Ayo Douson" data-author="SOUND" data-prev1="" data-prev2="" data-prev3="" data-prev4="" data-prev5="" data-prev6="" data-videoName="Adidas" data-videoSubName="" data-credit="yes" data-credits="<h3>Apollo</h3><b>Sound Design: Ayo Douson</b>"><video poster="videos/images/adidas cover 1080p.png" src="videos/short/to_compress/adidas cover 1080p.mp4" muted autoplay loop></video><label>Adidas</label></div>
   </div> 
   
-  <div class="editorsMain editorsLeftMain" >
+  <div class="editorsMain editorsLeftMain" id="leftPanel">
         <ul class="editorsLeft editors">
-            <li data-start=0><a href="/roster/edit">EDIT</a></li>
-            <li data-start=1><a href="/roster/color">COLOR</a></li>
-            <li class="active" data-start=2><a href="/roster/sound">SOUND</a></li>
-            <li data-start=3><a href="/roster/vfx">VFX</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
+            <li data-start=0><a href="/roster/edit.php">EDIT</a></li>
+            <li data-start=1><a href="/roster/color.php">COLOR</a></li>
+            <li class="active" data-start=2><a href="/roster/sound.php">SOUND</a></li>
+            <li data-start=3><a href="/roster/vfx.php">VFX</a></li>
         </ul>
     </div>
     
-    <div class="editorsMain editorsRightMain">
+    <div class="editorsMain editorsRightMain" id="rightPanel">
         <ul class="editorsRight editors EditorGroupUL">
-            <!--<li data-start=32><a href="/roster/brian-charles">Brian Charles</a></li>-->
             <li class="active" data-start=44><a href="/roster/ayo-douson">Ayo Douson</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li> 
         </ul>
     </div>
      <div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog"> 
@@ -223,6 +213,7 @@
                 hidePreloader();
             });
         }, 100);
+        var lastActiveArtist = null;
         window.addEventListener("scroll", handleScroll);
         function handleScroll() {
             const viewportHeight = window.innerHeight;
@@ -235,6 +226,30 @@
                 video.style.transform = `scale(${scale})`;
                 video.style.opacity = opacity;
                 
+                // When video is in center (scale > 1.2), update right panel
+                if (scale > 1.2) {
+                    const currentTitle = video.getAttribute("data-title");
+                    
+                    // Only update if artist changed
+                    if (currentTitle && currentTitle !== lastActiveArtist) {
+                        lastActiveArtist = currentTitle;
+                        
+                        // Update header
+                        $('div.insideHeader div.menuRight h4.authorsNames').text(currentTitle);
+                        
+                        // Update right panel using scroll controller
+                        if (rightScrollController) {
+                            var items = document.querySelectorAll('#rightPanel ul.editorsRight li');
+                            for (var i = 0; i < items.length; i++) {
+                                var link = items[i].querySelector('a');
+                                if (link && link.textContent.trim() === currentTitle) {
+                                    rightScrollController.setIndex(i);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
             });
         }
     // });
@@ -278,104 +293,126 @@
         });
     });
 
-    $(document).ready(function () {
-        var maxWidth = 0;
-        $('ul.editorsRight.editors li[data-start]').each(function() {
-            if ($(this).width() > maxWidth) {
-                maxWidth = $(this).width();
-            }
-        });
-        $('ul.editorsRight.editors li[data-start]').width(maxWidth + 10);
-        $('ul.editorsLeft.editors li[data-start]').each(function() {
-            if ($(this).width() > maxWidth) {
-                maxWidth = $(this).width();
-            }
-        });
-        $('ul.editorsLeft.editors li[data-start]').width(maxWidth / 2);
-
-        function setupScrollableList(selector) {
-            var $scrollArea = $(selector);
-            if ($scrollArea.length === 0) return;
-
-            var $items = $scrollArea.children('li[data-start]');
-            var currentIndex = $items.index($scrollArea.find('li.active'));
-            if (currentIndex === -1) currentIndex = 0;
-            var isScrolling = false;
+    // Snappy scroll controllers (initialized after fonts load)
+    var leftScrollController = null;
+    var rightScrollController = null;
+    
+    // Snappy scroll function for both panels using CSS transform
+    function setupScrollableList(panelId, listSelector) {
+        var panel = document.getElementById(panelId);
+        var list = panel.querySelector(listSelector);
+        if (!panel || !list) return null;
         
-            $scrollArea.on('wheel', function (e) {
-                if ($scrollArea.get(0).scrollHeight <= $scrollArea.get(0).clientHeight) {
+        var items = list.querySelectorAll('li[data-start]');
+        if (items.length === 0) return null;
+        
+        var currentIndex = Array.from(items).findIndex(function(item) {
+            return item.classList.contains('active');
+        });
+        if (currentIndex === -1) currentIndex = 0;
+        var isScrolling = false;
+        
+        function updatePosition() {
+            var itemHeight = items[0].getBoundingClientRect().height || 24;
+            var gap = 15;
+            var itemSpacing = itemHeight + gap;
+            var panelHeight = panel.getBoundingClientRect().height || 180;
+            var panelCenter = panelHeight / 2;
+            
+            // Calculate where the current item's center should be
+            var itemCenterFromTop = (currentIndex * itemSpacing) + (itemHeight / 2);
+            
+            // Offset to move that item's center to panel center
+            var offset = panelCenter - itemCenterFromTop;
+            
+            // Apply transform
+            list.style.transform = 'translateY(' + offset + 'px)';
+            
+            // Update active states and opacity
+            items.forEach(function(item, idx) {
+                item.classList.remove('active', 'scrollActive');
+                var distance = Math.abs(idx - currentIndex);
+                var opacity = Math.max(1 - (distance * 0.25), 0.3);
+                item.querySelector('a').style.opacity = opacity;
+            });
+            items[currentIndex].classList.add('active', 'scrollActive');
+            items[currentIndex].querySelector('a').style.opacity = 1;
+        }
+        
+        // Handle wheel events on the panel
+        panel.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (isScrolling) return;
+            isScrolling = true;
+            
+            if (e.deltaY > 0 && currentIndex < items.length - 1) {
+                currentIndex++;
+            } else if (e.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+            
+            updatePosition();
+            
+            setTimeout(function() {
+                isScrolling = false;
+            }, 200);
+        });
+        
+        // Handle click on items
+        items.forEach(function(item, idx) {
+            item.addEventListener('click', function(e) {
+                var link = item.querySelector('a');
+                var href = link ? link.getAttribute('href') : null;
+                
+                if (idx !== currentIndex) {
                     e.preventDefault();
-                    return;
-                }
-
-                e.preventDefault();
-                
-                if (isScrolling) return;
-                isScrolling = true;
-    
-                if (e.originalEvent.deltaY > 0) {
-                    if (currentIndex < $items.length - 1) {
-                        currentIndex++;
+                    currentIndex = idx;
+                    updatePosition();
+                    // Navigate after animation
+                    if (href) {
+                        setTimeout(function() {
+                            window.location.href = href;
+                        }, 300);
                     }
-                } else {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                    }
-                }
-    
-                var $targetItem = $items.eq(currentIndex);
-
-                if (selector === 'ul.editorsLeft.editors') {
-                        $items.removeClass('active').removeClass('scrollActive');
-                        $targetItem.addClass('active').addClass('scrollActive');
-
-                        $('div.editorsLeftMain').removeClass('padding-0 padding-1 padding-2 padding-3');
-                        
-                        if (currentIndex === 0) {
-                            $('div.editorsLeftMain').css('padding-bottom', '0').css('padding-top', '13rem');
-                        } else if (currentIndex === 1) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '7.3rem',
-                                'padding-bottom': '0'
-                            });
-                        } else if (currentIndex === 2) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '1.6rem',
-                                'padding-bottom': '0'
-                            });
-                        } else if (currentIndex === 3) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '4.1rem'
-                            });
-                        } else if (currentIndex === 4) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '9.8rem'
-                            });
-                        } else if (currentIndex === 4) {
-                            $('div.editorsLeftMain').css({
-                                'padding-top': '0',
-                                'padding-bottom': '2.5rem'
-                            });
-                        }
-                    }
-                
-                if ($targetItem.length > 0) {
-                    var scrollTo = $targetItem.position().top + $scrollArea.scrollTop() - ($scrollArea.height() - $targetItem.height()) / 2;
-                    
-                    $scrollArea.stop().scrollTop(scrollTo);
-                    
-                    setTimeout(function () {
-                        isScrolling = false;
-                    }, 200);
-                } else {
-                    isScrolling = false;
                 }
             });
-        }
-        setupScrollableList('ul.editorsLeft.editors');
-    });
+        });
+        
+        // Initial position
+        updatePosition();
+        
+        // Show list after positioning (add .positioned class for CSS transition)
+        list.classList.add('positioned');
+        
+        // Return controller for external use
+        return {
+            updatePosition: updatePosition,
+            setIndex: function(idx) {
+                if (idx >= 0 && idx < items.length) {
+                    currentIndex = idx;
+                    updatePosition();
+                }
+            },
+            getIndex: function() { return currentIndex; }
+        };
+    }
+    
+    // Initialize panels after fonts load
+    function initPanels() {
+        leftScrollController = setupScrollableList('leftPanel', 'ul.editorsLeft.editors');
+        rightScrollController = setupScrollableList('rightPanel', 'ul.editorsRight.editors');
+    }
+    
+    // Wait for fonts and layout to be ready
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function() {
+            setTimeout(initPanels, 150);
+        });
+    } else {
+        setTimeout(initPanels, 300);
+    }
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function(){

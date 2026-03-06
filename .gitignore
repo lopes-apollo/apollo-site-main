@@ -39,3 +39,6 @@ php-server.log
 # Keep documentation files
 !*.md
 !*.txt
+
+# CMS Data (optional - remove this line if you want to track JSON data in git)
+# data/

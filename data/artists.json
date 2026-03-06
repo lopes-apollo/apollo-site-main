@@ -1,0 +1,3437 @@
+[
+    {
+        "id": "artist_6965e95a4e334",
+        "name": "Devon Solwold",
+        "slug": "devon-solwold",
+        "category": "EDIT",
+        "videos": [
+            {
+                "id": "video_6965e95a4e1b0",
+                "videoName": "Bodega",
+                "videoSubName": "New Balance",
+                "videoShort": "videos\/short\/to_compress\/eds1.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds1.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Editor:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Agency + Production: drinkadmilk<br> <b>Director:<\/b> Tristan Kim<br> <b>Executive Producer:<\/b> Alex Majher<br> <b>Producer:<\/b> Kevin Wall",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a4e1de",
+                "videoName": "Bodega x G Shock",
+                "videoSubName": "Anytime, Anywhere",
+                "videoShort": "videos\/short\/to_compress\/bodega-g-shock-anytime-anywhere.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/to_compress\/bodega-g-shock-anytime-anywhere.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Edit & Sound Design:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Agency: drinkadmilk<br> <b>Director:<\/b> Michael B Janey<br> <b>DP:<\/b> Kai Dickson",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a4e1ef",
+                "videoName": "OKEM",
+                "videoSubName": "Short Film",
+                "videoShort": "videos\/short\/to_compress\/eds3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds3.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Editor:<\/b> Devon Solwold<br><br><h3>Production<\/h3><br> <b>Director:<\/b> Joshua Okwuosa<br> <b>DP:<\/b> Kai Dickson<br> <b>Producer:<\/b> Elizabeth Kraushaar",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a4e1ff",
+                "videoName": "Eem Triplin",
+                "videoSubName": "What Da Opp Said",
+                "videoShort": "videos\/short\/to_compress\/eds4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Post Supervisor:<\/b> Alex Peterson<br> <b>Edit & Sound Design:<\/b> Devon Solwold<br> <b>VFX:<\/b> Ben Gillespie<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br> <b>Director:<\/b> Michael Kelly<br> <b>Executive Producers:<\/b> Tony Pillow, Simon Chasalow, Lucas Alexander<br> <b>Producer:<\/b> Nour Sayeh",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a4e20e",
+                "videoName": "$NOT feat. Zilla Kami",
+                "videoSubName": "0 PERCENT",
+                "videoShort": "videos\/short\/to_compress\/NOT-Ft-Zilla-Kami-0-PERCENT.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/NOT-Ft-Zilla-Kami-0-PERCENT.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Head of Post:<\/b> Alex Peterson<br> <b>Post Supervisor:<\/b> Chris Carson<br> <b>Editor:<\/b> Devon Solwold & JMP<br> <b>Sound Design:<\/b> Devon Solwold<br> <b>VFX:<\/b> Auraj Raj<br><br><h3>Production<\/h3>Production Company: Paperwork<br> <b>Director:<\/b> JMP-James Pereira<br> <b>Executive Producer:<\/b> Joey Szela<br> <b>DP:<\/b> Joel Wolt<br><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a4e21c",
+                "videoName": "Run that Shit! Short Film",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/eds6.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds6.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Edit, Sound, VFX:<\/b> Devon Solwold<br><br><h3>Production<\/h3><b>EXECUTIVE PRODUCERS:<\/b> Tristan Kim, Harrison Kracht<br> <b>DIRECTOR:<\/b> Tristan Kim<br> <b>WRITTEN BY:<\/b> Tristan Kim, Will Allyn Robinson<br> <b>DP:<\/b> Harrison Kracht",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a4e228",
+                "videoName": "PURPLE DENIM",
+                "videoSubName": "Daytrippin",
+                "videoShort": "videos\/short\/to_compress\/eds7.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds7.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Edit, Sound, VFX:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Studio: drinkadmilk<br> <b>Producer:<\/b> Alex Majher",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a4e236",
+                "videoName": "OnJuno Banking",
+                "videoSubName": "Granny",
+                "videoShort": "videos\/short\/to_compress\/OnJunoBankingGranny.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/OnJunoBankingGranny.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Editor:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Agency + Production: drinkadmilk<br> <b>Director:<\/b> Tristan Kim<br> <b>Executive Producer:<\/b> Alex Majher<br> <b>Producer:<\/b> Kevin Wall",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a4e2ba",
+                "videoName": "Bodega",
+                "videoSubName": "New Balance",
+                "videoShort": "videos\/short\/to_compress\/eds1.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds1.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Editor:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Agency + Production: drinkadmilk<br> <b>Director:<\/b> Tristan Kim<br> <b>Executive Producer:<\/b> Alex Majher<br> <b>Producer:<\/b> Kevin Wall",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a4e2c8",
+                "videoName": "Bodega x G Shock",
+                "videoSubName": "Anytime, Anywhere",
+                "videoShort": "videos\/short\/to_compress\/bodega-g-shock-anytime-anywhere.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/to_compress\/bodega-g-shock-anytime-anywhere.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Edit & Sound Design:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Agency: drinkadmilk<br> <b>Director:<\/b> Michael B Janey<br> <b>DP:<\/b> Kai Dickson",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a4e2e3",
+                "videoName": "OKEM",
+                "videoSubName": "Short Film",
+                "videoShort": "videos\/short\/to_compress\/eds3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds3.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Editor:<\/b> Devon Solwold<br><br><h3>Production<\/h3><br> <b>Director:<\/b> Joshua Okwuosa<br> <b>DP:<\/b> Kai Dickson<br> <b>Producer:<\/b> Elizabeth Kraushaar",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a4e2fc",
+                "videoName": "Eem Triplin",
+                "videoSubName": "What Da Opp Said",
+                "videoShort": "videos\/short\/to_compress\/eds4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Post Supervisor:<\/b> Alex Peterson<br> <b>Edit & Sound Design:<\/b> Devon Solwold<br> <b>VFX:<\/b> Ben Gillespie<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br> <b>Director:<\/b> Michael Kelly<br> <b>Executive Producers:<\/b> Tony Pillow, Simon Chasalow, Lucas Alexander<br> <b>Producer:<\/b> Nour Sayeh",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a4e309",
+                "videoName": "$NOT feat. Zilla Kami",
+                "videoSubName": "0 PERCENT",
+                "videoShort": "videos\/short\/to_compress\/NOT-Ft-Zilla-Kami-0-PERCENT.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/NOT-Ft-Zilla-Kami-0-PERCENT.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br> <b>Head of Post:<\/b> Alex Peterson<br> <b>Post Supervisor:<\/b> Chris Carson<br> <b>Editor:<\/b> Devon Solwold & JMP<br> <b>Sound Design:<\/b> Devon Solwold<br> <b>VFX:<\/b> Auraj Raj<br><br><h3>Production<\/h3>Production Company: Paperwork<br> <b>Director:<\/b> JMP-James Pereira<br> <b>Executive Producer:<\/b> Joey Szela<br> <b>DP:<\/b> Joel Wolt<br><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a4e316",
+                "videoName": "Run that Shit! Short Film",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/eds6.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds6.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Edit, Sound, VFX:<\/b> Devon Solwold<br><br><h3>Production<\/h3><b>EXECUTIVE PRODUCERS:<\/b> Tristan Kim, Harrison Kracht<br> <b>DIRECTOR:<\/b> Tristan Kim<br> <b>WRITTEN BY:<\/b> Tristan Kim, Will Allyn Robinson<br> <b>DP:<\/b> Harrison Kracht",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a4e322",
+                "videoName": "PURPLE DENIM",
+                "videoSubName": "Daytrippin",
+                "videoShort": "videos\/short\/to_compress\/eds7.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/eds7.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Edit, Sound, VFX:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Studio: drinkadmilk<br> <b>Producer:<\/b> Alex Majher",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 14
+            },
+            {
+                "id": "video_6965e95a4e32f",
+                "videoName": "OnJuno Banking",
+                "videoSubName": "Granny",
+                "videoShort": "videos\/short\/to_compress\/OnJunoBankingGranny.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/OnJunoBankingGranny.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Editor:<\/b> Devon Solwold<br><br><h3>Production<\/h3>Agency + Production: drinkadmilk<br> <b>Director:<\/b> Tristan Kim<br> <b>Executive Producer:<\/b> Alex Majher<br> <b>Producer:<\/b> Kevin Wall",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 15
+            }
+        ],
+        "order": 0,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a4e745",
+        "name": "Griffin Olis",
+        "slug": "griffin-olis",
+        "category": "EDIT",
+        "videos": [
+            {
+                "id": "video_6965e95a4e5e1",
+                "videoName": "Adidas",
+                "videoSubName": "Cam Ward",
+                "videoShort": "videos\/short\/to_compress\/cam ward cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/cam ward cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Jozi Creative<br>Director: Danny McNabb<br>DP: Neema Sadeghi",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a4e5f4",
+                "videoName": "Adidas",
+                "videoSubName": "Speed Juice",
+                "videoShort": "videos\/short\/to_compress\/speed juice cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/MLS_Episode_4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Resin Projects<br>Director: Danny Paul McNabb<br>DP: Cory Burmester",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a4e601",
+                "videoName": "Fear of God",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/fear of god cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/fear of god 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Blanksquare Productions<br>Director: Joshua Kissi<br>DP: Lerry Kin",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a4e60f",
+                "videoName": "Kai Cenat",
+                "videoSubName": "Going Professional",
+                "videoShort": "videos\/short\/to_compress\/nv19.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv19.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Black Screen Productions Inc<br>Director: Michael Daniel, Lachlan McClellan<br>Executive Producers: Monique Carrillo, Michael Daniel<br>DP: Jonathan Charles",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a4e61c",
+                "videoName": "Under Armour",
+                "videoSubName": "Men",
+                "videoShort": "videos\/short\/to_compress\/nv20.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv20.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Head of Post: Alex Peterson<br>Post Supervisor: Chris Carson<br>Editor: Griffin Olis<br>Music: Jile<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Michael Kelly<br>Executive Producers: Tony Pillow, Simon Chasalow<br>Lead Producer: Amanda Jones",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a4e629",
+                "videoName": "Kai Cenat x iShowSpeed",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/nv21.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv21.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Black Screen Productions Inc<br>Director: Michael Daniel, Lachlan McClellan<br>Executive Producers: Monique Carrillo, Michael Daniel<br>DP: Jonathan Charles",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a4e636",
+                "videoName": "MLS & Apple TV",
+                "videoSubName": "Beyond the Pitch - Episode 2",
+                "videoShort": "videos\/short\/to_compress\/MLS_Episode_2.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/MLS_Episode_2.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Post Supervisor: Alex Peterson<br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Don Newkirk Jr.<br>Executive Producers: Alex Peterson, Nate Loucks<br>Media Company: Boardroom",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a4e643",
+                "videoName": "MLS & Apple TV",
+                "videoSubName": "Beyond the Pitch - Episode 4",
+                "videoShort": "videos\/short\/to_compress\/MLS_Episode_4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/MLS_Episode_4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Post Supervisor: Alex Peterson<br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Don Newkirk Jr.<br>Executive Producers: Alex Peterson, Nate Loucks<br>Media Company: Boardroom",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a4e6bf",
+                "videoName": "Adidas",
+                "videoSubName": "Cam Ward",
+                "videoShort": "videos\/short\/to_compress\/cam ward cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/cam ward cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Jozi Creative<br>Director: Danny McNabb<br>DP: Neema Sadeghi",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a4e6cf",
+                "videoName": "Adidas",
+                "videoSubName": "Speed Juice",
+                "videoShort": "videos\/short\/to_compress\/speed juice cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/MLS_Episode_4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Resin Projects<br>Director: Danny Paul McNabb<br>DP: Cory Burmester",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a4e6e3",
+                "videoName": "Fear of God",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/fear of god cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/fear of god 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Blanksquare Productions<br>Director: Joshua Kissi<br>DP: Lerry Kin",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a4e6f0",
+                "videoName": "Kai Cenat",
+                "videoSubName": "Going Professional",
+                "videoShort": "videos\/short\/to_compress\/nv19.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv19.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Black Screen Productions Inc<br>Director: Michael Daniel, Lachlan McClellan<br>Executive Producers: Monique Carrillo, Michael Daniel<br>DP: Jonathan Charles",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a4e6fd",
+                "videoName": "Under Armour",
+                "videoSubName": "Men",
+                "videoShort": "videos\/short\/to_compress\/nv20.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv20.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Head of Post: Alex Peterson<br>Post Supervisor: Chris Carson<br>Editor: Griffin Olis<br>Music: Jile<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Michael Kelly<br>Executive Producers: Tony Pillow, Simon Chasalow<br>Lead Producer: Amanda Jones",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a4e70a",
+                "videoName": "Kai Cenat x iShowSpeed",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/nv21.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv21.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Black Screen Productions Inc<br>Director: Michael Daniel, Lachlan McClellan<br>Executive Producers: Monique Carrillo, Michael Daniel<br>DP: Jonathan Charles",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a4e72d",
+                "videoName": "MLS & Apple TV",
+                "videoSubName": "Beyond the Pitch - Episode 2",
+                "videoShort": "videos\/short\/to_compress\/MLS_Episode_2.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/MLS_Episode_2.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Post Supervisor: Alex Peterson<br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Don Newkirk Jr.<br>Executive Producers: Alex Peterson, Nate Loucks<br>Media Company: Boardroom",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 14
+            },
+            {
+                "id": "video_6965e95a4e73b",
+                "videoName": "MLS & Apple TV",
+                "videoSubName": "Beyond the Pitch - Episode 4",
+                "videoShort": "videos\/short\/to_compress\/MLS_Episode_4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/MLS_Episode_4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Post Supervisor: Alex Peterson<br>Editor: Griffin Olis<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Don Newkirk Jr.<br>Executive Producers: Alex Peterson, Nate Loucks<br>Media Company: Boardroom",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 15
+            }
+        ],
+        "order": 1,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a4ebac",
+        "name": "Liam Tangum",
+        "slug": "liam-tangum",
+        "category": "EDIT",
+        "videos": [
+            {
+                "id": "video_6965e95a4ea64",
+                "videoName": "Oakely",
+                "videoSubName": "Kylian Mbappe",
+                "videoShort": "videos\/short\/to_compress\/nv11.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv11.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Liam Tangum<br><br><h3>Production<\/h3>Creative and Production : Stept Studios<br>Producer: Alexa Hinson<br>Director: Joaquim Bayle<br>DP: Angelo Marques",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a4ea75",
+                "videoName": "YMI Jeans",
+                "videoSubName": "RFM",
+                "videoShort": "videos\/short\/to_compress\/nv12.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv12.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3> Editor: Liam Tangum<br><br><h3>Production<\/h3><b>Director:<\/b> Sofia Cristina Alvarez<br> <b>Producer:<\/b> Marlyn Rodriguez",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a4ea82",
+                "videoName": "Brooks",
+                "videoSubName": "Sounds of Trail Running",
+                "videoShort": "videos\/short\/to_compress\/nv13.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv13.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3> Editor: Liam Tangum <br><br> <h3>Production<\/h3> <b>Production Comapny:<\/b> Stept Studios<br> <b>DP:<\/b> Nash Howe<br> <b>Head of Post:<\/b> Connor Scofield<br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a4ea8f",
+                "videoName": "Bevel",
+                "videoSubName": "Kyle Pitts",
+                "videoShort": "videos\/short\/to_compress\/nv14.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv14.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Head of Post: Alex Peterson<br>Post Supervisor: Nasser Boulaich<br>Editor: Liam Tangum<br>Colorist: Brian Charles<br><br><h3>Production<\/h3>Director \/ DP: Franklin Ricart<br>Produced by: The Kitchen Table",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a4ea9b",
+                "videoName": "Nowness",
+                "videoSubName": "Short Film",
+                "videoShort": "videos\/short\/to_compress\/nv15.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv15.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Liam Tangum<br><br><h3>Production<\/h3><b>Production Company:<\/b> Alto Visuals<br><b>Director:<\/b> Leo Pfeifer",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a4eaa7",
+                "videoName": "A Slice of Paradise",
+                "videoSubName": "Short Film",
+                "videoShort": "videos\/short\/to_compress\/nv16.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv16.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editors: Liam Tangum & Lindsay Wilkins<br><br><h3>Production<\/h3><b>Director:<\/b> Liam Tangum<br> <b>Executive Producers:<\/b> No Laying Up",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a4eab5",
+                "videoName": "WHOA (mind in awe)",
+                "videoSubName": "XXX Tentacion & Juice WRLD",
+                "videoShort": "videos\/short\/compressed\/whoa cover-1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Head of Post: Alex Peterson<br>Post Supervisor: JMP<br>Editor: Liam Tangum<br>Assistant Editor: Alex Peterson<br>Colorist: Aubrey Woodiwiss<br>Sound Design & Mix: Ayo Douson<br><br><h3>Production<\/h3>Production Company: Paperwork<br>Director: JMP<br>Executive Producer: Joey Szela<br>Producer: Tali Weizman<br>DP: Franklin Ricart",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a4ebaa",
+                "videoName": "Oakely - Kylian Mbappe",
+                "videoSubName": "",
+                "videoShort": "https:\/\/appollo.360cloudcenter.com\/griffin-olis\/mlsepisode2\/vlcsnap-2024-06-06-04h16m58s466.jpg",
+                "videoLong": "<div style=\\",
+                "poster": "",
+                "hasCredit": false,
+                "credits": "",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            }
+        ],
+        "order": 2,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a4f716",
+        "name": "Jamil Shaukat",
+        "slug": "jamil-shaukat",
+        "category": "EDIT",
+        "videos": [
+            {
+                "id": "video_6965e95a4f4da",
+                "videoName": "Ruroc - Berserker",
+                "videoSubName": "Anytime, Anywhere",
+                "videoShort": "videos\/short\/to_compress\/nv1.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv1.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>Executive Producer: KC Locke<br>Producer: Lewis Nicholson",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a4f4f4",
+                "videoName": "Drama Call",
+                "videoSubName": "Heaviest in the Game",
+                "videoShort": "videos\/short\/to_compress\/nv3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv3.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Ant Farm Film Services<br>Director: Rory A Wood<br>DP: James Killeen",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a4f506",
+                "videoName": "CP Company",
+                "videoSubName": "Manchester City",
+                "videoShort": "videos\/short\/to_compress\/nv4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv4.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Antfarm<br>Director: Rory A Wood<br>Producer: Fin Mulligan Wild<br>Agency: LAW Magazine",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a4f517",
+                "videoName": "Boohoo Man Black Friday",
+                "videoSubName": "iShowSpeed",
+                "videoShort": "videos\/short\/to_compress\/nv5.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv5.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>Producer: Lewis Nicholson<br>DP: Rowan Biddiscombe",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a4f527",
+                "videoName": "Meekz",
+                "videoSubName": "Mini Me",
+                "videoShort": "videos\/short\/to_compress\/nv6.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv6.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: swordsandeagles<br>Director: KC Locke<br>Executive Producers: KC Locke & Jenny O\u2019Sullivan<br>DP: James Killeen",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a4f539",
+                "videoName": "Ed Sheeran",
+                "videoSubName": "Take Me Back To London feat. Stormzy, Jaykae & Aitch",
+                "videoShort": "videos\/short\/to_compress\/nv7.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv7.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Unknown<br>Director: KC Locke<br>Executive Producer: Gwil Doe<br>Producer: Samona O Manoela Chiabai Gwil Doe<br>DP: Sam Meyer",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a4f549",
+                "videoName": "Aitch",
+                "videoSubName": "Learning Curve",
+                "videoShort": "videos\/short\/to_compress\/nv8.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv8.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC LOCKE<br>Exec Producer\/Directors: Rep Marisa Garner<br>DP: Pieter Synman",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a4f55a",
+                "videoName": "M Huncho & Headie One",
+                "videoSubName": "Warzone",
+                "videoShort": "videos\/short\/to_compress\/nv9.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv9.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>Producer: Lewis Nicholson<br>DP: Matthew Emvin Taylor",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a4f56b",
+                "videoName": "David Guetta & Bebe Rexha",
+                "videoSubName": "I",
+                "videoShort": "videos\/short\/to_compress\/nv10.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv10.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>DP: Beatriz Sastre",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a4f57d",
+                "videoName": "Shoreline Mafia",
+                "videoSubName": "Back in Bidness",
+                "videoShort": "videos\/short\/to_compress\/bib cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/bib cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br>Head of Post: Alex Peterson<br>Post Supervisor: Lynn He<br>VFX: Le Jumper<br> Compositor: Anurag Raj<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>DP: Beatriz Sastre",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a4f66c",
+                "videoName": "Ruroc - Berserker",
+                "videoSubName": "Anytime, Anywhere",
+                "videoShort": "videos\/short\/to_compress\/nv1.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv1.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>Executive Producer: KC Locke<br>Producer: Lewis Nicholson",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a4f684",
+                "videoName": "Drama Call",
+                "videoSubName": "Heaviest in the Game",
+                "videoShort": "videos\/short\/to_compress\/nv3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv3.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Ant Farm Film Services<br>Director: Rory A Wood<br>DP: James Killeen",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a4f698",
+                "videoName": "CP Company",
+                "videoSubName": "Manchester City",
+                "videoShort": "videos\/short\/to_compress\/nv4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv4.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Antfarm<br>Director: Rory A Wood<br>Producer: Fin Mulligan Wild<br>Agency: LAW Magazine",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a4f6aa",
+                "videoName": "Boohoo Man Black Friday",
+                "videoSubName": "iShowSpeed",
+                "videoShort": "videos\/short\/to_compress\/nv5.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv5.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>Producer: Lewis Nicholson<br>DP: Rowan Biddiscombe",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a4f6bb",
+                "videoName": "Meekz",
+                "videoSubName": "Mini Me",
+                "videoShort": "videos\/short\/to_compress\/nv6.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv6.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: swordsandeagles<br>Director: KC Locke<br>Executive Producers: KC Locke & Jenny O\u2019Sullivan<br>DP: James Killeen",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 14
+            },
+            {
+                "id": "video_6965e95a4f6cc",
+                "videoName": "Ed Sheeran",
+                "videoSubName": "Take Me Back To London feat. Stormzy, Jaykae & Aitch",
+                "videoShort": "videos\/short\/to_compress\/nv7.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv7.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Unknown<br>Director: KC Locke<br>Executive Producer: Gwil Doe<br>Producer: Samona O Manoela Chiabai Gwil Doe<br>DP: Sam Meyer",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 15
+            },
+            {
+                "id": "video_6965e95a4f6dc",
+                "videoName": "Aitch",
+                "videoSubName": "Learning Curve",
+                "videoShort": "videos\/short\/to_compress\/nv8.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv8.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC LOCKE<br>Exec Producer\/Directors: Rep Marisa Garner<br>DP: Pieter Synman",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 16
+            },
+            {
+                "id": "video_6965e95a4f6ee",
+                "videoName": "M Huncho & Headie One",
+                "videoSubName": "Warzone",
+                "videoShort": "videos\/short\/to_compress\/nv9.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv9.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>Producer: Lewis Nicholson<br>DP: Matthew Emvin Taylor",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 17
+            },
+            {
+                "id": "video_6965e95a4f6ff",
+                "videoName": "David Guetta & Bebe Rexha",
+                "videoSubName": "I",
+                "videoShort": "videos\/short\/to_compress\/nv10.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv10.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>DP: Beatriz Sastre",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 18
+            },
+            {
+                "id": "video_6965e95a4f712",
+                "videoName": "Shoreline Mafia",
+                "videoSubName": "Back in Bidness",
+                "videoShort": "videos\/short\/to_compress\/bib cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/bib cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br>Head of Post: Alex Peterson<br>Post Supervisor: Lynn He<br>VFX: Le Jumper<br> Compositor: Anurag Raj<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>DP: Beatriz Sastre",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 19
+            }
+        ],
+        "order": 3,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a4fbe4",
+        "name": "Nasser Boulaich",
+        "slug": "nasser-boulaich",
+        "category": "EDIT",
+        "videos": [
+            {
+                "id": "video_6965e95a4f9cb",
+                "videoName": "Goldlink",
+                "videoSubName": "Metatron",
+                "videoShort": "videos\/short\/to_compress\/vc-goldlink-metatron-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-goldlink-metatron-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: EXGF<br>Director: Cole Santiago<br>DP: Bradley Credit",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a4f9e0",
+                "videoName": "Samara Cyn",
+                "videoSubName": "Chrome",
+                "videoShort": "videos\/short\/to_compress\/vc-samaracyn-chrome-12 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-samaracyn-chrome-12 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Softspot<br>Director: Hannan Hussain, Nasser Boulaich<br>DP: Justin McWilliams",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a4f9f3",
+                "videoName": "Chase Shakur",
+                "videoSubName": "2OfUs",
+                "videoShort": "videos\/short\/to_compress\/vc-chaseshakur-2ofus-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-chaseshakur-2ofus-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: SonSon Productions<br>Director: Khari McCloud<br>DP: Benji Flores",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a4fa06",
+                "videoName": "Kenny Mason",
+                "videoSubName": "Angelic Hoodrat",
+                "videoShort": "videos\/short\/to_compress\/vc-kennymason-angelichoodrat-05 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-kennymason-angelichoodrat-05 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: NorthOfNow<br>Director: Nasser Boulaich<br>DP: Corey C Waters",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a4fa16",
+                "videoName": "Kenny Mason",
+                "videoSubName": "EXXON",
+                "videoShort": "videos\/short\/to_compress\/vc-kennymason-exxon-03 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-kennymason-exxon-03 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Bear Witness<br>Director: Nasser Boulaich, Aditya Pamidi<br>DP: Corey C Waters",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a4fa26",
+                "videoName": "SKUFL",
+                "videoSubName": "Saint",
+                "videoShort": "videos\/short\/to_compress\/vc-skufl-saint-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-skufl-saint-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Bear Witness<br>Director: Nasser Boulaich, Aditya Pamidi<br>DP: Avery Stedman",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a4fa39",
+                "videoName": "Clipse",
+                "videoSubName": "So Be It",
+                "videoShort": "videos\/short\/to_compress\/vc-clipse-sobeit-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-clipse-sobeit-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3><br>Production Company: Softspot<br>Director: Hannan Hussain<br>DP: Liam Reardon",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a4fa49",
+                "videoName": "SKUFL",
+                "videoSubName": "Eyes Open",
+                "videoShort": "videos\/short\/to_compress\/vc-skufl-eyesopen-04 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-skufl-eyesopen-04 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br>Colorist: Wilhends Norvil<br>Color Producer: Chris Carson<br><br><h3>Production<\/h3><br>Production Companies: Bear Witness, Parallel Studios<br>Director: Ashley Rodholm<br>DP: Benji Flores",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a4fa59",
+                "videoName": "Samaria",
+                "videoSubName": "Even Paradise Rains",
+                "videoShort": "videos\/short\/to_compress\/vc-samaria-epr-03 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-samaria-epr-03 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Parallel Studios<br>Director: Nasser Boulaich<br>DP: Neema Sadeghi",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a4fa6a",
+                "videoName": "Travis Scott x Jumpan",
+                "videoSubName": "TREXX",
+                "videoShort": "videos\/short\/to_compress\/vc-travisscott-jordan-01 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-travisscott-jordan-01 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Post Producer: Alex Peterson<br>Editor: Nasser Boulaich<br>VFX: Le Jumper<br>Sound: Ayo Douson<br><br><h3>Production<\/h3><br>Production Company: GameSeven<br>Director: Hannan Hussain<br>DP: Mike Koziel",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a4fb0a",
+                "videoName": "Goldlink",
+                "videoSubName": "Metatron",
+                "videoShort": "videos\/short\/to_compress\/vc-goldlink-metatron-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-goldlink-metatron-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: EXGF<br>Director: Cole Santiago<br>DP: Bradley Credit",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a4fb1c",
+                "videoName": "Samara Cyn",
+                "videoSubName": "Chrome",
+                "videoShort": "videos\/short\/to_compress\/vc-samaracyn-chrome-12 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-samaracyn-chrome-12 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Softspot<br>Director: Hannan Hussain, Nasser Boulaich<br>DP: Justin McWilliams",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a4fb2e",
+                "videoName": "Chase Shakur",
+                "videoSubName": "2OfUs",
+                "videoShort": "videos\/short\/to_compress\/vc-chaseshakur-2ofus-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-chaseshakur-2ofus-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: SonSon Productions<br>Director: Khari McCloud<br>DP: Benji Flores",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a4fb3f",
+                "videoName": "Kenny Mason",
+                "videoSubName": "Angelic Hoodrat",
+                "videoShort": "videos\/short\/to_compress\/vc-kennymason-angelichoodrat-05 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-kennymason-angelichoodrat-05 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: NorthOfNow<br>Director: Nasser Boulaich<br>DP: Corey C Waters",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a4fb50",
+                "videoName": "Kenny Mason",
+                "videoSubName": "EXXON",
+                "videoShort": "videos\/short\/to_compress\/vc-kennymason-exxon-03 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-kennymason-exxon-03 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Bear Witness<br>Director: Nasser Boulaich, Aditya Pamidi<br>DP: Corey C Waters",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 14
+            },
+            {
+                "id": "video_6965e95a4fb78",
+                "videoName": "SKUFL",
+                "videoSubName": "Saint",
+                "videoShort": "videos\/short\/to_compress\/vc-skufl-saint-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-skufl-saint-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Bear Witness<br>Director: Nasser Boulaich, Aditya Pamidi<br>DP: Avery Stedman",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 15
+            },
+            {
+                "id": "video_6965e95a4fbad",
+                "videoName": "Clipse",
+                "videoSubName": "So Be It",
+                "videoShort": "videos\/short\/to_compress\/vc-clipse-sobeit-02 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-clipse-sobeit-02 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3><br>Production Company: Softspot<br>Director: Hannan Hussain<br>DP: Liam Reardon",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 16
+            },
+            {
+                "id": "video_6965e95a4fbbe",
+                "videoName": "SKUFL",
+                "videoSubName": "Eyes Open",
+                "videoShort": "videos\/short\/to_compress\/vc-skufl-eyesopen-04 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-skufl-eyesopen-04 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br>Colorist: Wilhends Norvil<br>Color Producer: Chris Carson<br><br><h3>Production<\/h3><br>Production Companies: Bear Witness, Parallel Studios<br>Director: Ashley Rodholm<br>DP: Benji Flores",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 17
+            },
+            {
+                "id": "video_6965e95a4fbce",
+                "videoName": "Samaria",
+                "videoSubName": "Even Paradise Rains",
+                "videoShort": "videos\/short\/to_compress\/vc-samaria-epr-03 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-samaria-epr-03 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Editor: Nasser Boulaich<br><br><h3>Production<\/h3><br>Production Company: Parallel Studios<br>Director: Nasser Boulaich<br>DP: Neema Sadeghi",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 18
+            },
+            {
+                "id": "video_6965e95a4fbe0",
+                "videoName": "Travis Scott x Jumpan",
+                "videoSubName": "TREXX",
+                "videoShort": "videos\/short\/to_compress\/vc-travisscott-jordan-01 cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vc-travisscott-jordan-01 cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><br>Post Producer: Alex Peterson<br>Editor: Nasser Boulaich<br>VFX: Le Jumper<br>Sound: Ayo Douson<br><br><h3>Production<\/h3><br>Production Company: GameSeven<br>Director: Hannan Hussain<br>DP: Mike Koziel",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 19
+            }
+        ],
+        "order": 4,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a50337",
+        "name": "Zack Pelletier",
+        "slug": "zack-pelletier",
+        "category": "EDIT",
+        "videos": [
+            {
+                "id": "video_6965e95a5010e",
+                "videoName": "NFLPA",
+                "videoSubName": "Rookie of the Year 2023",
+                "videoShort": "videos\/short\/ezp1.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp1.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: OM Digital<br><b>Executive Producer: Dave Clark<\/b><br><b>Director: Julia Pitch<\/b><br><b>Producer: Sofie rhw<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a50125",
+                "videoName": "NHL",
+                "videoSubName": "Hockey is Back",
+                "videoShort": "videos\/short\/NHLHockeyisBack.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/NHLHockeyisBack.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3> <b>Director: James Winterhalter<\/b><br><b>DP: Cinesthetics<\/b><br><b>Producer: Joseph Larkin<\/b><br><b>Prod. Co: Kursza<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a50139",
+                "videoName": "7uice",
+                "videoSubName": "Vanson Leathers",
+                "videoShort": "videos\/short\/ezp3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp3.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3><b>Production Company: Parallel studios<\/b><br><b>Director: Drew Cigna, & Medulla Media<\/b><br><b>DP: Thomas Marchese<\/b><br><b>Executive Producers: Simon Chasalow & Tony Pillow<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a5014a",
+                "videoName": "Chris Brown",
+                "videoSubName": "Nightmares",
+                "videoShort": "videos\/short\/ezp4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: Projektstu<b>DIRECTOR : Travis Colbert<\/b><br><b>DP: Henri Taillon<\/b><br><b>Executive Producers: Simon Chasalow & Tony Pillow<\/b><br><b>Colorist: Thomas Dauteuille<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a5015a",
+                "videoName": "Louis the Child",
+                "videoSubName": "How High",
+                "videoShort": "videos\/short\/ezp5.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp5.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: Parallel Studios <br><b>Director: Drew Cigna<\/b><br><b>Executive Producers: Simon Chasalow & Tony Pillow<\/b><br><b>DP: Owen Schatz  Drew Cigna<\/b><br><b>Post Supervisor: Alex Peterson <\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a5016b",
+                "videoName": "Lil Tecca",
+                "videoSubName": "Can",
+                "videoShort": "videos\/short\/to_compress\/cant let go cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/cant let go cover 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: BT Studios<br><b>Director: JordieDotCom<\/b><br><b>Executive Producers: Galileo Mondol & Carlos Lopes<\/b><br><b>DP: Dima Shorin<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a5017c",
+                "videoName": "Chris Brown",
+                "videoSubName": "Residuals",
+                "videoShort": "videos\/short\/to_compress\/residuals cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/residuals cover 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Post Producer: Alex Peterson<\/b><br><b>Post Supervisor: Lynn He<\/b><br><b>Editor: Zack Pelletier<\/b><br><b>Edit Producer: Nasser Boulaich<\/b><br><b>3D Artist: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><b>3D Title: Harley Wrecks<\/b><br><br><h3>Production<\/h3>Production Company: Projektstu<br><b>Director: Travis Colbert<\/b><br><b>Producer: Sam King<\/b><br><b>DP: Brian Beckwith<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a5018e",
+                "videoName": "Fridayy & Meek Mill",
+                "videoSubName": "Proud of Me",
+                "videoShort": "videos\/short\/to_compress\/proud of me cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/proud of me cover 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><br><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: Blanksquare Productions<br><b>Directors: Edgar Esteves, JordieDotCom<\/b><br><b>Producer: Marquis Abrahams<\/b><br><b>DP: Evan Miller<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a5019f",
+                "videoName": "Asake",
+                "videoSubName": "Why Love",
+                "videoShort": "videos\/short\/compressed\/asake why love cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/why love cover 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><br><b>Editor: Zack Pelletier<\/b><br><b>Colorist: Avery Niles<\/b><br><b>Color Producer: Vic Brandt<\/b><br><br><h3>Production<\/h3>Production Company: Blanksquare Productions<br><b>Directors: Edgar Esteves, JordieDotCom<\/b><br><b>Producer: Marquis Abrahams<\/b><br><b>DP: Evan Miller<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a50289",
+                "videoName": "NFLPA",
+                "videoSubName": "Rookie of the Year 2023",
+                "videoShort": "videos\/short\/ezp1.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp1.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: OM Digital<br><b>Executive Producer: Dave Clark<\/b><br><b>Director: Julia Pitch<\/b><br><b>Producer: Sofie rhw<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a502a1",
+                "videoName": "NHL",
+                "videoSubName": "Hockey is Back",
+                "videoShort": "videos\/short\/NHLHockeyisBack.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/NHLHockeyisBack.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3> <b>Director: James Winterhalter<\/b><br><b>DP: Cinesthetics<\/b><br><b>Producer: Joseph Larkin<\/b><br><b>Prod. Co: Kursza<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a502b5",
+                "videoName": "7uice",
+                "videoSubName": "Vanson Leathers",
+                "videoShort": "videos\/short\/ezp3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp3.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3><b>Production Company: Parallel studios<\/b><br><b>Director: Drew Cigna, & Medulla Media<\/b><br><b>DP: Thomas Marchese<\/b><br><b>Executive Producers: Simon Chasalow & Tony Pillow<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a502c6",
+                "videoName": "Chris Brown",
+                "videoSubName": "Nightmares",
+                "videoShort": "videos\/short\/ezp4.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp4.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: Projektstu<b>DIRECTOR : Travis Colbert<\/b><br><b>DP: Henri Taillon<\/b><br><b>Executive Producers: Simon Chasalow & Tony Pillow<\/b><br><b>Colorist: Thomas Dauteuille<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a502d7",
+                "videoName": "Louis the Child",
+                "videoSubName": "How High",
+                "videoShort": "videos\/short\/ezp5.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ezp5.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: Parallel Studios <br><b>Director: Drew Cigna<\/b><br><b>Executive Producer: Simon Chasalow & Tony Pillow<\/b><br><b>DP: Owen Schatz  Drew Cigna<\/b><br><b>Post Supervisor: Alex Peterson <\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a502e8",
+                "videoName": "Lil Tecca",
+                "videoSubName": "Can",
+                "videoShort": "videos\/short\/to_compress\/cant let go cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/cant let go 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: BT Studios<br><b>Director: JordieDotCom<\/b><br><b>Executive Producers: Galileo Mondol & Carlos Lopes<\/b><br><b>DP: Dima Shorin<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 14
+            },
+            {
+                "id": "video_6965e95a502f9",
+                "videoName": "Chris Brown",
+                "videoSubName": "Residuals",
+                "videoShort": "videos\/short\/to_compress\/residuals cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/residuals cover 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><b>Post Producer: Alex Peterson<\/b><br><b>Post Supervisor: Lynn He<\/b><br><b>Editor: Zack Pelletier<\/b><br><b>Edit Producer: Nasser Boulaich<\/b><br><b>3D Artist: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><b>3D Title: Harley Wrecks<\/b><br><br><h3>Production<\/h3>Production Company: Projektstu<br><b>Director: Travis Colbert<\/b><br><b>Producer: Sam King<\/b><br><b>DP: Brian Beckwith<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 15
+            },
+            {
+                "id": "video_6965e95a5030b",
+                "videoName": "Fridayy & Meek Mill",
+                "videoSubName": "Proud of Me",
+                "videoShort": "videos\/short\/to_compress\/proud of me cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/proud of me cover 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><br><b>Editor: Zack Pelletier<\/b><br><br><h3>Production<\/h3>Production Company: Blanksquare Productions<br><b>Directors: Edgar Esteves, JordieDotCom<\/b><br><b>Producer: Marquis Abrahams<\/b><br><b>DP: Evan Miller<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 16
+            },
+            {
+                "id": "video_6965e95a50333",
+                "videoName": "Asake",
+                "videoSubName": "Why Love",
+                "videoShort": "videos\/short\/compressed\/asake why love cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/why love cover 1080p",
+                "hasCredit": true,
+                "credits": "<h3>Apollo:<\/h3><br><b>Editor: Zack Pelletier<\/b><br><b>Colorist: Avery Niles<\/b><br><b>Color Producer: Vic Brandt<\/b><br><br><h3>Production<\/h3>Production Company: Blanksquare Productions<br><b>Directors: Edgar Esteves, JordieDotCom<\/b><br><b>Producer: Marquis Abrahams<\/b><br><b>DP: Evan Miller<\/b><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 17
+            }
+        ],
+        "order": 5,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a50921",
+        "name": "Avery Niles",
+        "slug": "avery-niles",
+        "category": "COLOR",
+        "videos": [
+            {
+                "id": "video_6965e95a50698",
+                "videoName": "Duckwrth",
+                "videoSubName": "Vertigo",
+                "videoShort": "videos\/short\/compressed\/Vertigo Cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/compressed\/Vertigo Cover 1080p.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Executive Producers: Tony Pillow, Simon Chasalow<br>Director: Onda<br>DP: Mike Koziel",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Vertigo 1.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 2.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 3.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 4.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 5.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 6.jpg"
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a506b0",
+                "videoName": "EvenOdd",
+                "videoSubName": "Remezcla - Cerveza Indio",
+                "videoShort": "videos\/short\/indio cover.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/indio cover.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>VFX Producer: Chris Carson<br>VFX: Ben Gillespie<br>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Even Odd Studio<br>Director: Ashley Rodholm<br>DP: Chiao Chen",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Indio 1.jpg",
+                    "\/roster\/images\/colorist\/Indio 2.jpg",
+                    "\/roster\/images\/colorist\/Indio 3.jpg",
+                    "\/roster\/images\/colorist\/Indio 4.jpg",
+                    "\/roster\/images\/colorist\/Indio 5.jpg",
+                    "\/roster\/images\/colorist\/Indio 6.jpg"
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a506c4",
+                "videoName": "Arcteryx",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/Arcteryx Cover New.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/Arcteryx Cover New.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Dogma Studios<br>Producers: Lindo Arturo<br>Director: Nicholas Buckwalte<br>DP: Eli Leibow",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Arcteryx 1.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 2.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 3.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 4.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 5.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 6.jpg"
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a506d7",
+                "videoName": "Rema",
+                "videoSubName": "Outlander - LOTUS",
+                "videoShort": "videos\/short\/Rema - Outlander - LOTUS Cover.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/Rema - Outlander - LOTUS Cover.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Post Producer: Alex Peterson\n<br>VFX: Antoine Royal<br>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Neri Mastriani Levi<br>Executive Producers: Tony Pillow, Simon Chasalow, Anuar Aly",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Rema LOTUS 1.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 2.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 3.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 4.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 5.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 6.jpg"
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a506e9",
+                "videoName": "Belair",
+                "videoSubName": "Athletics",
+                "videoShort": "videos\/short\/belair athletics new.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/belair athletics new.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Producer: Anuar Aly<br>Director: Nick Manterola<br>DP: Kai Dickson",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Belair 1.jpg",
+                    "\/roster\/images\/colorist\/Belair 2.jpg",
+                    "\/roster\/images\/colorist\/Belair 3.jpg",
+                    "\/roster\/images\/colorist\/Belair 4.jpg",
+                    "\/roster\/images\/colorist\/Belair 5.jpg",
+                    "\/roster\/images\/colorist\/Belair 6.jpg"
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a506fc",
+                "videoName": "Meta Quest",
+                "videoSubName": "Offset",
+                "videoShort": "videos\/short\/meta quest offset.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/meta quest offset.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/meta saquan 1.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 2.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 3.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 4.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 5.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 6.jpg"
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a5071b",
+                "videoName": "Tommy Richman",
+                "videoSubName": "Elephant in the Room",
+                "videoShort": "videos\/short\/compressed\/Tommy Richman - Elephant Covers 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/compressed\/Tommy Richman - Elephant Covers 1080p.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Dogma Studios<br>Producer: Doug Kerner, Gabby Fiszman<br>Director: Nicholas Buckwalter, Elan Bia",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Elephant 1.jpg",
+                    "\/roster\/images\/colorist\/Elephant 2.jpg",
+                    "\/roster\/images\/colorist\/Elephant 3.jpg",
+                    "\/roster\/images\/colorist\/Elephant 4.jpg",
+                    "\/roster\/images\/colorist\/Elephant 5.jpg",
+                    "\/roster\/images\/colorist\/Elephant 6.jpg"
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a5072c",
+                "videoName": "Rare Beauty",
+                "videoSubName": "Summer 2025",
+                "videoShort": "videos\/short\/Rare beauty cover.mp4",
+                "videoLong": "https:\/\/apollo.gosimian.com\/share\/v\/sDbEXGV9oa47wSXerMXvNA\/false\/auto\/auto\/ffffff\/000000\/",
+                "poster": "videos\/short\/Rare beauty cover.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Production Company:<\/h3><br>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a507d8",
+                "videoName": "Duckwrth",
+                "videoSubName": "Vertigo",
+                "videoShort": "videos\/short\/compressed\/Vertigo Cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/compressed\/Vertigo Cover 1080p.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Executive Producers: Tony Pillow, Simon Chasalow<br>Director: Onda<br>DP: Mike Koziel",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Vertigo 1.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 2.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 3.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 4.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 5.jpg",
+                    "\/roster\/images\/colorist\/Vertigo 6.jpg"
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a507ed",
+                "videoName": "EvenOdd",
+                "videoSubName": "Remezcla - Cerveza Indio",
+                "videoShort": "videos\/short\/indio cover.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/indio cover.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>VFX Producer: Chris Carson<br>VFX: Ben Gillespie<br>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Even Odd Studio<br>Director: Ashley Rodholm<br>DP: Chiao Chen",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Indio 1.jpg",
+                    "\/roster\/images\/colorist\/Indio 2.jpg",
+                    "\/roster\/images\/colorist\/Indio 3.jpg",
+                    "\/roster\/images\/colorist\/Indio 4.jpg",
+                    "\/roster\/images\/colorist\/Indio 5.jpg",
+                    "\/roster\/images\/colorist\/Indio 6.jpg"
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a507ff",
+                "videoName": "Arcteryx",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/Arcteryx Cover New.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/Arcteryx Cover New.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Dogma Studios<br>Producers: Lindo Arturo<br>Director: Nicholas Buckwalte<br>DP: Eli Leibow",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Arcteryx 1.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 2.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 3.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 4.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 5.jpg",
+                    "\/roster\/images\/colorist\/Arcteryx 6.jpg"
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a5081c",
+                "videoName": "Rema",
+                "videoSubName": "Outlander - LOTUS",
+                "videoShort": "videos\/short\/Rema - Outlander - LOTUS Cover.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/Rema - Outlander - LOTUS Cover.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Post Producer: Alex Peterson\n<br>VFX: Antoine Royal<br>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Director: Neri Mastriani Levi<br>Executive Producers: Tony Pillow, Simon Chasalow, Anuar Aly",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Rema LOTUS 1.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 2.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 3.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 4.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 5.jpg",
+                    "\/roster\/images\/colorist\/Rema LOTUS 6.jpg"
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a508f4",
+                "videoName": "Belair",
+                "videoSubName": "Athletics",
+                "videoShort": "videos\/short\/belair athletics new.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/belair athletics new.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Parallel Studios<br>Producer: Anuar Aly<br>Director: Nick Manterola<br>DP: Kai Dickson",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Belair 1.jpg",
+                    "\/roster\/images\/colorist\/Belair 2.jpg",
+                    "\/roster\/images\/colorist\/Belair 3.jpg",
+                    "\/roster\/images\/colorist\/Belair 4.jpg",
+                    "\/roster\/images\/colorist\/Belair 5.jpg",
+                    "\/roster\/images\/colorist\/Belair 6.jpg"
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a50908",
+                "videoName": "Meta Quest",
+                "videoSubName": "Offset",
+                "videoShort": "videos\/short\/meta quest offset.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/meta quest offset.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/meta saquan 1.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 2.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 3.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 4.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 5.jpg",
+                    "\/roster\/images\/colorist\/meta saquan 6.jpg"
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a5091c",
+                "videoName": "Tommy Richman",
+                "videoSubName": "Elephant in the Room",
+                "videoShort": "videos\/short\/compressed\/Tommy Richman - Elephant Covers 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/compressed\/Tommy Richman - Elephant Covers 1080p.mp4",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Colorist: Avery Niles<br>Color Producer: Vic Brandt<br><br><h3>Production<\/h3>Production Company: Dogma Studios<br>Producer: Doug Kerner, Gabby Fiszman<br>Director: Nicholas Buckwalter, Elan Bia",
+                "previewImages": [
+                    "\/roster\/images\/colorist\/Elephant 1.jpg",
+                    "\/roster\/images\/colorist\/Elephant 2.jpg",
+                    "\/roster\/images\/colorist\/Elephant 3.jpg",
+                    "\/roster\/images\/colorist\/Elephant 4.jpg",
+                    "\/roster\/images\/colorist\/Elephant 5.jpg",
+                    "\/roster\/images\/colorist\/Elephant 6.jpg"
+                ],
+                "order": 14
+            }
+        ],
+        "order": 0,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a51047",
+        "name": "Wilhends Norvil",
+        "slug": "wilhends-norvil",
+        "category": "COLOR",
+        "videos": [
+            {
+                "id": "video_6965e95a50f0a",
+                "videoName": "BRIDGE",
+                "videoSubName": "Fate Loves Irony",
+                "videoShort": "videos\/short\/compressed\/cnv10 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/cnv10.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Colorist: Wilhends Norvil<\/b><br><b>Color Producer: Christopher Carson<\/b><br><br><h3>Production<\/h3>Production Company: Parallel Studios<b>Director: Nicolas Manterola<\/b><br> <b>DOP: Kai Dickson<\/b><br><b>Executive Producers: Simon Chasalow & Tony Pillow<\/b>",
+                "previewImages": [
+                    "images\/colorist\/bridge1.jpg",
+                    "images\/colorist\/bridge2.jpg",
+                    "images\/colorist\/bridge3.jpg",
+                    "images\/colorist\/bridge4.jpg",
+                    "images\/colorist\/bridge5.jpg",
+                    "images\/colorist\/bridge6.jpg"
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a50f1d",
+                "videoName": "Movado",
+                "videoSubName": "Bold Evolution 2.0",
+                "videoShort": "videos\/short\/compressed\/MovadoBoldEvolution2 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/MovadoBoldEvolution2.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Producer: Alex Peterson<\/b><br> <b>Post Supervisor: Christopher Carson<\/b><br><b>Editor: Devon Solwold<\/b><br><b>Colorist: Wilhends Norvil<\/b><br><b>Sound Design: Douson Yuan<\/b><br><br><h3>Production<\/h3><b>Agency: uvtagency<\/b>",
+                "previewImages": [
+                    "images\/colorist\/movado1.jpg",
+                    "images\/colorist\/movado2.jpg",
+                    "images\/colorist\/movado3.jpg",
+                    "images\/colorist\/movado4.jpg",
+                    "images\/colorist\/movado5.jpg",
+                    "images\/colorist\/movado6.jpg"
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a50f2d",
+                "videoName": "SKUFL",
+                "videoSubName": "Eyes Open",
+                "videoShort": "videos\/short\/compressed\/SKUFL_Eyes_Open 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/SKUFL_Eyes_Open.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Supervisor: Alex Peterson<\/b><br><b>Colorist: Wilhends Norvil<\/b><br><b>Color Producer: Christopher Carson<\/b><br><br><h3>Production<\/h3><b>Director: Nasser Boulaich<\/b>",
+                "previewImages": [
+                    "images\/colorist\/EO1.jpg",
+                    "images\/colorist\/EO2.jpg",
+                    "images\/colorist\/EO3.jpg",
+                    "images\/colorist\/EO4.jpg",
+                    "images\/colorist\/EO5.jpg",
+                    "images\/colorist\/EO6.jpg"
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a50f3d",
+                "videoName": "Penderdyn",
+                "videoSubName": "Distillery",
+                "videoShort": "videos\/short\/compressed\/Penderdyn_Distillery 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/Penderdyn_Distillery.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Colorist: Wilhends Norvil<\/b><br><br><h3>Production<\/h3><b>Production Company: neufcinq films<\/b><br><b>Director: Keirana Scott<\/b>",
+                "previewImages": [
+                    "images\/colorist\/penderdyn1.jpg",
+                    "images\/colorist\/penderdyn2.jpg",
+                    "images\/colorist\/penderdyn3.jpg",
+                    "images\/colorist\/penderdyn4.jpg",
+                    "images\/colorist\/penderdyn5.jpg",
+                    "images\/colorist\/penderdyn6.jpg"
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a50f4c",
+                "videoName": "Doritos Crash",
+                "videoSubName": "Abduction",
+                "videoShort": "videos\/short\/compressed\/Doritos_Crash_Abduction 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/Doritos_Crash_Abduction.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Colorist: Wilhends Norvil<\/b><br><b>Post Producer: Christopher Carson<\/b><br><br><h3>Production<\/h3><b>Directors: Dylan Bradshaw & Nate Norell<\/b><br><b>DP: Dave Cortez<\/b>",
+                "previewImages": [
+                    "images\/colorist\/Doritos1.jpg",
+                    "images\/colorist\/Doritos2.jpg",
+                    "images\/colorist\/Doritos3.jpg",
+                    "images\/colorist\/Doritos4.jpg",
+                    "images\/colorist\/Doritos5.jpg",
+                    "images\/colorist\/Doritos6.jpg"
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a50f71",
+                "videoName": "Bravest Studios",
+                "videoSubName": "Kid Cudi",
+                "videoShort": "videos\/short\/compressed\/Bravest_Studios 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/Bravest_Studios.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Supervisor: Alex Peterson<\/b><br><b>VFX: Jack Phoenix<\/b><br><b>Colorist: Wilhends Norvil<\/b><br><br><h3>Production<\/h3><b>Director \/ Creative Director: Brenton L Roberson<\/b><br><b>Line Producer: Brenton L Roberson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a50feb",
+                "videoName": "BRIDGE",
+                "videoSubName": "Fate Loves Irony",
+                "videoShort": "videos\/short\/compressed\/cnv10 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/cnv10.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Colorist: Wilhends Norvil<\/b><br><b>Color Producer: Christopher Carson<\/b><br><br><h3>Production<\/h3>Production Company: Parallel Studios<b>Director: Nicolas Manterola<\/b><br> <b>DOP: Kai Dickson<\/b><br><b>Executive Producers: Simon Chasalow & Tony Pillow<\/b>",
+                "previewImages": [
+                    "images\/colorist\/bridge1.jpg",
+                    "images\/colorist\/bridge2.jpg",
+                    "images\/colorist\/bridge3.jpg",
+                    "images\/colorist\/bridge4.jpg",
+                    "images\/colorist\/bridge5.jpg",
+                    "images\/colorist\/bridge6.jpg"
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a50ff9",
+                "videoName": "Movado",
+                "videoSubName": "Bold Evolution 2.0",
+                "videoShort": "videos\/short\/compressed\/MovadoBoldEvolution2 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/MovadoBoldEvolution2.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Producer: Alex Peterson<\/b><br> <b>Post Supervisor: Christopher Carson<\/b><br><b>Editor: Devon Solwold<\/b><br><b>Colorist: Wilhends Norvil<\/b><br><b>Sound Design: Douson Yuan<\/b><br><br><h3>Production<\/h3><b>Agency: uvtagency<\/b>",
+                "previewImages": [
+                    "images\/colorist\/movado1.jpg",
+                    "images\/colorist\/movado2.jpg",
+                    "images\/colorist\/movado3.jpg",
+                    "images\/colorist\/movado4.jpg",
+                    "images\/colorist\/movado5.jpg",
+                    "images\/colorist\/movado6.jpg"
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a51008",
+                "videoName": "SKUFL",
+                "videoSubName": "Eyes Open",
+                "videoShort": "videos\/short\/compressed\/SKUFL_Eyes_Open 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/SKUFL_Eyes_Open.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Supervisor: Alex Peterson<\/b><br><b>Colorist: Wilhends Norvil<\/b><br><b>Color Producer: Christopher Carson<\/b><br><br><h3>Production<\/h3><b>Director: Nasser Boulaich<\/b>",
+                "previewImages": [
+                    "images\/colorist\/EO1.jpg",
+                    "images\/colorist\/EO2.jpg",
+                    "images\/colorist\/EO3.jpg",
+                    "images\/colorist\/EO4.jpg",
+                    "images\/colorist\/EO5.jpg",
+                    "images\/colorist\/EO6.jpg"
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a51017",
+                "videoName": "Penderdyn",
+                "videoSubName": "Distillery",
+                "videoShort": "videos\/short\/compressed\/Penderdyn_Distillery 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/Penderdyn_Distillery.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Colorist: Wilhends Norvil<\/b><br><br><h3>Production<\/h3><b>Production Company: neufcinq films<\/b><br><b>Director: Keirana Scott<\/b>",
+                "previewImages": [
+                    "images\/colorist\/penderdyn1.jpg",
+                    "images\/colorist\/penderdyn2.jpg",
+                    "images\/colorist\/penderdyn3.jpg",
+                    "images\/colorist\/penderdyn4.jpg",
+                    "images\/colorist\/penderdyn5.jpg",
+                    "images\/colorist\/penderdyn6.jpg"
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a51027",
+                "videoName": "Doritos Crash",
+                "videoSubName": "Abduction",
+                "videoShort": "videos\/short\/compressed\/Doritos_Crash_Abduction 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/Doritos_Crash_Abduction.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Colorist: Wilhends Norvil<\/b><br><b>Post Producer: Christopher Carson<\/b><br><br><h3>Production<\/h3><b>Directors: Dylan Bradshaw & Nate Norell<\/b><br><b>DP: Dave Cortez<\/b>",
+                "previewImages": [
+                    "images\/colorist\/Doritos1.jpg",
+                    "images\/colorist\/Doritos2.jpg",
+                    "images\/colorist\/Doritos3.jpg",
+                    "images\/colorist\/Doritos4.jpg",
+                    "images\/colorist\/Doritos5.jpg",
+                    "images\/colorist\/Doritos6.jpg"
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a51044",
+                "videoName": "Bravest Studios",
+                "videoSubName": "Kid Cudi",
+                "videoShort": "videos\/short\/compressed\/Bravest_Studios 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/Bravest_Studios.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Supervisor: Alex Peterson<\/b><br><b>VFX: Jack Phoenix<\/b><br><b>Colorist: Wilhends Norvil<\/b><br><br><h3>Production<\/h3><b>Director \/ Creative Director: Brenton L Roberson<\/b><br><b>Line Producer: Brenton L Roberson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            }
+        ],
+        "order": 1,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a5157c",
+        "name": "Ayo Douson",
+        "slug": "ayo-douson",
+        "category": "SOUND",
+        "videos": [
+            {
+                "id": "video_6965e95a513f8",
+                "videoName": "The Weeknd",
+                "videoSubName": "Sao Paulo Recap",
+                "videoShort": "videos\/short\/nv22.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv22.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3> <b>Director: Evan Larsen<\/b><br><b>Concert Creative Direction: Lamar C Taylor<\/b><br><b>Concert Visual CGI: Alexander Wessely<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a5140d",
+                "videoName": "F1",
+                "videoSubName": "Miami",
+                "videoShort": "videos\/short\/nv23.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv23.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3> <b>Directed By: B Cruz  x KENDRI RODRIGUEZ<\/b><br><b>Executive Producer: B Cruz<\/b><br><b>Producer: KENDRI RODRIGUEZ<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a5141d",
+                "videoName": "A$AP Rocky",
+                "videoSubName": "Riot",
+                "videoShort": "videos\/short\/nv24.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv24.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3> <b>Directed by Asap Rocky & Chris Villa<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a5142d",
+                "videoName": "New Balance",
+                "videoSubName": "Prosperity Be the Prize",
+                "videoShort": "videos\/short\/nv25.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv25.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sounds Design: Ayo Douson<\/b<br><br><br><h3>Production<\/h3>Production Company: <b>Better Days<\/b><br><b>Directed by: NAT PRINZI<\/b><br><b>Executive Producer: NAT PRINZI<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a5143a",
+                "videoName": "Lil Tecca",
+                "videoSubName": "Plan A",
+                "videoShort": "videos\/short\/nv26.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv26.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sounds Design: Ayo Douson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a51447",
+                "videoName": "AB Soul",
+                "videoSubName": "Soul Burger",
+                "videoShort": "videos\/short\/nv27.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv27.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sounds Design: Ayo Douson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a51455",
+                "videoName": "Terrace Martin",
+                "videoSubName": "Paradise",
+                "videoShort": "videos\/short\/nv28.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv28.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3><b>Director: child<\/b><br><b>Executive Producer: Galileo Mondol<\/b><br><b>Executive Producer: Lopes<\/b><br><b>Producer: Tashi Bhutia <\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a51462",
+                "videoName": "Cadence",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/nv29.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv29.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson & Ken Psalms<\/b><br><br><h3>Production<\/h3>Production Company: <b>Anno<\/b><br><b>Director: Nick Buska<\/b><br><b>Producers: Sydnyfuruichi Brentassayag<\/b><br><b>DP: Cory Burmester & MASON K PRENDERGAST<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a51470",
+                "videoName": "Chris Brown",
+                "videoSubName": "Hmmm (Official Video) feat. Davido",
+                "videoShort": "videos\/short\/ChrisBrown-Hmmm.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ChrisBrown-Hmmm.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Supervisor: Zack Pelletier<\/b><br><b>Editor: Alex Peterson<\/b><br><b>VFX: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><b>Colorist: Thomas Dautueil<\/b><br><b>Sound Producer: Sean Carroll<\/b><br><br><h3>Production<\/h3>Production Company: <b>Projekt Studios<\/b><br><b>Director \/ Executive Producer: Travis Colbert <\/b><br><b>Executive Producer: Samuel King<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a5147d",
+                "videoName": "Adidas",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/adidas cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/adidas cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a514fa",
+                "videoName": "The Weeknd",
+                "videoSubName": "Sao Paulo Recap",
+                "videoShort": "videos\/short\/nv22.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv22.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3> <b>Director: Evan Larsen<\/b><br><b>Concert Creative Direction: Lamar C Taylor<\/b><br><b>Concert Visual CGI: Alexander Wessely<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a51509",
+                "videoName": "F1",
+                "videoSubName": "Miami",
+                "videoShort": "videos\/short\/nv23.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv23.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3> <b>Directed By: B Cruz  x KENDRI RODRIGUEZ<\/b><br><b>Executive Producer: B Cruz<\/b><br><b>Producer: KENDRI RODRIGUEZ<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a51516",
+                "videoName": "A$AP Rocky",
+                "videoSubName": "Riot",
+                "videoShort": "videos\/short\/nv24.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv24.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3> <b>Directed by Asap Rocky & Chris Villa<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a5152b",
+                "videoName": "New Balance",
+                "videoSubName": "Prosperity Be the Prize",
+                "videoShort": "videos\/short\/nv25.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv25.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sounds Design: Ayo Douson<\/b<br><br><br><h3>Production<\/h3>Production Company: <b>Better Days<\/b><br><b>Directed by: NAT PRINZI<\/b><br><b>Executive Producer: NAT PRINZI<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a51538",
+                "videoName": "Lil Tecca",
+                "videoSubName": "Plan A",
+                "videoShort": "videos\/short\/nv26.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv26.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sounds Design: Ayo Douson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 14
+            },
+            {
+                "id": "video_6965e95a51544",
+                "videoName": "AB Soul",
+                "videoSubName": "Soul Burger",
+                "videoShort": "videos\/short\/nv27.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv27.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sounds Design: Ayo Douson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 15
+            },
+            {
+                "id": "video_6965e95a51551",
+                "videoName": "Terrace Martin",
+                "videoSubName": "Paradise",
+                "videoShort": "videos\/short\/nv28.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv28.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3><b>Director: child<\/b><br><b>Executive Producer: Galileo Mondol<\/b><br><b>Executive Producer: Lopes<\/b><br><b>Producer: Tashi Bhutia <\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 16
+            },
+            {
+                "id": "video_6965e95a5155e",
+                "videoName": "Cadence",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/nv29.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv29.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson & Ken Psalms<\/b><br><br><h3>Production<\/h3>Production Company: <b>Anno<\/b><br><b>Director: Nick Buska<\/b><br><b>Producers: Sydnyfuruichi Brentassayag<\/b><br><b>DP: Cory Burmester & MASON K PRENDERGAST<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 17
+            },
+            {
+                "id": "video_6965e95a5156b",
+                "videoName": "Chris Brown",
+                "videoSubName": "Hmmm (Official Video) feat. Davido",
+                "videoShort": "videos\/short\/ChrisBrown-Hmmm.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/ChrisBrown-Hmmm.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Supervisor: Zack Pelletier<\/b><br><b>Editor: Alex Peterson<\/b><br><b>VFX: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><b>Colorist: Thomas Dautueil<\/b><br><b>Sound Producer: Sean Carroll<\/b><br><br><h3>Production<\/h3>Production Company: <b>Projekt Studios<\/b><br><b>Director \/ Executive Producer: Travis Colbert <\/b><br><b>Executive Producer: Samuel King<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 18
+            },
+            {
+                "id": "video_6965e95a51579",
+                "videoName": "Adidas",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/to_compress\/adidas cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/adidas cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Sound Design: Ayo Douson<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 19
+            }
+        ],
+        "order": 0,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a518e2",
+        "name": "Ben Gillespie",
+        "slug": "ben-gillespie",
+        "category": "VFX",
+        "videos": [
+            {
+                "id": "video_6965e95a51778",
+                "videoName": "Fortrock",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/nv30.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv30.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a51787",
+                "videoName": "Garmin Watch",
+                "videoSubName": "",
+                "videoShort": "\/videos\/short\/nv31.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv31.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b><br><br><h3>Production<\/h3> <b>Production Company: Fortem<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a51793",
+                "videoName": "Happytown",
+                "videoSubName": "Promo",
+                "videoShort": "videos\/short\/nv32.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv32.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a517a0",
+                "videoName": "The North Face",
+                "videoSubName": "Fall\/Winter 2024",
+                "videoShort": "videos\/short\/nv33.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv33.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b><br><br><h3>Production<\/h3> <b>Producer: Will Beihoffer<\/b><br><b>Director\/DP: Cole Pates<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a517ac",
+                "videoName": "Arqui Vistas",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/nv34.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv34.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a517ba",
+                "videoName": "Guiness",
+                "videoSubName": "The Most Wonderful Pint of the Year",
+                "videoShort": "videos\/short\/ben-gillespie-guiness.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/ben-gillespie-guiness.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Editor: Alex Peterson<\/b><br><b>VFX Artist: Ben Gillespie<\/b><br><b>Sound Design: Ayo Douson<\/b><br><b>Colorist: Brian Charles<\/b><br><br><h3>Production<\/h3> <b>Agency: Taylor Agency<\/b><br><b>DP: Jon Cospito<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a517c7",
+                "videoName": "Pure Protein",
+                "videoSubName": "AMAZE Protein Bars",
+                "videoShort": "videos\/short\/to_compress\/amaze protein cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/amaze protein cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Producer: Chris Carson<\/b><br><b>VFX Artist: Ben Gillespie<\/b><br><b>Sound Design: Christophe Daigle<\/b><br><br><h3>Production<\/h3> <b>Agency: Us VS Them Agency<\/b><br><b>Executive Producers: Reese Hopper & Jeremiah Davis<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a517d4",
+                "videoName": "Teto",
+                "videoSubName": "Yes or No",
+                "videoShort": "videos\/short\/to_compress\/yes or no cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/yes or no cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b><br><br><h3>Production<\/h3> <b>Production Company: BT Studios<\/b><br><b>Executive Producer: Carlos Lopes<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a51852",
+                "videoName": "Fortrock",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/nv30.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv30.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a5185f",
+                "videoName": "Garmin Watch",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/nv31.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv31.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b><br><br><h3>Production<\/h3> <b>Production Company: Fortem<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a5186b",
+                "videoName": "Happytown",
+                "videoSubName": "Promo",
+                "videoShort": "videos\/short\/nv32.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv32.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a51879",
+                "videoName": "The North Face",
+                "videoSubName": "Fall\/Winter 2024",
+                "videoShort": "videos\/short\/nv33.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv33.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b><br><br><h3>Production<\/h3> <b>Producer: Will Beihoffer<\/b><br><b>Director\/DP: Cole Pates<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a51885",
+                "videoName": "Arqui Vistas",
+                "videoSubName": "",
+                "videoShort": "videos\/short\/nv34.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv34.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a51891",
+                "videoName": "Guiness",
+                "videoSubName": "The Most Wonderful Pint of the Year",
+                "videoShort": "videos\/short\/ben-gillespie-guiness.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/ben-gillespie-guiness.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Editor: Alex Peterson<\/b><br><b>VFX Artist: Ben Gillespie<\/b><br><b>Sound Design: Ayo Douson<\/b><br><b>Colorist: Brian Charles<\/b><br><br><h3>Production<\/h3> <b>Creative: Taylor Agency<\/b><br><b>DP: Jon Cospito<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            },
+            {
+                "id": "video_6965e95a5189e",
+                "videoName": "Pure Protein",
+                "videoSubName": "AMAZE Protein Bars",
+                "videoShort": "videos\/short\/to_compress\/amaze protein cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/amaze protein cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Producer: Chris Carson<\/b><br><b>VFX Artist: Ben Gillespie<\/b><br><b>Sound Design: Christophe Daigle<\/b><br><br><h3>Production<\/h3> <b>Agency: Us VS Them Agency<\/b><br><b>Executive Producers: Reese Hopper & Jeremiah Davis<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 14
+            },
+            {
+                "id": "video_6965e95a518de",
+                "videoName": "Teto",
+                "videoSubName": "Yes or No",
+                "videoShort": "videos\/short\/to_compress\/yes or no cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/yes or no cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX Artist: Ben Gillespie<\/b><br><br><h3>Production<\/h3> <b>Production Company: BT Studios<\/b><br><b>Executive Producer: Carlos Lopes<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 15
+            }
+        ],
+        "order": 0,
+        "visible": true
+    },
+    {
+        "id": "artist_6965e95a51cc5",
+        "name": "Le Jumper",
+        "slug": "le-jumper",
+        "category": "VFX",
+        "videos": [
+            {
+                "id": "video_6965e95a51bd0",
+                "videoName": "Jaylen Brown",
+                "videoSubName": "741 Performance",
+                "videoShort": "videos\/short\/nv35.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv35.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Edit\/VFX\/Sound: Le Jumper<\/b><br><br><h3>Production<\/h3> <b>Director: Drew Cigna<\/b><br><b>CD: Shawn Plata<\/b><br><b>DP: Drew Cigna<\/b><br><b>Executive Producers: Shawn Plata & Energy Shifter<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 0
+            },
+            {
+                "id": "video_6965e95a51bde",
+                "videoName": "Chris Brown",
+                "videoSubName": "Nightmares",
+                "videoShort": "videos\/short\/chris-brown-nightmares-le-jumper.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/chris-brown-nightmares-le-jumper.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Editor: Zack Pelletier<\/b><br><b>VFX: Le Jumper<\/b><br><b>Colorist: Thomas D",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 1
+            },
+            {
+                "id": "video_6965e95a51beb",
+                "videoName": "When We Die",
+                "videoSubName": "Yung Blud feat. Lil Yachty",
+                "videoShort": "videos\/short\/when-we-die-le-jumper.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/when-we-die-le-jumper.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX: Le Jumper<\/b><br><br><h3>Production<\/h3><b>Directed by: Logan Fields & Yussef Haridy<\/b><br><b>Executive Producers: Michael Kelly, Tony Pillow, Simon Chasalow<\/b><br><b>Producer: William Hickox<\/b><br><b>Production Company: Parallel Studios<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 2
+            },
+            {
+                "id": "video_6965e95a51bf7",
+                "videoName": "Chris Brown",
+                "videoSubName": "Residuals",
+                "videoShort": "videos\/short\/vfxnew2.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vfxnew2.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Head of Post: Alex Peterson<\/b><br><b>Post Supervisor: Lynn He<\/b><br><b>Editor: Zack Pelletier<\/b><br><b>Edit Producer: Nasser Boulaich<\/b><br><b>Colorist: Houmam Abdallah<\/b><br><b>3D Artist: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3><b>Director: TRAVIS COLBERT<\/b><br><b>Producer: SAMUEL KING<\/b><br><b>Executive Producer \/ CD: TRAVIS COLBERT & SAM KING<\/b><br><b>Production Company: PROJEKT STUDIOS<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 3
+            },
+            {
+                "id": "video_6965e95a51c01",
+                "videoName": "Shakira",
+                "videoSubName": "Grammy Short Film",
+                "videoShort": "videos\/short\/vfxnew3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/vfxnew3.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX: Le Jumper<\/b><br><br><h3>Production<\/h3><b>Production Company: Fulwell<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 4
+            },
+            {
+                "id": "video_6965e95a51c0c",
+                "videoName": "Snoop Dogg & Sexyy Red",
+                "videoSubName": "Me N OG Snoop",
+                "videoShort": "videos\/short\/m n og snoop cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/vm n og snoop cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Producer: Sean Carroll<\/b><br><b>VFX: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3><b>Production Company: BT Studios<\/b><br><b>Director: Austin Simkins<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 5
+            },
+            {
+                "id": "video_6965e95a51c17",
+                "videoName": "Shoreline Mafia",
+                "videoSubName": "Back in Bidness",
+                "videoShort": "videos\/short\/to_compress\/bib cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv10.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br>Head of Post: Alex Peterson<br>Post Supervisor: Lynn He<br>VFX: Le Jumper<br> Compositor: Anurag Raj<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>DP: Beatriz Sastre",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 6
+            },
+            {
+                "id": "video_6965e95a51c80",
+                "videoName": "Jaylen Brown",
+                "videoSubName": "741 Performance",
+                "videoShort": "videos\/short\/nv35.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv35.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Edit\/VFX\/Sound: Le Jumper<\/b><br><br><h3>Production<\/h3> <b>Director: Drew Cigna<\/b><br><b>CD: Shawn Plata<\/b><br><b>DP: Drew Cigna<\/b><br><b>Executive Producer: Shawn Plata & Energy Shifter<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 7
+            },
+            {
+                "id": "video_6965e95a51c8c",
+                "videoName": "Chris Brown",
+                "videoSubName": "Nightmares",
+                "videoShort": "videos\/short\/chris-brown-nightmares-le-jumper.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/chris-brown-nightmares-le-jumper.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Editor: Zack Pelletier<\/b><br><b>VFX: Le Jumper<\/b><br><b>Colorist: Thomas D",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 8
+            },
+            {
+                "id": "video_6965e95a51c97",
+                "videoName": "When We Die",
+                "videoSubName": "Yung Blud feat. Lil Yachty",
+                "videoShort": "videos\/short\/when-we-die-le-jumper.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/when-we-die-le-jumper.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX: Le Jumper<\/b><br><br><h3>Production<\/h3><b>Directed by: Logan Fields & Yussef Haridy<\/b><br><b>Executive Producers: Michael Kelly, Tony Pillow, Simon Chasalow<\/b><br><b>Producer: William Hickox<\/b><br><b>Production Company: Parallel Studios<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 9
+            },
+            {
+                "id": "video_6965e95a51ca2",
+                "videoName": "Chris Brown",
+                "videoSubName": "Residuals",
+                "videoShort": "videos\/short\/vfxnew2.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/short\/vfxnew2.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Head of Post: Alex Peterson<\/b><br><b>Post Supervisor: Lynn He<\/b><br><b>Editor: Zack Pelletier<\/b><br><b>Edit Producer: Nasser Boulaich<\/b><br><b>Colorist: Houmam Abdallah<\/b><br><b>3D Artist: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3><b>Director: TRAVIS COLBERT<\/b><br><b>Producer: SAMUEL KING<\/b><br><b>Executive Producer \/ CD: TRAVIS COLBERT & SAM KING<\/b><br><b>Production Company: PROJEKT STUDIOS<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 10
+            },
+            {
+                "id": "video_6965e95a51cac",
+                "videoName": "Shakira",
+                "videoSubName": "Grammy Short Film",
+                "videoShort": "videos\/short\/vfxnew3.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/vfxnew3.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>VFX: Le Jumper<\/b><br><br><h3>Production<\/h3><b>Production Company: Fulwell<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 11
+            },
+            {
+                "id": "video_6965e95a51cb7",
+                "videoName": "Snoop Dogg & Sexyy Red",
+                "videoSubName": "Me N OG Snoop",
+                "videoShort": "videos\/short\/to_compress\/me n og snoop cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/me n og snoop cover 1080p.png",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3><b>Post Producer: Sean Carroll<\/b><br><b>VFX: Le Jumper<\/b><br><b>Sound Design: Ayo Douson<\/b><br><br><h3>Production<\/h3><b>Production Company: BT Studios<\/b><br><b>Director: Austin Simkins<\/b>",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 12
+            },
+            {
+                "id": "video_6965e95a51cc3",
+                "videoName": "Shoreline Mafia",
+                "videoSubName": "Back in Bidness",
+                "videoShort": "videos\/short\/to_compress\/bib cover 1080p.mp4",
+                "videoLong": "<div style=",
+                "poster": "videos\/images\/nv10.jpg",
+                "hasCredit": true,
+                "credits": "<h3>Apollo<\/h3>Editor: Jamil Shaukat<br>Head of Post: Alex Peterson<br>Post Supervisor: Lynn He<br>VFX: Le Jumper<br> Compositor: Anurag Raj<br>Sound Design: Ayo Douson<br><br><h3>Production<\/h3>Production Company: Swords & Eagles<br>Director: KC Locke<br>DP: Beatriz Sastre",
+                "previewImages": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "order": 13
+            }
+        ],
+        "order": 1,
+        "visible": true
+    }
+]
