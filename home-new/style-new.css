@@ -71,7 +71,8 @@ header .menu ul li a {
     text-decoration: unset;
     font-size: 18px;
     font-weight: 500;
-    opacity: 1;
+    opacity: 0.8;
+    letter-spacing: 2px;
     transition: all 0.3s linear;
     padding-bottom: 10px;
     font-family: newyork;

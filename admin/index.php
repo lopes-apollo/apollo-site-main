@@ -5,9 +5,9 @@ requireLogin();
 $landing_projects = getLandingPageProjects();
 $artists = getArtists();
 $settings = getSettings();
+$all_videos = getVideos();
 
-// Calculate stats
-$total_videos = 0;
+$total_videos = count($all_videos);
 $artists_by_category = [
     'EDIT' => 0,
     'COLOR' => 0,
@@ -17,14 +17,18 @@ $artists_by_category = [
 
 foreach ($artists as $artist) {
     if ($artist['visible'] ?? true) {
-        $videos_count = count($artist['videos'] ?? []);
-        $total_videos += $videos_count;
-        
         $category = $artist['category'] ?? '';
         if (isset($artists_by_category[$category])) {
             $artists_by_category[$category]++;
         }
     }
+}
+
+// Count unlinked videos
+$unlinked_videos = 0;
+foreach ($all_videos as $v) {
+    $refs = getVideoReferences($v['id']);
+    if (empty($refs['artists']) && empty($refs['landing'])) $unlinked_videos++;
 }
 
 $visible_projects = count(array_filter($landing_projects, function($p) { return $p['visible'] ?? true; }));
@@ -64,10 +68,10 @@ if (!file_exists(LANDING_PAGE_FILE) || !file_exists(ARTISTS_FILE) || !file_exist
     $health_checks['data_files']['message'] = 'Some data files are missing';
 }
 
-// Check if artists have videos
+// Check if artists have videos (using video_ids from pool)
 $artists_without_videos = 0;
 foreach ($artists as $artist) {
-    if (($artist['visible'] ?? true) && empty($artist['videos'])) {
+    if (($artist['visible'] ?? true) && empty($artist['video_ids'])) {
         $artists_without_videos++;
     }
 }
@@ -207,6 +211,17 @@ foreach ($health_checks as $check) {
             </div>
         </div>
         
+        <!-- Quick Action -->
+        <div class="row mb-3">
+            <div class="col-12">
+                <a href="video-pool.php" style="display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:var(--bg-secondary); border:1px solid var(--border-color); color:var(--text-primary); text-decoration:none; transition:all 0.2s;">
+                    <i class="fas fa-plus-circle" style="color:var(--accent); font-size:18px;"></i>
+                    <span style="font-size:14px; font-weight:500;">Upload New Video</span>
+                    <i class="fas fa-arrow-right" style="font-size:12px; color:var(--text-muted); margin-left:8px;"></i>
+                </a>
+            </div>
+        </div>
+
         <!-- Stats Cards -->
         <div class="row">
             <div class="col-md-3">
@@ -214,34 +229,38 @@ foreach ($health_checks as $check) {
                     <h3>Total Artists</h3>
                     <div class="number"><?php echo $visible_artists; ?></div>
                     <small class="text-muted" style="display: block; margin-top: 10px;">
-                        <?php echo count($artists); ?> total artists, <?php echo $total_videos; ?> total videos across the website
+                        <?php echo count($artists); ?> total across all departments
                     </small>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stats-card">
-                    <h3>Total Videos</h3>
+                    <h3>Video Pool</h3>
                     <div class="number"><?php echo $total_videos; ?></div>
                     <small class="text-muted" style="display: block; margin-top: 10px;">
-                        <?php echo count($artists); ?> total artists, <?php echo $total_videos; ?> total videos across the website
+                        <?php if ($unlinked_videos > 0): ?>
+                            <span style="color:var(--warning);"><?php echo $unlinked_videos; ?> unlinked</span>
+                        <?php else: ?>
+                            All videos assigned
+                        <?php endif; ?>
                     </small>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stats-card">
-                    <h3>Categories</h3>
+                    <h3>Departments</h3>
                     <div class="number">4</div>
                     <small class="text-muted" style="display: block; margin-top: 10px;">
-                        <?php echo count($artists); ?> total artists, <?php echo $total_videos; ?> total videos across the website
+                        Edit, Color, Sound, VFX
                     </small>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stats-card">
                     <h3>Landing Page</h3>
-                    <div class="number"><?php echo count($landing_projects); ?></div>
+                    <div class="number"><?php echo $visible_projects; ?></div>
                     <small class="text-muted" style="display: block; margin-top: 10px;">
-                        <?php echo count($landing_projects); ?> total videos
+                        <?php echo count($landing_projects); ?> total projects
                     </small>
                 </div>
             </div>

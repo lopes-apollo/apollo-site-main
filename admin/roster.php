@@ -55,17 +55,12 @@ if (empty(array_filter($roster)) && !empty($artists)) {
     }
 }
 
-$pending = getPendingChanges();
-$pending_roster = $pending['roster'] ?? null;
-$has_pending = !empty($pending_roster);
 $message = $message ?? '';
 
-// Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
     
     if ($action === 'update_roster') {
-        // Update roster assignments
         $new_roster = [
             'EDIT' => [],
             'COLOR' => [],
@@ -79,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
         
-        // Sort each section alphabetically by artist name
         foreach (ROSTER_SECTIONS as $section) {
             usort($new_roster[$section], function($a, $b) use ($artists) {
                 $artist_a = null;
@@ -94,20 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             });
         }
         
-        // Save to pending changes instead of directly
+        saveRoster($new_roster);
         savePendingChanges(['roster' => $new_roster]);
         $roster = $new_roster;
-        $pending_roster = $new_roster;
-        $has_pending = true;
-        $message = '<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> <strong>Changes saved to pending!</strong> Click "Save to Next Sync" below to prepare these changes for the next website sync.</div>';
-    } elseif ($action === 'save_to_sync') {
-        $message = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> <strong>Changes saved for next sync!</strong> Go to <a href="sync.php">Sync to Website</a> to apply these changes.</div>';
+        $message = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> <strong>Roster updated!</strong> Changes saved successfully.</div>';
     }
     
-    // Refresh data
-    $pending = getPendingChanges();
-    $pending_roster = $pending['roster'] ?? null;
-    $has_pending = !empty($pending_roster);
+    clearCache();
+    $roster = getRoster();
 }
 ?>
 <!DOCTYPE html>
@@ -120,53 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Compact Status Box */
-        .status-box {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 0px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            border: 1px solid;
-        }
-        
-        .status-pending {
-            background-color: rgba(251, 191, 36, 0.1);
-            border-color: var(--warning);
-            color: var(--warning);
-        }
-        
-        .status-synced {
-            background-color: rgba(74, 222, 128, 0.1);
-            border-color: var(--success);
-            color: var(--success);
-        }
-        
-        .status-box i {
-            font-size: 14px;
-        }
-        
-        .status-btn {
-            background-color: var(--warning);
-            border: none;
-            color: var(--bg-primary);
-            padding: 4px 12px;
-            font-size: 12px;
-            cursor: pointer;
-            border-radius: 0px;
-            transition: background-color 0.2s ease;
-        }
-        
-        .status-btn:hover {
-            background-color: #e6a200;
-        }
-        
-        .status-btn i {
-            margin-right: 4px;
-        }
-        
         .roster-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -282,25 +223,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="header">
             <h1><i class="fas fa-list"></i> Roster</h1>
         </div>
-        
-        <!-- Compact Status Box -->
-        <?php if ($has_pending): ?>
-            <div class="status-box status-pending">
-                <i class="fas fa-exclamation-triangle"></i>
-                <span>Changes Pending</span>
-                <form method="POST" style="display: inline; margin-left: 10px;">
-                    <input type="hidden" name="action" value="save_to_sync">
-                    <button type="submit" class="status-btn">
-                        <i class="fas fa-save"></i> Save to Sync
-                    </button>
-                </form>
-            </div>
-        <?php else: ?>
-            <div class="status-box status-synced">
-                <i class="fas fa-check-circle"></i>
-                <span>All Synced</span>
-            </div>
-        <?php endif; ?>
         
         <?php echo $message; ?>
         

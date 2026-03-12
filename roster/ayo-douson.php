@@ -34,7 +34,7 @@
     	<h4 class="authorsNames" style="display:none;"></h4>
 	    <ul>
 	        <li>
-	            <a href="/work/">ROSTER</a>
+	            <a href="/roster/">ROSTER</a>
 	        </li>
 	        <li>
 	            <a href="/contact/">CONTACT</a>

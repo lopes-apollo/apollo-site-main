@@ -1,0 +1,9 @@
+# Block all direct web access to data files
+# JSON data should only be read by PHP, never served to browsers
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>

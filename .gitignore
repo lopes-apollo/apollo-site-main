@@ -1,44 +1,21 @@
-# Apollo Website - Git Ignore File
-
-# macOS
+# OS files
 .DS_Store
-.AppleDouble
-.LSOverride
+Thumbs.db
 
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-.TemporaryItems
-.apdisk
-
-# IDE
+# Editor files
+.cursor/
 .vscode/
-.idea/
-*.swp
-*.swo
-*~
 
-# Logs
-*.log
-/tmp/
-php-server.log
+# Data backups (kept separate from git)
+data/backups/
+data/videos_backup_pre_repair.json
 
-# Keep documentation files
-!*.md
-!*.txt
+# Uploaded files (too large for git)
+roster/videos/
+data/crm_uploads/
 
-# CMS Data (optional - remove this line if you want to track JSON data in git)
-# data/
+# Node modules (if any)
+node_modules/
+
+# PHP session files
+*.sess

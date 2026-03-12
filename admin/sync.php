@@ -22,10 +22,69 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sync'])) {
     // Create backup before syncing
     $backup_timestamp = createSyncBackup();
     
-    $landing_projects = getLandingPageProjects();
+    if (!function_exists('formatVideoLong')) {
+        function formatVideoLong($video_long) {
+            if (strpos($video_long, '<iframe') === false && strpos($video_long, 'http') === 0) {
+                return '<div style="width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;"><iframe src="' . htmlspecialchars($video_long) . '" name="SimianEmbed" scrolling="no" style="position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000" frameborder="0" allowFullScreen webkitAllowFullScreen></iframe></div>';
+            }
+            return $video_long;
+        }
+    }
+    
+    $landing_raw = getLandingPageProjects();
     $artists = getArtists();
     $roster = getRoster();
     $settings = getSettings();
+    
+    // Resolve video_ids for landing page projects (template expects title, video_long, etc.)
+    $landing_projects = [];
+    foreach ($landing_raw as $proj) {
+        $vid = getVideoById($proj['video_id'] ?? '');
+        $video_long = '';
+        $video_short = '';
+        $preview_images = ['','','','','',''];
+        $has_credits = false;
+        $credits = '';
+        if ($vid) {
+            $video_long = $vid['videoLong'] ?? '';
+            $video_short = $vid['videoShort'] ?? '';
+            $preview_images = $vid['previewImages'] ?? ['','','','','',''];
+            $has_credits = $vid['hasCredit'] ?? false;
+            $credits = $vid['credits'] ?? '';
+        }
+        $landing_projects[] = [
+            'image_class'    => $proj['image_class'] ?? '',
+            'title'          => $proj['title_override'] ?? ($vid['title'] ?? ''),
+            'subtitle'       => $proj['subtitle_override'] ?? ($vid['subtitle'] ?? ''),
+            'author'         => $proj['author'] ?? '',
+            'video_long'     => $video_long,
+            'video_short'    => $video_short,
+            'preview_images' => $preview_images,
+            'has_credits'    => $has_credits,
+            'credits'        => $credits,
+            'order'          => $proj['order'] ?? 999,
+            'visible'        => $proj['visible'] ?? true,
+        ];
+    }
+    
+    // Resolve video_ids to video objects for all artists (templates expect $artist['videos'])
+    foreach ($artists as &$_a) {
+        $_a['videos'] = [];
+        foreach (getVideosByIds($_a['video_ids'] ?? []) as $v) {
+            $_a['videos'][] = [
+                'videoName' => $v['title'] ?? '',
+                'videoSubName' => $v['subtitle'] ?? '',
+                'videoShort' => $v['videoShort'] ?? '',
+                'videoLong' => $v['videoLong'] ?? '',
+                'poster' => $v['poster'] ?? '',
+                'hasCredit' => $v['hasCredit'] ?? false,
+                'credits' => $v['credits'] ?? '',
+                'previewImages' => $v['previewImages'] ?? ['','','','','',''],
+                'order' => $v['order'] ?? 0,
+            ];
+        }
+    }
+    unset($_a);
     
     // Generate index.php (landing page)
     ob_start();
@@ -39,59 +98,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sync'])) {
         $errors[] = 'Failed to write index.php';
     }
     
-    // Generate work/index.php (roster listing)
-    ob_start();
-    $roster_data = $roster; // Pass roster data to template
-    include 'templates/work_index_template.php';
-    $work_index_content = ob_get_clean();
-    
-    $work_index_file = __DIR__ . '/../work/index.php';
-    if (!file_exists(__DIR__ . '/../work')) {
-        mkdir(__DIR__ . '/../work', 0755, true);
-    }
-    if (file_put_contents($work_index_file, $work_index_content)) {
-        $message .= '<div class="alert alert-success">✓ Roster listing (work/index.php) updated</div>';
-    } else {
-        $errors[] = 'Failed to write work/index.php';
-    }
-    
-    // Generate roster/index.php (all videos page)
-    ob_start();
-    include 'templates/roster_index_template.php';
-    $roster_index_content = ob_get_clean();
-    
-    $roster_index_file = __DIR__ . '/../roster/index.php';
-    if (!file_exists(__DIR__ . '/../roster')) {
-        mkdir(__DIR__ . '/../roster', 0755, true);
-    }
-    if (file_put_contents($roster_index_file, $roster_index_content)) {
-        $message .= '<div class="alert alert-success">✓ All videos page (roster/index.php) updated</div>';
-    } else {
-        $errors[] = 'Failed to write roster/index.php';
-    }
-    
-    // Generate individual artist pages
-    $artist_pages_created = 0;
-    foreach ($artists as $artist) {
-        if (!($artist['visible'] ?? true)) continue;
-        if (empty($artist['slug'])) continue;
-        
-        ob_start();
-        $current_artist = $artist;
-        include 'templates/artist_page_template.php';
-        $artist_content = ob_get_clean();
-        
-        $artist_file = __DIR__ . '/../roster/' . $artist['slug'] . '.php';
-        if (file_put_contents($artist_file, $artist_content)) {
-            $artist_pages_created++;
-        } else {
-            $errors[] = 'Failed to write roster/' . $artist['slug'] . '.php';
-        }
-    }
-    
-    if ($artist_pages_created > 0) {
-        $message .= '<div class="alert alert-success">✓ Created/updated ' . $artist_pages_created . ' artist pages</div>';
-    }
+    // PROTECTED: work/index.php is a redirect to the V2 department page.
+    // Do NOT regenerate it -- the V2 design (department.php, artist-page.php,
+    // style-v2.css, app-v2.js) renders live from JSON data and does not need sync.
+    $message .= '<div class="alert alert-info">ℹ work/index.php preserved (V2 redirect)</div>';
+    $message .= '<div class="alert alert-info">ℹ roster/index.php skipped (V2 uses department.php)</div>';
+    $message .= '<div class="alert alert-info">ℹ Individual artist pages skipped (V2 uses artist-page.php)</div>';
     
     // Generate category pages (edit.php, color.php, sound.php, vfx.php)
     $category_map = [
@@ -101,10 +113,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sync'])) {
         'VFX' => 'vfx'
     ];
     
+    // Build a lookup of resolved artists by ID for category pages
+    $artists_by_id_resolved = [];
+    foreach ($artists as $a) {
+        $artists_by_id_resolved[$a['id']] = $a;
+    }
+    
     foreach ($category_map as $category => $filename) {
         ob_start();
         $current_category = $category;
-        $category_artists = getArtistsByRosterCategory($category); // Use roster assignments
+        // Build category_artists from resolved artists (with videos populated)
+        $roster_ids = $roster[$category] ?? [];
+        $category_artists = [];
+        foreach ($roster_ids as $aid) {
+            if (isset($artists_by_id_resolved[$aid])) {
+                $category_artists[] = $artists_by_id_resolved[$aid];
+            }
+        }
         include 'templates/category_page_template.php';
         $category_content = ob_get_clean();
         

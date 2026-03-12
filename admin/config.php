@@ -16,6 +16,7 @@ define('ROSTER_FILE', DATA_DIR . 'roster.json'); // Roster assignments (which ar
 define('SETTINGS_FILE', DATA_DIR . 'settings.json');
 define('PENDING_CHANGES_FILE', DATA_DIR . 'pending_changes.json'); // Pending changes waiting for sync
 define('CRM_PROJECTS_FILE', DATA_DIR . 'crm_projects.json'); // CRM project management
+define('VIDEOS_FILE', DATA_DIR . 'videos.json'); // Centralized video pool
 define('CRM_UPLOADS_DIR', __DIR__ . '/../data/crm_uploads/'); // Directory for CRM file uploads
 
 // Admin credentials
@@ -66,6 +67,9 @@ function initDataFiles() {
             'saved_at' => null
         ], JSON_PRETTY_PRINT));
     }
+    if (!file_exists(VIDEOS_FILE)) {
+        file_put_contents(VIDEOS_FILE, json_encode([], JSON_PRETTY_PRINT));
+    }
     if (!file_exists(CRM_PROJECTS_FILE)) {
         file_put_contents(CRM_PROJECTS_FILE, json_encode([], JSON_PRETTY_PRINT));
     }
@@ -97,7 +101,9 @@ static $cache = [
     'artists' => null,
     'roster' => null,
     'settings' => null,
-    'artists_by_id' => null
+    'artists_by_id' => null,
+    'videos' => null,
+    'videos_by_id' => null
 ];
 
 // Helper functions with caching
@@ -160,6 +166,137 @@ function saveRoster($roster) {
     global $cache;
     file_put_contents(ROSTER_FILE, json_encode($roster, JSON_PRETTY_PRINT));
     $cache['roster'] = $roster; // Update cache
+}
+
+// Video Pool functions
+function getVideos() {
+    global $cache;
+    if ($cache['videos'] === null) {
+        $data = file_get_contents(VIDEOS_FILE);
+        $cache['videos'] = json_decode($data, true) ?: [];
+        $cache['videos_by_id'] = [];
+        foreach ($cache['videos'] as $video) {
+            $cache['videos_by_id'][$video['id']] = $video;
+        }
+    }
+    return $cache['videos'];
+}
+
+function getVideoById($id) {
+    global $cache;
+    if ($cache['videos_by_id'] === null) {
+        getVideos();
+    }
+    return $cache['videos_by_id'][$id] ?? null;
+}
+
+function getVideosByIds($ids) {
+    $result = [];
+    foreach ($ids as $id) {
+        $video = getVideoById($id);
+        if ($video) {
+            $result[] = $video;
+        }
+    }
+    return $result;
+}
+
+function saveVideos($videos) {
+    global $cache;
+    file_put_contents(VIDEOS_FILE, json_encode($videos, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+    $cache['videos'] = $videos;
+    $cache['videos_by_id'] = [];
+    foreach ($videos as $video) {
+        $cache['videos_by_id'][$video['id']] = $video;
+    }
+}
+
+function getVideosForArtist($artist) {
+    return getVideosByIds($artist['video_ids'] ?? []);
+}
+
+function getVideoReferences($video_id) {
+    $refs = ['artists' => [], 'landing' => [], 'roster_depts' => []];
+    $artists = getArtists();
+    $roster = getRoster();
+    
+    // Which artists have this video
+    foreach ($artists as $artist) {
+        if (in_array($video_id, $artist['video_ids'] ?? [])) {
+            $refs['artists'][] = $artist;
+        }
+    }
+    
+    // Which roster/department pages show this video (artist is in a roster section)
+    $depts_seen = [];
+    foreach ($refs['artists'] as $artist) {
+        foreach ($roster as $dept => $artist_ids) {
+            if (in_array($artist['id'], $artist_ids) && !in_array($dept, $depts_seen)) {
+                $depts_seen[] = $dept;
+            }
+        }
+    }
+    $refs['roster_depts'] = $depts_seen;
+    
+    // Landing page projects using this video
+    $landing = getLandingPageProjects();
+    foreach ($landing as $proj) {
+        if (($proj['video_id'] ?? '') === $video_id) {
+            $refs['landing'][] = $proj;
+        }
+    }
+    return $refs;
+}
+
+function linkVideoToArtist($video_id, $artist_id) {
+    $artists = getArtists();
+    foreach ($artists as &$artist) {
+        if ($artist['id'] === $artist_id) {
+            if (!in_array($video_id, $artist['video_ids'] ?? [])) {
+                $artist['video_ids'][] = $video_id;
+            }
+            break;
+        }
+    }
+    unset($artist);
+    return $artists;
+}
+
+function unlinkVideoFromArtist($video_id, $artist_id) {
+    $artists = getArtists();
+    foreach ($artists as &$artist) {
+        if ($artist['id'] === $artist_id) {
+            $artist['video_ids'] = array_values(array_filter($artist['video_ids'] ?? [], fn($id) => $id !== $video_id));
+            break;
+        }
+    }
+    unset($artist);
+    return $artists;
+}
+
+function addVideoToLanding($video_id, $title_override = '', $subtitle_override = '', $author = '') {
+    $landing = getLandingPageProjects();
+    foreach ($landing as $proj) {
+        if (($proj['video_id'] ?? '') === $video_id) {
+            return $landing;
+        }
+    }
+    $landing[] = [
+        'id' => uniqid('proj_'),
+        'video_id' => $video_id,
+        'image_class' => 'bgimage' . (count($landing) + 1),
+        'title_override' => $title_override,
+        'subtitle_override' => $subtitle_override,
+        'author' => $author,
+        'order' => count($landing),
+        'visible' => true
+    ];
+    return $landing;
+}
+
+function removeVideoFromLanding($video_id) {
+    $landing = getLandingPageProjects();
+    return array_values(array_filter($landing, fn($p) => ($p['video_id'] ?? '') !== $video_id));
 }
 
 // Get artists by roster category (OPTIMIZED - uses hash map instead of nested loops)
@@ -236,7 +373,9 @@ function clearCache() {
         'artists' => null,
         'roster' => null,
         'settings' => null,
-        'artists_by_id' => null
+        'artists_by_id' => null,
+        'videos' => null,
+        'videos_by_id' => null
     ];
 }
 
@@ -477,23 +616,8 @@ function restoreSyncBackup($timestamp) {
         copy($backup_path . 'index.php', __DIR__ . '/../index.php');
     }
     
-    // Restore work/index.php
-    if (file_exists($backup_path . 'work_index.php')) {
-        $dest = __DIR__ . '/../work/index.php';
-        if (!file_exists(__DIR__ . '/../work')) {
-            mkdir(__DIR__ . '/../work', 0755, true);
-        }
-        copy($backup_path . 'work_index.php', $dest);
-    }
-    
-    // Restore roster/index.php
-    if (file_exists($backup_path . 'roster_index.php')) {
-        $dest = __DIR__ . '/../roster/index.php';
-        if (!file_exists(__DIR__ . '/../roster')) {
-            mkdir(__DIR__ . '/../roster', 0755, true);
-        }
-        copy($backup_path . 'roster_index.php', $dest);
-    }
+    // PROTECTED: work/index.php is a V2 redirect — do NOT overwrite
+    // PROTECTED: roster/index.php is unused by V2 — do NOT overwrite
     
     // Restore category pages
     foreach (['edit.php', 'color.php', 'sound.php', 'vfx.php'] as $file) {
@@ -503,11 +627,13 @@ function restoreSyncBackup($timestamp) {
     }
     
     // Restore artist pages
+    // Restore artist pages from backup, but PROTECT V2 design files
+    $v2_protected = ['department.php', 'artist-page.php', 'style-v2.css', 'app-v2.js', 'index.php'];
     $artist_backup_dir = $backup_path . 'artists/';
     if (is_dir($artist_backup_dir)) {
         $files = scandir($artist_backup_dir);
         foreach ($files as $file) {
-            if (pathinfo($file, PATHINFO_EXTENSION) === 'php') {
+            if (pathinfo($file, PATHINFO_EXTENSION) === 'php' && !in_array($file, $v2_protected)) {
                 $source = $artist_backup_dir . $file;
                 $dest = __DIR__ . '/../roster/' . $file;
                 copy($source, $dest);

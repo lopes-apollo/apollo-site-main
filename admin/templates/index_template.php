@@ -95,7 +95,7 @@ usort($visible_projects, function($a, $b) { return ($a['order'] ?? 999) <=> ($b[
     <div class="menu" style="display:none;">
         <ul>
             <li>
-                <a href="work/">ROSTER</a>
+                <a href="/roster/department.php">ROSTER</a>
             </li>
             <li>
                 <a href="contact/">CONTACT</a>

@@ -10,11 +10,13 @@ usort($visible_artists, function($a, $b) {
     return ($a['order'] ?? 999) <=> ($b['order'] ?? 999);
 });
 
-function formatVideoLong($video_long) {
-    if (strpos($video_long, '<iframe') === false && strpos($video_long, 'http') === 0) {
-        return '<div style="width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;"><iframe src="' . htmlspecialchars($video_long) . '" name="SimianEmbed" scrolling="no" style="position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000" frameborder="0" allowFullScreen webkitAllowFullScreen></iframe></div>';
+if (!function_exists('formatVideoLong')) {
+    function formatVideoLong($video_long) {
+        if (strpos($video_long, '<iframe') === false && strpos($video_long, 'http') === 0) {
+            return '<div style="width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;"><iframe src="' . htmlspecialchars($video_long) . '" name="SimianEmbed" scrolling="no" style="position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000" frameborder="0" allowFullScreen webkitAllowFullScreen></iframe></div>';
+        }
+        return $video_long;
     }
-    return $video_long;
 }
 ?>
 <!DOCTYPE html>
@@ -93,7 +95,7 @@ function formatVideoLong($video_long) {
     	<h4 class="authorsNames" style="display:none;"></h4>
 	    <ul>
 	        <li>
-	            <a href="/work/">ROSTER</a>
+	            <a href="/roster/">ROSTER</a>
 	        </li>
 	        <li>
 	            <a href="/contact/">CONTACT</a>

@@ -70,11 +70,12 @@ header .logo a {
 header .menu ul li a {
     color: #fff;
     text-decoration: unset;
-    font-size: 26px;
-    font-weight: 400;
-    opacity: 1;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.8;
+    letter-spacing: 2px;
     transition: all 0.3s linear;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     font-family: newyork;
 }
 

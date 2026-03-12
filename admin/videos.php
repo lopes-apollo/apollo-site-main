@@ -39,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 }
             }
         }
-        saveArtists($artists);
-        $message = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> Video updated successfully!</div>';
+        savePendingChanges(['artists' => $artists]);
+        $message = '<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Video updated! Changes saved to pending. Go to <a href="sync.php">Sync</a> to apply.</div>';
         // Refresh data
         $artists = getArtists();
         // Rebuild all_videos array
@@ -69,7 +69,7 @@ function formatFileSize($bytes) {
 
 // Helper function to get file size if file exists
 function getVideoFileSize($file_path) {
-    $full_path = __DIR__ . '/../' . $file_path;
+    $full_path = __DIR__ . '/../roster/' . $file_path;
     if (file_exists($full_path)) {
         return filesize($full_path);
     }
@@ -127,7 +127,7 @@ foreach ($all_videos as $video) {
     if (empty($poster_path)) {
         $report['missing_thumbnails'][] = array_merge($video_info, ['issue' => 'No poster path set']);
     } else {
-        $full_poster_path = __DIR__ . '/../' . $poster_path;
+        $full_poster_path = __DIR__ . '/../roster/' . $poster_path;
         if (!file_exists($full_poster_path)) {
             $report['missing_thumbnails'][] = array_merge($video_info, ['issue' => 'Poster file not found: ' . $poster_path]);
         }
@@ -149,7 +149,7 @@ foreach ($all_videos as $video) {
     // Check for missing video files
     $video_path = $video['videoShort'] ?? '';
     if (!empty($video_path)) {
-        $full_video_path = __DIR__ . '/../' . $video_path;
+        $full_video_path = __DIR__ . '/../roster/' . $video_path;
         if (!file_exists($full_video_path)) {
             $report['missing_video_files'][] = array_merge($video_info, ['path' => $video_path]);
         }
@@ -171,7 +171,7 @@ $total_videos = count($all_videos);
 // Calculate total size of ALL MP4 files in roster/videos directories
 $video_dirs = [
     __DIR__ . '/../roster/videos',
-    __DIR__ . '/../roaster/videos'
+    __DIR__ . '/../roster/videos'
 ];
 
 $total_size = 0;
@@ -754,8 +754,8 @@ foreach ($video_dirs as $video_dir) {
         <div class="content-card">
             <div class="video-grid" id="videoGrid">
                 <?php foreach ($all_videos as $video): 
-                    $poster = !empty($video['poster']) ? '../' . $video['poster'] : '';
-                    $video_short = !empty($video['videoShort']) ? '../' . $video['videoShort'] : '';
+                    $poster = !empty($video['poster']) ? '../roster/' . $video['poster'] : '';
+                    $video_short = !empty($video['videoShort']) ? '../roster/' . $video['videoShort'] : '';
                     $category_label = CATEGORY_LABELS[$video['artist_category']] ?? $video['artist_category'];
                 ?>
                     <div class="video-card" 
@@ -854,8 +854,8 @@ foreach ($video_dirs as $video_dir) {
             const videoData = element.getAttribute('data-video-data');
             const video = JSON.parse(videoData);
             
-            const videoShort = video.videoShort ? '../' + video.videoShort : '';
-            const poster = video.poster ? '../' + video.poster : '';
+            const videoShort = video.videoShort ? '../roster/' + video.videoShort : '';
+            const poster = video.poster ? '../roster/' + video.poster : '';
             const categoryLabel = <?php echo json_encode(CATEGORY_LABELS); ?>;
             const categoryLabelText = categoryLabel[video.artist_category] || video.artist_category;
             
@@ -1095,7 +1095,7 @@ foreach ($video_dirs as $video_dir) {
                     if (videoPlaceholder) videoPlaceholder.remove();
                     const newVideo = document.createElement('video');
                     newVideo.id = 'modalPreviewVideoElement';
-                    newVideo.src = '../' + videoShort;
+                    newVideo.src = '../roster/' + videoShort;
                     newVideo.muted = true;
                     newVideo.loop = true;
                     newVideo.playsInline = true;
@@ -1107,7 +1107,7 @@ foreach ($video_dirs as $video_dir) {
                 } else {
                     // Update existing video
                     const currentSrc = videoEl.src;
-                    const newSrc = '../' + videoShort;
+                    const newSrc = '../roster/' + videoShort;
                     if (currentSrc !== new URL(newSrc, window.location.href).href) {
                         videoEl.src = newSrc;
                         videoEl.load();
@@ -1155,7 +1155,7 @@ foreach ($video_dirs as $video_dir) {
                 } else if (videoLong.includes('<iframe')) {
                     html = '<div id="modalPreviewFullVideo" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">' + videoLong + '</div>';
                 } else {
-                    html = '<div id="modalPreviewFullVideo" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"><video controls style="width: 100%; height: 100%; object-fit: cover;" src="../' + escapeHtml(videoLong) + '"></video></div>';
+                    html = '<div id="modalPreviewFullVideo" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"><video controls style="width: 100%; height: 100%; object-fit: cover;" src="../roster/' + escapeHtml(videoLong) + '"></video></div>';
                 }
                 
                 if (fullContainer) {
@@ -1187,7 +1187,7 @@ foreach ($video_dirs as $video_dir) {
             
             if (poster) {
                 if (thumbnailImg) {
-                    thumbnailImg.src = '../' + poster;
+                    thumbnailImg.src = '../roster/' + poster;
                     thumbnailImg.onerror = function() {
                         this.remove();
                         if (thumbnailContainer && !thumbnailPlaceholder) {
@@ -1205,7 +1205,7 @@ foreach ($video_dirs as $video_dir) {
                     if (thumbnailPlaceholder) thumbnailPlaceholder.remove();
                     const newImg = document.createElement('img');
                     newImg.id = 'modalPreviewThumbnailImg';
-                    newImg.src = '../' + poster;
+                    newImg.src = '../roster/' + poster;
                     newImg.alt = 'Thumbnail';
                     newImg.style.cssText = 'width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;';
                     newImg.onerror = function() {

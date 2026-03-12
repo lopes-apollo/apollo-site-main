@@ -93,9 +93,9 @@ foreach ($departments as $dept => $artists) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>roster | APOLLO</title>
-    <link rel="stylesheet" href="/roster-v2/style.css?v=1.0.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/roster-v2/style.css?v=2.0.0">
 </head>
 <body>
 
@@ -220,6 +220,6 @@ window.APOLLO_DATA = <?php echo json_encode($js_data, JSON_UNESCAPED_UNICODE); ?
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/roster-v2/app.js?v=1.0.0"></script>
+<script src="/roster-v2/app.js?v=2.0.0"></script>
 </body>
 </html>

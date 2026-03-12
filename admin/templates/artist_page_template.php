@@ -1,15 +1,16 @@
 <?php
 // Individual artist page template
-// $current_artist is set by sync.php
+// $current_artist is set by sync.php, $artists is available globally
 $artist_slug = strtolower(str_replace(' ', '-', $current_artist['name']));
-$category_artists = array_filter($artists, function($a) use ($current_artist) {
+$artist_category = strtoupper($current_artist['category'] ?? 'EDIT');
+
+$category_artists = array_values(array_filter($artists, function($a) use ($current_artist) {
     return ($a['category'] ?? '') === ($current_artist['category'] ?? '') && ($a['visible'] ?? true);
-});
+}));
 usort($category_artists, function($a, $b) {
     return ($a['order'] ?? 999) <=> ($b['order'] ?? 999);
 });
 
-// Find current artist index
 $current_index = 0;
 foreach ($category_artists as $idx => $a) {
     if ($a['id'] === $current_artist['id']) {
@@ -18,27 +19,85 @@ foreach ($category_artists as $idx => $a) {
     }
 }
 
-// Format video long URL
-function formatVideoLong($video_long) {
-    if (strpos($video_long, '<iframe') === false && strpos($video_long, 'http') === 0) {
-        return '<div style="width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;"><iframe src="' . htmlspecialchars($video_long) . '" name="SimianEmbed" scrolling="no" style="position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000" frameborder="0" allowFullScreen webkitAllowFullScreen></iframe></div>';
+$category_index_map = ['EDIT' => 0, 'COLOR' => 1, 'SOUND' => 2, 'VFX' => 3];
+$left_active_index = $category_index_map[$artist_category] ?? 0;
+
+$left_padding_map = [
+    0 => ['top' => '13rem', 'bottom' => '0'],
+    1 => ['top' => '7.3rem', 'bottom' => '0'],
+    2 => ['top' => '1.6rem', 'bottom' => '0'],
+    3 => ['top' => '0', 'bottom' => '4.1rem'],
+];
+$left_pad = $left_padding_map[$left_active_index];
+
+$right_padding_map = [
+    0 => ['top' => '13rem', 'bottom' => '0'],
+    1 => ['top' => '7.3rem', 'bottom' => '0'],
+    2 => ['top' => '1.6rem', 'bottom' => '0'],
+];
+$right_pad = $right_padding_map[$current_index] ?? ['top' => '13rem', 'bottom' => '0'];
+
+if (!function_exists('formatVideoLong')) {
+    function formatVideoLong($video_long) {
+        if (strpos($video_long, '<iframe') === false && strpos($video_long, 'http') === 0) {
+            return '<div style="width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;"><iframe src="' . htmlspecialchars($video_long) . '" name="SimianEmbed" scrolling="no" style="position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000" frameborder="0" allowFullScreen webkitAllowFullScreen></iframe></div>';
+        }
+        return $video_long;
     }
-    return $video_long;
 }
+
+$videos = $current_artist['videos'] ?? [];
+usort($videos, function($a, $b) {
+    return ($a['order'] ?? 999) <=> ($b['order'] ?? 999);
+});
+
+// Build video HTML once, reuse for container and infinite scroll
+ob_start();
+$first_video = true;
+foreach ($videos as $video):
+    $video_long = formatVideoLong($video['videoLong'] ?? '');
+    $video_class = $first_video ? ($artist_category . ' ' . $artist_slug) : '';
+    $first_video = false;
+    $video_name = $video['videoName'] ?? '';
+    $video_sub = $video['videoSubName'] ?? '';
+    $label = htmlspecialchars($video_name);
+    if ($video_sub) $label .= ' - ' . htmlspecialchars($video_sub);
+    $credit = ($video['hasCredit'] ?? false) ? 'yes' : 'no';
+    // Single-quote data-longVideo with raw HTML, only escape single quotes
+    $safe_long = str_replace("'", "&#39;", $video_long);
+    // Double-quote data-credits with raw HTML, only escape double quotes  
+    $safe_credits = str_replace('"', '&quot;', $video['credits'] ?? '');
+?>
+  <div class="video <?php echo $video_class; ?>" data-longVideo='<?php echo $safe_long; ?>' data-title="<?php echo htmlspecialchars($current_artist['name']); ?>" data-author="<?php echo $artist_category; ?>" data-prev1="<?php echo htmlspecialchars($video['previewImages'][0] ?? ''); ?>" data-prev2="<?php echo htmlspecialchars($video['previewImages'][1] ?? ''); ?>" data-prev3="<?php echo htmlspecialchars($video['previewImages'][2] ?? ''); ?>" data-prev4="<?php echo htmlspecialchars($video['previewImages'][3] ?? ''); ?>" data-prev5="<?php echo htmlspecialchars($video['previewImages'][4] ?? ''); ?>" data-prev6="<?php echo htmlspecialchars($video['previewImages'][5] ?? ''); ?>" data-videoName="<?php echo htmlspecialchars($video_name); ?>" data-videoSubName="<?php echo htmlspecialchars($video_sub); ?>" data-credit="<?php echo $credit; ?>" data-credits="<?php echo $safe_credits; ?>"><video poster="<?php echo htmlspecialchars($video['poster'] ?? ''); ?>" src="<?php echo htmlspecialchars($video['videoShort'] ?? ''); ?>" muted autoplay loop></video><label><?php echo $label; ?></label></div>
+    
+<?php endforeach;
+$video_block = ob_get_clean();
+
+// data-start for right sidebar uses incremental values starting at 44 for consistency
+$right_start_base = 44;
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>roster | APOLLO</title>
-  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
   <link rel="stylesheet" href="/roster/style.css?v=10.2.8"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    
+    div.editorsMain {
+        top: 100px;
+    }
+    div.editorsRightMain {
+        top: 30px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Preloader -->
   <div class="video-preloader" id="videoPreloader">
     <div class="preloader-content">
       <div class="preloader-spinner"></div>
@@ -53,7 +112,7 @@ function formatVideoLong($video_long) {
     	<h4 class="authorsNames" style="display:none;"></h4>
 	    <ul>
 	        <li>
-	            <a href="/work/">ROSTER</a>
+	            <a href="/roster/">ROSTER</a>
 	        </li>
 	        <li>
 	            <a href="/contact/">CONTACT</a>
@@ -62,47 +121,17 @@ function formatVideoLong($video_long) {
 	</div> 
       </div> 
     </header>
-  <div class="video-container">   
-    <?php 
-    $videos = $current_artist['videos'] ?? [];
-    usort($videos, function($a, $b) {
-        return ($a['order'] ?? 999) <=> ($b['order'] ?? 999);
-    });
-    $first_video = true;
-    foreach ($videos as $video): 
-        $video_long = formatVideoLong($video['videoLong'] ?? '');
-        $artist_class = $artist_slug;
-        $video_class = $first_video ? $artist_class : '';
-        $first_video = false;
-    ?>
-    <div class="video <?php echo $video_class; ?>" 
-         data-longVideo='<?php echo htmlspecialchars($video_long, ENT_QUOTES); ?>' 
-         data-title="<?php echo htmlspecialchars($current_artist['name']); ?>" 
-         data-author="<?php echo htmlspecialchars($current_artist['category'] ?? 'EDIT'); ?>" 
-         data-prev1="<?php echo htmlspecialchars($video['previewImages'][0] ?? ''); ?>" 
-         data-prev2="<?php echo htmlspecialchars($video['previewImages'][1] ?? ''); ?>" 
-         data-prev3="<?php echo htmlspecialchars($video['previewImages'][2] ?? ''); ?>" 
-         data-prev4="<?php echo htmlspecialchars($video['previewImages'][3] ?? ''); ?>" 
-         data-prev5="<?php echo htmlspecialchars($video['previewImages'][4] ?? ''); ?>" 
-         data-prev6="<?php echo htmlspecialchars($video['previewImages'][5] ?? ''); ?>" 
-         data-videoName="<?php echo htmlspecialchars($video['videoName']); ?>" 
-         data-videoSubName="<?php echo htmlspecialchars($video['videoSubName'] ?? ''); ?>" 
-         data-credit="<?php echo ($video['hasCredit'] ?? false) ? 'yes' : 'no'; ?>" 
-         data-credits="<?php echo htmlspecialchars($video['credits'] ?? '', ENT_QUOTES); ?>">
-        <video poster="<?php echo htmlspecialchars($video['poster'] ?? ''); ?>" 
-               src="<?php echo htmlspecialchars($video['videoShort']); ?>" 
-               muted autoplay loop></video>
-        <label><?php echo htmlspecialchars($video['videoName']); ?><?php if ($video['videoSubName']): ?> - <?php echo htmlspecialchars($video['videoSubName']); ?><?php endif; ?></label>
-    </div>
-    <?php endforeach; ?>
+  <div class="video-container">  
+  <?php echo $video_block; ?>
   </div> 
   
-  <div class="editorsMain editorsLeftMain" style="padding-top: 2rem;">
+  <div class="editorsMain editorsLeftMain" >
         <ul class="editorsLeft editors">
-            <li class="active" data-start=0><a href="/roster/edit">EDIT</a></li>
-            <li data-start=1><a href="/roster/color">COLOR</a></li>
-            <li data-start=2><a href="/roster/sound">SOUND</a></li>
-            <li data-start=3><a href="/roster/vfx">VFX</a></li>
+            <li <?php if ($left_active_index === 0): ?>class="active"<?php endif; ?> data-start=0><a href="/roster/edit">EDIT</a></li>
+            <li <?php if ($left_active_index === 1): ?>class="active"<?php endif; ?> data-start=1><a href="/roster/color">COLOR</a></li>
+            <li <?php if ($left_active_index === 2): ?>class="active"<?php endif; ?> data-start=2><a href="/roster/sound">SOUND</a></li>
+            <li <?php if ($left_active_index === 3): ?>class="active"<?php endif; ?> data-start=3><a href="/roster/vfx">VFX</a></li>
+            <li><a style="color:transparent;">Inner</a></li>
             <li><a style="color:transparent;">Inner</a></li>
             <li><a style="color:transparent;">Inner</a></li>
             <li><a style="color:transparent;">Inner</a></li>
@@ -111,24 +140,17 @@ function formatVideoLong($video_long) {
         </ul>
     </div>
     
-    <div class="editorsMain editorsRightMain" style="padding-top: 2rem;">
+    <div class="editorsMain editorsRightMain">
         <ul class="editorsRight editors EditorGroupUL">
             <?php foreach ($category_artists as $idx => $artist): ?>
-            <li <?php if ($idx === $current_index): ?>class="active"<?php endif; ?> data-start="<?php echo $idx; ?>">
-                <a href="/roster/<?php echo htmlspecialchars($artist['slug']); ?>"><?php echo htmlspecialchars($artist['name']); ?></a>
-            </li>
+            <li <?php if ($idx === $current_index): ?>class="active"<?php endif; ?> data-start=<?php echo $right_start_base + $idx; ?>><a href="/roster/<?php echo htmlspecialchars($artist['slug']); ?>"><?php echo htmlspecialchars($artist['name']); ?></a></li>
             <?php endforeach; ?>
             <li><a style="color:transparent;">Inner</a></li>
             <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
-            <li><a style="color:transparent;">Inner</a></li>
+            <li><a style="color:transparent;">Inner</a></li> 
         </ul>
     </div>
-    
-    <div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog"> 
+     <div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog"> 
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -165,7 +187,7 @@ function formatVideoLong($video_long) {
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script>
-        $(document).on('click','div.video-container div.video',function(){
+         $(document).on('click','div.video-container div.video',function(){
             var author = $(this).attr('data-author');
             var prev1 = $(this).attr('data-prev1');
             var prev2 = $(this).attr('data-prev2');
@@ -200,7 +222,11 @@ function formatVideoLong($video_long) {
             $('#videoModalPopup .video-placeholder').html('');
             if(credit=='yes'){
                 $('#videoModalPopup div.creditPopupVideo .video-placeholder').html(longVideo);
-                $('#videoModalPopup div.creditPopupVideo h3').text(title+' - '+subtitle);
+                if (subtitle!=''){
+                    $('#videoModalPopup div.creditPopupVideo h3').text(title+' - '+subtitle);
+                }else{
+                    $('#videoModalPopup div.creditPopupVideo h3').text(title);
+                }
                 $('#videoModalPopup div.creditPopupVideo div.rightSide').html(credits);
                 $('#videoModalPopup div.popupVideo').hide();
                 $('#videoModalPopup div.creditPopupVideo').show();
@@ -218,7 +244,7 @@ function formatVideoLong($video_long) {
         $('div#videoModalPopup').on('hidden.bs.modal', function () {
             $('#videoModalPopup .video-placeholder').html('');
         });
-
+        
         function showPreloader() {
             $('#videoPreloader').css('display', 'flex').removeClass('fade-out').addClass('fade-in');
         }
@@ -232,23 +258,30 @@ function formatVideoLong($video_long) {
 
         setTimeout(() => {
             $('div.editorsMain ul.editorsRight li').removeClass('active');
-            $('div.editorsMain ul.editorsRight li[data-start="<?php echo $current_index; ?>"]').addClass('active');
-            $('ul.editorsRight.editors.EditorGroupUL').animate({ scrollTop: 0 }, 0);
-            $('div.insideHeader div.menuRight h4.authorsNames').text('<?php echo htmlspecialchars($current_artist['name'], ENT_QUOTES); ?>');
-            $('div.editorsRightMain').css('padding-bottom', '4.1rem');
-            $('div.editorsLeftMain').css('padding-top', '13rem');
-            var firstVideo = $(".video-container div.video.<?php echo $artist_slug; ?>").first();
-            if (firstVideo.length) {
-                $("html, body").animate({
-                    scrollTop: firstVideo.offset().top-330
-                }, 2100, function() {
-                    hidePreloader();
-                });
-            } else {
-                hidePreloader();
+            $('div.editorsMain ul.editorsRight li[data-start="<?php echo $right_start_base + $current_index; ?>"]').addClass('active');
+            var $scrollArea = $('ul.editorsRight.editors.EditorGroupUL');
+            var $targetItem = $scrollArea.find('li.active');
+            if ($targetItem.length) {
+                var scrollTo = $targetItem.position().top + $scrollArea.scrollTop() - ($scrollArea.height() - $targetItem.height()) / 2;
+                $scrollArea.scrollTop(scrollTo);
             }
-        }, 300);
-        
+
+            var $scrollAreaLeft = $('ul.editorsLeft.editors');
+            var $targetItemLeft = $scrollAreaLeft.find('li.active');
+            if ($targetItemLeft.length) {
+                var scrollToLeft = $targetItemLeft.position().top + $scrollAreaLeft.scrollTop() - ($scrollAreaLeft.height() - $targetItemLeft.height()) / 2;
+                $scrollAreaLeft.scrollTop(scrollToLeft);
+            }
+            
+            $('div.editorsRightMain').css('padding-bottom', '<?php echo $right_pad['bottom']; ?>').css('padding-top', '<?php echo $right_pad['top']; ?>');
+            $('div.editorsLeftMain').css('padding-top', '<?php echo $left_pad['top']; ?>');
+            $('div.insideHeader div.menuRight h4.authorsNames').text('<?php echo htmlspecialchars($current_artist['name'], ENT_QUOTES); ?>');
+            $("html, body").animate({
+                scrollTop: $(".video-container div.video.<?php echo $artist_slug; ?>").offset().top-330 
+            }, 1500, function() {
+                hidePreloader();
+            });
+        }, 100);
         window.addEventListener("scroll", handleScroll);
         function handleScroll() {
             const viewportHeight = window.innerHeight;
@@ -260,18 +293,32 @@ function formatVideoLong($video_long) {
                 const opacity = Math.max(1.3 - distanceFromCenter / viewportHeight, 0.5);
                 video.style.transform = `scale(${scale})`;
                 video.style.opacity = opacity;
+                
             });
         }
-        
+    // });
     document.addEventListener("DOMContentLoaded", function(event){
-        document.querySelectorAll('div.video video').forEach(function(v){
-            v.setAttribute('playsinline','');
-            v.setAttribute('webkit-playsinline','');
-            v.muted = true;
+        var videoContainer = document.querySelector('.video-container');
+        var videoHTML = `
+       <?php echo $video_block; ?>
+                `;
+        videoContainer.insertAdjacentHTML("afterbegin", videoHTML);
+        window.addEventListener('scroll', () => {
+            var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            var scrolled = window.scrollY;
+            if (Math.ceil(scrolled) >= scrollable) {
+                videoContainer.insertAdjacentHTML('beforeend', videoHTML);
+            }
+            if (scrolled === 0) {
+                const oldHeight = videoContainer.offsetHeight;
+                videoContainer.insertAdjacentHTML("afterbegin", videoHTML);
+                window.scrollTo(0, videoContainer.offsetHeight);
+                const newHeight = videoContainer.offsetHeight;
+                window.scrollTo({ top: newHeight - oldHeight, behavior: 'instant' });
+            }
         });
     });
-  </script>
-  <script>
+
     $(document).ready(function () {
         var maxWidth = 0;
         $('ul.editorsRight.editors li[data-start]').each(function() {
@@ -287,152 +334,87 @@ function formatVideoLong($video_long) {
         });
         $('ul.editorsLeft.editors li[data-start]').width(maxWidth / 2);
 
-        function updateOpacityBasedOnDistance($scrollArea) {
-            if (!$scrollArea || $scrollArea.length === 0) return;
-            
-            var $items = $scrollArea.children('li[data-start]');
-            if ($items.length === 0) return;
-            
-            var scrollAreaHeight = $scrollArea.height();
-            var scrollTop = $scrollArea.scrollTop();
-            var centerY = scrollAreaHeight / 2; // Center of visible area
-            var maxDistance = scrollAreaHeight / 2; // Maximum distance for opacity calculation
-            
-            $items.each(function() {
-                var $item = $(this);
-                var itemOffset = $item.position().top; // Position relative to scroll container
-                var itemHeight = $item.outerHeight();
-                var itemCenterY = itemOffset + (itemHeight / 2);
-                
-                // Calculate distance from center line
-                var distanceFromCenter = Math.abs(itemCenterY - centerY);
-                
-                // Calculate opacity: 1.0 at center, decreasing as distance increases
-                // Using a smooth curve for better visual effect
-                var normalizedDistance = Math.min(distanceFromCenter / maxDistance, 1);
-                var opacity = 1 - (normalizedDistance * 0.4); // Fade from 1.0 to 0.6
-                opacity = Math.max(opacity, 0.6); // Minimum opacity of 0.6
-                
-                $item.find('a').css('opacity', opacity);
-            });
-        }
-        
         function setupScrollableList(selector) {
             var $scrollArea = $(selector);
-            if ($scrollArea.length === 0) {
-                console.log('Scroll area not found:', selector);
-                return;
-            }
+            if ($scrollArea.length === 0) return;
+
             var $items = $scrollArea.children('li[data-start]');
-            if ($items.length === 0) {
-                console.log('No items with data-start found in:', selector);
-                return;
-            }
-            
-            // Ensure the scroll area can scroll by adding padding if needed
-            var scrollAreaHeight = $scrollArea.height();
-            var totalItemsHeight = 0;
-            $items.each(function() {
-                totalItemsHeight += $(this).outerHeight(true);
-            });
-            
-            // Add padding to ensure scrolling is possible
-            if (totalItemsHeight < scrollAreaHeight) {
-                var paddingNeeded = (scrollAreaHeight - totalItemsHeight) / 2;
-                $scrollArea.css({
-                    'padding-top': paddingNeeded + 'px',
-                    'padding-bottom': paddingNeeded + 'px'
-                });
-            }
-            
             var currentIndex = $items.index($scrollArea.find('li.active'));
             if (currentIndex === -1) currentIndex = 0;
             var isScrolling = false;
         
-            // Initial opacity update
-            updateOpacityBasedOnDistance($scrollArea);
-            
-            // Update opacity on scroll
-            $scrollArea.on('scroll', function() {
-                updateOpacityBasedOnDistance($scrollArea);
-            });
-        
-            // Attach wheel event to both the scroll area and its parent container
-            var $parentContainer = $scrollArea.closest('.editorsMain');
-            
-            function handleWheel(e) {
-                // Check if mouse is over the scroll area
-                var rect = $scrollArea[0].getBoundingClientRect();
-                var mouseX = e.originalEvent.clientX;
-                var mouseY = e.originalEvent.clientY;
-                
-                // Only handle if mouse is over the panel
-                if (!(mouseX >= rect.left && mouseX <= rect.right && 
-                      mouseY >= rect.top && mouseY <= rect.bottom)) {
-                    // Mouse is not over the panel, allow normal scrolling
+            $scrollArea.on('wheel', function (e) {
+                if ($scrollArea.get(0).scrollHeight <= $scrollArea.get(0).clientHeight) {
+                    e.preventDefault();
                     return;
                 }
-                
-                // Prevent default scrolling for this panel
+
                 e.preventDefault();
-                e.stopPropagation();
                 
                 if (isScrolling) return;
                 isScrolling = true;
-        
+    
                 if (e.originalEvent.deltaY > 0) {
-                    // Scroll down - move to next item
                     if (currentIndex < $items.length - 1) {
                         currentIndex++;
                     }
                 } else {
-                    // Scroll up - move to previous item
                     if (currentIndex > 0) {
                         currentIndex--;
                     }
                 }
-        
+    
                 var $targetItem = $items.eq(currentIndex);
-                if (selector === 'ul.editorsRight.editors' || selector.indexOf('editorsRight') !== -1) {
-                    // Right panel - artist names
-                    var editorName = $targetItem.find('a').text();
-                    $items.removeClass('active').removeClass('scrollActive');
-                    $targetItem.addClass('active').addClass('scrollActive');
-                } else if (selector === 'ul.editorsLeft.editors' || selector.indexOf('editorsLeft') !== -1) {
-                    // Left panel - categories (EDIT, COLOR, SOUND, VFX)
-                    $items.removeClass('active').removeClass('scrollActive');
-                    $targetItem.addClass('active').addClass('scrollActive');
-                }
+
+                if (selector === 'ul.editorsLeft.editors') {
+                        $items.removeClass('active').removeClass('scrollActive');
+                        $targetItem.addClass('active').addClass('scrollActive');
+
+                        $('div.editorsLeftMain').removeClass('padding-0 padding-1 padding-2 padding-3');
+                        
+                        if (currentIndex === 0) {
+                            $('div.editorsLeftMain').css('padding-bottom', '0').css('padding-top', '13rem');
+                        } else if (currentIndex === 1) {
+                            $('div.editorsLeftMain').css({
+                                'padding-top': '7.3rem',
+                                'padding-bottom': '0'
+                            });
+                        } else if (currentIndex === 2) {
+                            $('div.editorsLeftMain').css({
+                                'padding-top': '1.6rem',
+                                'padding-bottom': '0'
+                            });
+                        } else if (currentIndex === 3) {
+                            $('div.editorsLeftMain').css({
+                                'padding-top': '0',
+                                'padding-bottom': '4.1rem'
+                            });
+                        }
+                    }
                 
                 if ($targetItem.length > 0) {
-                    // Calculate scroll position to center the item
-                    var itemOffset = $targetItem.position().top;
-                    var scrollAreaHeight = $scrollArea.height();
-                    var itemHeight = $targetItem.outerHeight();
-                    var scrollTo = itemOffset + $scrollArea.scrollTop() - (scrollAreaHeight / 2) + (itemHeight / 2);
+                    var scrollTo = $targetItem.position().top + $scrollArea.scrollTop() - ($scrollArea.height() - $targetItem.height()) / 2;
                     
-                    $scrollArea.stop().animate({ scrollTop: scrollTo }, 300, function() {
+                    $scrollArea.stop().scrollTop(scrollTo);
+                    
+                    setTimeout(function () {
                         isScrolling = false;
-                        updateOpacityBasedOnDistance($scrollArea);
-                    });
+                    }, 200);
                 } else {
                     isScrolling = false;
                 }
-            }
-            
-            // Attach to both the scroll area and parent for better detection
-            $scrollArea.on('wheel', handleWheel);
-            $parentContainer.on('wheel', handleWheel);
+            });
         }
-
-        setupScrollableList('ul.editorsRight.editors');
         setupScrollableList('ul.editorsLeft.editors');
-        
-        // Initial opacity update after a short delay to ensure layout is complete
-        setTimeout(function() {
-            updateOpacityBasedOnDistance($('ul.editorsRight.editors'));
-            updateOpacityBasedOnDistance($('ul.editorsLeft.editors'));
-        }, 100);
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('div.video video').forEach(function(v){
+        v.setAttribute('playsinline','');
+        v.setAttribute('webkit-playsinline','');
+        v.muted = true;
+      });
     });
   </script>
 </body>
