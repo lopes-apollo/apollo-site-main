@@ -189,50 +189,59 @@
 
         $(document).on('click', cardSelector, function() {
             var $card = $(this);
-            var simianUrl = $card.attr('data-simian-url');
-            var videoName = $card.attr('data-video-name');
-            var videoSub  = $card.attr('data-video-subname');
+            var simianUrl = $card.attr('data-simian-url') || '';
+            var embedHtml = $card.attr('data-embed') || '';
+            var videoName = $card.attr('data-video-name') || '';
+            var videoSub  = $card.attr('data-video-subname') || '';
             var hasCredit = $card.attr('data-has-credit');
-            var credits   = $card.attr('data-credits');
-            var prev1 = $card.attr('data-prev1');
-            var prev2 = $card.attr('data-prev2');
-            var prev3 = $card.attr('data-prev3');
-            var prev4 = $card.attr('data-prev4');
-            var prev5 = $card.attr('data-prev5');
-            var prev6 = $card.attr('data-prev6');
+            var credits   = $card.attr('data-credits') || '';
+            var aspect    = $card.attr('data-aspect') || 'landscape';
 
-            $('#videoModal iframe').attr('src', '');
-            $('#videoModal .modal-screenshots').html('');
-
-            [prev1, prev2, prev3, prev4, prev5, prev6].forEach(function(src, i) {
-                if (src) {
-                    $('#videoModal .modal-screenshots').append(
-                        '<li class="preview' + (i + 1) + '"><img src="' + src + '"></li>'
-                    );
-                }
-            });
-
-            var title = videoSub ? videoName + ' - ' + videoSub : videoName;
-
-            if (hasCredit === 'yes' && credits) {
-                $('#videoModal .modal-credit iframe').attr('src', simianUrl);
-                $('#videoModal .modal-credit .modal-title-main').text(title);
-                $('#videoModal .modal-credit .credit-right').html(credits);
-                $('#videoModal .modal-simple').hide();
-                $('#videoModal .modal-credit').show();
-            } else {
-                $('#videoModal .modal-simple iframe').attr('src', simianUrl);
-                $('#videoModal .modal-simple .modal-title-main').text(videoName);
-                $('#videoModal .modal-simple .modal-title-sub').text(videoSub);
-                $('#videoModal .modal-credit').hide();
-                $('#videoModal .modal-simple').show();
+            var $modal = $('#videoModal');
+            $modal.removeClass('modal-portrait');
+            if (aspect === 'portrait') {
+                $modal.addClass('modal-portrait');
             }
 
-            $('#videoModal').modal('show');
+            $modal.find('.vmodal-player').html('');
+            $modal.find('.vmodal-screenshots').html('');
+
+            var displayTitle = videoSub ? videoName + ' \u2014 ' + videoSub : videoName;
+            $modal.find('.vmodal-title').text(displayTitle);
+
+            var $tags = $modal.find('.vmodal-tags').empty();
+            var artistName = $card.attr('data-artist-name') || '';
+            if (artistName) {
+                $tags.append('<span class="vmodal-tag">' + artistName + '</span>');
+            }
+
+            if (embedHtml && embedHtml.indexOf('<') !== -1) {
+                $modal.find('.vmodal-player').html(embedHtml);
+            } else if (simianUrl) {
+                $modal.find('.vmodal-player').html(
+                    '<div style="width:100%;height:0;position:relative;padding-bottom:56.25%;"><iframe src="' + simianUrl + '" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay" allowfullscreen></iframe></div>'
+                );
+            }
+
+            if (hasCredit === 'yes' && credits) {
+                $modal.find('.vmodal-credits-content').html(credits);
+                $modal.find('.vmodal-credits-bar').show();
+            } else {
+                $modal.find('.vmodal-credits-bar').hide();
+            }
+
+            for (var i = 1; i <= 6; i++) {
+                var src = $card.attr('data-prev' + i);
+                if (src) {
+                    $modal.find('.vmodal-screenshots').append('<li><img src="' + src + '" loading="lazy"></li>');
+                }
+            }
+
+            $modal.modal('show');
         });
 
         $('#videoModal').on('hidden.bs.modal', function() {
-            $('#videoModal iframe').attr('src', '');
+            $('#videoModal .vmodal-player').html('');
         });
     }
 

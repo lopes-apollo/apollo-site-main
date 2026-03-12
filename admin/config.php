@@ -17,6 +17,7 @@ define('SETTINGS_FILE', DATA_DIR . 'settings.json');
 define('PENDING_CHANGES_FILE', DATA_DIR . 'pending_changes.json'); // Pending changes waiting for sync
 define('CRM_PROJECTS_FILE', DATA_DIR . 'crm_projects.json'); // CRM project management
 define('VIDEOS_FILE', DATA_DIR . 'videos.json'); // Centralized video pool
+define('ROSTER_FEATURED_FILE', DATA_DIR . 'roster_featured.json'); // Hand-picked videos for roster page
 define('CRM_UPLOADS_DIR', __DIR__ . '/../data/crm_uploads/'); // Directory for CRM file uploads
 
 // Admin credentials
@@ -70,6 +71,14 @@ function initDataFiles() {
     if (!file_exists(VIDEOS_FILE)) {
         file_put_contents(VIDEOS_FILE, json_encode([], JSON_PRETTY_PRINT));
     }
+    if (!file_exists(ROSTER_FEATURED_FILE)) {
+        file_put_contents(ROSTER_FEATURED_FILE, json_encode([
+            'EDIT' => [],
+            'COLOR' => [],
+            'SOUND' => [],
+            'VFX' => []
+        ], JSON_PRETTY_PRINT));
+    }
     if (!file_exists(CRM_PROJECTS_FILE)) {
         file_put_contents(CRM_PROJECTS_FILE, json_encode([], JSON_PRETTY_PRINT));
     }
@@ -103,7 +112,8 @@ static $cache = [
     'settings' => null,
     'artists_by_id' => null,
     'videos' => null,
-    'videos_by_id' => null
+    'videos_by_id' => null,
+    'roster_featured' => null
 ];
 
 // Helper functions with caching
@@ -165,7 +175,24 @@ function getRoster() {
 function saveRoster($roster) {
     global $cache;
     file_put_contents(ROSTER_FILE, json_encode($roster, JSON_PRETTY_PRINT));
-    $cache['roster'] = $roster; // Update cache
+    $cache['roster'] = $roster;
+}
+
+function getRosterFeatured() {
+    global $cache;
+    if ($cache['roster_featured'] === null) {
+        $data = file_get_contents(ROSTER_FEATURED_FILE);
+        $cache['roster_featured'] = json_decode($data, true) ?: [
+            'EDIT' => [], 'COLOR' => [], 'SOUND' => [], 'VFX' => []
+        ];
+    }
+    return $cache['roster_featured'];
+}
+
+function saveRosterFeatured($data) {
+    global $cache;
+    file_put_contents(ROSTER_FEATURED_FILE, json_encode($data, JSON_PRETTY_PRINT));
+    $cache['roster_featured'] = $data;
 }
 
 // Video Pool functions
@@ -216,9 +243,10 @@ function getVideosForArtist($artist) {
 }
 
 function getVideoReferences($video_id) {
-    $refs = ['artists' => [], 'landing' => [], 'roster_depts' => []];
+    $refs = ['artists' => [], 'landing' => [], 'roster_depts' => [], 'roster_featured_depts' => []];
     $artists = getArtists();
     $roster = getRoster();
+    $featured = getRosterFeatured();
     
     // Which artists have this video
     foreach ($artists as $artist) {
@@ -238,6 +266,13 @@ function getVideoReferences($video_id) {
     }
     $refs['roster_depts'] = $depts_seen;
     
+    // Roster featured departments using this video
+    foreach ($featured as $dept => $vid_ids) {
+        if (in_array($video_id, $vid_ids)) {
+            $refs['roster_featured_depts'][] = $dept;
+        }
+    }
+
     // Landing page projects using this video
     $landing = getLandingPageProjects();
     foreach ($landing as $proj) {

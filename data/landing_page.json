@@ -1,15 +1,5 @@
 [
     {
-        "id": "proj_6965e95a52a67",
-        "video_id": "vid_053be97721a8",
-        "image_class": "bgimage8",
-        "title_override": "Travis Scott x Jumpman",
-        "subtitle_override": "TREXX",
-        "author": "EDIT,SOUND,VFX",
-        "order": 0,
-        "visible": true
-    },
-    {
         "id": "proj_6965e95a52a72",
         "video_id": "vid_0503179d2d39",
         "image_class": "bgimage14",
@@ -160,12 +150,12 @@
         "visible": true
     },
     {
-        "id": "proj_6965e95a52abc",
-        "video_id": "vid_9dbe2556c562",
+        "id": "proj_69b24ad046d2e",
+        "video_id": "vid_da7cdddf8c47",
         "image_class": "bgimage16",
-        "title_override": "David Kushner",
-        "subtitle_override": "Sweet Oblivion",
-        "author": "VFX",
+        "title_override": "Travis Scott x Jumpan",
+        "subtitle_override": "TREXX",
+        "author": "",
         "order": 16,
         "visible": true
     }

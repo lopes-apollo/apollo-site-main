@@ -8,12 +8,11 @@ $dept_roles = [
     'VFX'   => 'VFX Artist',
 ];
 
-$artists_json = file_get_contents(__DIR__ . '/../data/artists.json');
-$roster_json  = file_get_contents(__DIR__ . '/../data/roster.json');
-$videos_json  = file_get_contents(__DIR__ . '/../data/videos.json');
-$artists_data = json_decode($artists_json, true) ?: [];
-$roster_data  = json_decode($roster_json, true) ?: [];
-$videos_pool  = json_decode($videos_json, true) ?: [];
+$artists_data    = json_decode(file_get_contents(__DIR__ . '/../data/artists.json'), true) ?: [];
+$roster_data     = json_decode(file_get_contents(__DIR__ . '/../data/roster.json'), true) ?: [];
+$videos_pool     = json_decode(file_get_contents(__DIR__ . '/../data/videos.json'), true) ?: [];
+$roster_featured_path = __DIR__ . '/../data/roster_featured.json';
+$roster_featured = file_exists($roster_featured_path) ? (json_decode(file_get_contents($roster_featured_path), true) ?: []) : [];
 
 $videos_by_id = [];
 foreach ($videos_pool as $vp) {
@@ -68,28 +67,73 @@ foreach ($valid_depts as $dept) {
         return ($a['order'] ?? 0) - ($b['order'] ?? 0);
     });
 
+    $featured_ids = $roster_featured[$dept] ?? [];
     $videos = [];
-    foreach ($dept_artists as $artist) {
-        $video_ids = $artist['video_ids'] ?? [];
-        $seen = [];
-        foreach ($video_ids as $vid) {
+    $seen = [];
+
+    if (!empty($featured_ids)) {
+        foreach ($featured_ids as $vid) {
             if (!isset($videos_by_id[$vid])) continue;
             $pool_video = $videos_by_id[$vid];
-            $v = [
-                'videoName'     => $pool_video['title'] ?? '',
-                'videoSubName'  => $pool_video['subtitle'] ?? '',
-                'videoShort'    => $pool_video['videoShort'] ?? '',
-                'poster'        => $pool_video['poster'] ?? '',
-                'hasCredit'     => $pool_video['hasCredit'] ?? false,
-                'credits'       => $pool_video['credits'] ?? '',
-                'previewImages' => $pool_video['previewImages'] ?? [],
-            ];
-            $path = $v['videoShort'];
+            $vlong = $pool_video['videoLong'] ?? '';
+            $aspect = 'landscape';
+            if (preg_match('/padding-bottom:([\d.]+)%/', $vlong, $_pb) && floatval($_pb[1]) > 100) {
+                $aspect = 'portrait';
+            }
+            $artist_name = '';
+            $artist_slug = '';
+            foreach ($artists_data as $a) {
+                if (in_array($vid, $a['video_ids'] ?? [])) {
+                    $artist_name = $a['name'];
+                    $artist_slug = $a['slug'];
+                    break;
+                }
+            }
+            $path = $pool_video['videoShort'] ?? '';
             if ($path && !isset($seen[$path])) {
                 $seen[$path] = true;
-                $v['_artist_name'] = $artist['name'];
-                $v['_artist_slug'] = $artist['slug'];
-                $videos[] = $v;
+                $videos[] = [
+                    'videoName'     => $pool_video['title'] ?? '',
+                    'videoSubName'  => $pool_video['subtitle'] ?? '',
+                    'videoShort'    => $path,
+                    'poster'        => $pool_video['poster'] ?? '',
+                    'hasCredit'     => $pool_video['hasCredit'] ?? false,
+                    'credits'       => $pool_video['credits'] ?? '',
+                    'previewImages' => $pool_video['previewImages'] ?? [],
+                    '_aspect'       => $aspect,
+                    '_videoLong'    => $vlong,
+                    '_artist_name'  => $artist_name,
+                    '_artist_slug'  => $artist_slug,
+                ];
+            }
+        }
+    } else {
+        foreach ($dept_artists as $artist) {
+            foreach ($artist['video_ids'] ?? [] as $vid) {
+                if (!isset($videos_by_id[$vid])) continue;
+                $pool_video = $videos_by_id[$vid];
+                $vlong = $pool_video['videoLong'] ?? '';
+                $aspect = 'landscape';
+                if (preg_match('/padding-bottom:([\d.]+)%/', $vlong, $_pb) && floatval($_pb[1]) > 100) {
+                    $aspect = 'portrait';
+                }
+                $path = $pool_video['videoShort'] ?? '';
+                if ($path && !isset($seen[$path])) {
+                    $seen[$path] = true;
+                    $videos[] = [
+                        'videoName'     => $pool_video['title'] ?? '',
+                        'videoSubName'  => $pool_video['subtitle'] ?? '',
+                        'videoShort'    => $path,
+                        'poster'        => $pool_video['poster'] ?? '',
+                        'hasCredit'     => $pool_video['hasCredit'] ?? false,
+                        'credits'       => $pool_video['credits'] ?? '',
+                        'previewImages' => $pool_video['previewImages'] ?? [],
+                        '_aspect'       => $aspect,
+                        '_videoLong'    => $vlong,
+                        '_artist_name'  => $artist['name'],
+                        '_artist_slug'  => $artist['slug'],
+                    ];
+                }
             }
         }
     }
@@ -142,7 +186,7 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
     <title>ROSTER | APOLLO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/roster/style-v2.css?v=7.1.0">
+    <link rel="stylesheet" href="/roster/style-v2.css?v=8.0.0">
 </head>
 <body class="page-department" data-start-dept="<?php echo $start_dept; ?>">
 
@@ -224,7 +268,9 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
                  data-prev3="<?php echo htmlspecialchars($preview_images[2] ?? ''); ?>"
                  data-prev4="<?php echo htmlspecialchars($preview_images[3] ?? ''); ?>"
                  data-prev5="<?php echo htmlspecialchars($preview_images[4] ?? ''); ?>"
-                 data-prev6="<?php echo htmlspecialchars($preview_images[5] ?? ''); ?>">
+                 data-prev6="<?php echo htmlspecialchars($preview_images[5] ?? ''); ?>"
+                 data-aspect="<?php echo $video['_aspect'] ?? 'landscape'; ?>"
+                 data-embed="<?php echo htmlspecialchars($video['_videoLong'] ?? ''); ?>">
                 <video poster="/roster/<?php echo htmlspecialchars($poster); ?>"
                        <?php if ($global_card_index <= 8): ?>src="/roster/<?php echo htmlspecialchars($short_vid); ?>"<?php endif; ?>
                        data-src="/roster/<?php echo htmlspecialchars($short_vid); ?>"
@@ -244,27 +290,19 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
 <div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <button type="button" class="vmodal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1L19 19M19 1L1 19" stroke="#fff" stroke-width="1.5"/></svg>
+            </button>
             <div class="modal-body">
-                <div class="modal-video-wrap">
-                    <div class="modal-simple" style="display:none;">
-                        <iframe src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-                        <h3 class="modal-title-main"></h3>
-                        <h4 class="modal-title-sub"></h4>
-                    </div>
-                    <div class="modal-credit" style="display:none;">
-                        <div class="credit-layout">
-                            <div class="credit-left">
-                                <h3 class="modal-title-main"></h3>
-                                <iframe src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-                            </div>
-                            <div class="credit-right"></div>
-                        </div>
-                    </div>
+                <div class="vmodal-info">
+                    <h2 class="vmodal-title"></h2>
+                    <div class="vmodal-tags"></div>
                 </div>
-                <ul class="modal-screenshots"></ul>
+                <div class="vmodal-player"></div>
+                <div class="vmodal-credits-bar" style="display:none;">
+                    <div class="vmodal-credits-content"></div>
+                </div>
+                <ul class="vmodal-screenshots"></ul>
             </div>
         </div>
     </div>
@@ -272,6 +310,6 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/roster/app-v2.js?v=7.0.0"></script>
+<script src="/roster/app-v2.js?v=8.0.0"></script>
 </body>
 </html>

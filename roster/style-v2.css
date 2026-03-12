@@ -333,164 +333,172 @@ header {
 
 #videoModal .modal-dialog {
     margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
     display: flex;
-    align-items: center;
-    max-width: 100%;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 0 40px;
 }
 
 #videoModal .modal-content {
     background: transparent;
     border: none;
     position: relative;
-}
-
-#videoModal .modal-header {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    justify-content: center;
-    padding: 0;
-    border: none;
-    z-index: 999;
-}
-
-#videoModal .btn-close {
-    margin: 0;
-    padding: 8px 16px;
-    filter: none;
-    opacity: 1;
-    font-size: 16.5px;
-    font-weight: 400;
-    z-index: 9;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    position: absolute;
-    right: 70px;
-    top: 10px;
-    color: white;
-    font-family: ltsuperiormono_medium, monospace;
-    appearance: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-#videoModal .btn-close::before {
-    content: "Close";
+    width: 100%;
+    overflow: visible;
 }
 
 #videoModal .modal-body {
-    padding: 70px 0 0;
+    padding: 60px 0 80px;
+    overflow: visible;
 }
 
-#videoModal .modal-video-wrap {
-    position: relative;
-    width: 100%;
+#videoModal .vmodal-close {
+    position: fixed;
+    top: 28px;
+    right: 36px;
+    z-index: 10;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 8px;
+}
+
+#videoModal .vmodal-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Title block */
+#videoModal .vmodal-info {
     text-align: center;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-/* Simple modal layout */
-.modal-simple iframe {
-    width: 100% !important;
-    background: #000;
-    height: 500px;
-    max-width: 900px;
-}
-
-.modal-simple h3 {
-    font-family: ltsuperiormono_medium, monospace;
-    color: #fff;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 25px 0 15px;
-}
-
-.modal-simple h4 {
-    font-family: ltsuperiormono_medium, monospace;
-    color: #fff;
-    font-weight: 400;
-    font-size: 20px;
-    margin: 0 0 12px;
-}
-
-/* Credit modal layout */
-.credit-layout {
-    display: flex;
-    align-items: center;
-    padding: 0 3%;
-}
-
-.credit-left {
-    text-align: left;
-    width: 90%;
-    padding-right: 0;
-}
-
-.credit-left h3 {
+#videoModal .vmodal-title {
     font-family: newyork, serif;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #fff;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+}
+
+#videoModal .vmodal-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#videoModal .vmodal-tag {
+    font-family: ltsuperiormono_medium, monospace;
+    font-size: 10px;
     letter-spacing: 2px;
-    margin: 0 0 10px;
-    color: #fff;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 5px 14px;
 }
 
-.credit-left iframe {
-    width: 100% !important;
-    background: #000;
-    height: 500px;
-    max-width: 1000px;
-}
-
-.credit-right {
-    width: 54%;
-    text-align: left;
-    font-family: ltsuperiormono_medium, monospace;
-    color: #fff;
-    padding-left: 2%;
-}
-
-.credit-right h3 {
-    font-family: ltsuperiormono_medium, monospace;
-    color: #fff;
-    margin-bottom: 18px;
-}
-
-.credit-right a {
-    margin-bottom: 8px;
-    display: inline-block;
-    color: #fff;
-    font-weight: 400;
-}
-
-/* Modal screenshots */
-.modal-screenshots {
-    padding: 0;
-    margin: 0;
-    display: block;
-    list-style: none;
-}
-
-.modal-screenshots li {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-    margin: 0;
-    padding: 0 10px 20px;
-}
-
-.modal-screenshots li:nth-child(even) {
-    text-align: right;
-}
-
-.modal-screenshots li img {
+/* Video player — embed code provides its own responsive wrapper */
+#videoModal .vmodal-player {
     width: 100%;
-    height: 550px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#videoModal .vmodal-player iframe {
+    border: none !important;
+}
+
+/* Credits bar */
+#videoModal .vmodal-credits-bar {
+    max-width: 960px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 32px 0 0;
+    margin-top: 32px;
+}
+
+#videoModal .vmodal-credits-content {
+    font-family: ltsuperiormono_medium, monospace;
+    font-size: 13px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.5px;
+    columns: 2;
+    column-gap: 60px;
+}
+
+#videoModal .vmodal-credits-content h3 {
+    font-family: newyork, serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    break-after: avoid;
+}
+
+#videoModal .vmodal-credits-content b {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+#videoModal .vmodal-credits-content a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#videoModal .vmodal-credits-content a:hover {
+    color: #fff;
+}
+
+/* Screenshots */
+#videoModal .vmodal-screenshots {
+    list-style: none;
+    padding: 0;
+    margin: 48px auto 0;
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+#videoModal .vmodal-screenshots li img {
+    width: 100%;
+    height: 360px;
     object-fit: cover;
-    margin: 0;
+    display: block;
+}
+
+/* ── Portrait Video Modal ── */
+#videoModal.modal-portrait .modal-dialog {
+    max-width: 500px;
+}
+
+#videoModal.modal-portrait .vmodal-player {
+    max-width: 400px;
+}
+
+#videoModal.modal-portrait .vmodal-credits-bar {
+    max-width: 400px;
+}
+
+#videoModal.modal-portrait .vmodal-credits-content {
+    columns: 1;
+}
+
+#videoModal.modal-portrait .vmodal-screenshots {
+    max-width: 400px;
+    grid-template-columns: 1fr;
 }
 
 /* ── Department Page Header ── */
@@ -914,37 +922,38 @@ header {
         flex-direction: column;
     }
 
-    .credit-left {
-        width: 100%;
-        padding-right: 0;
+    #videoModal .modal-dialog {
+        padding: 0 16px;
     }
 
-    .credit-right {
-        width: 100%;
+    #videoModal .vmodal-close {
+        top: 16px;
+        right: 16px;
     }
 
-    .credit-left iframe,
-    .modal-simple iframe {
-        height: 100%;
-        min-height: 220px;
+    #videoModal .vmodal-title {
+        font-size: 22px;
+        letter-spacing: 2px;
     }
 
-    .modal-screenshots li {
-        display: block;
-        width: 100%;
+    #videoModal .vmodal-tag {
+        font-size: 9px;
+        padding: 4px 10px;
     }
 
-    .modal-screenshots li img {
-        height: 100%;
-        width: 100%;
+    #videoModal .vmodal-credits-content {
+        columns: 1;
+        font-size: 12px;
     }
 
-    #videoModal .btn-close {
-        right: 20px;
+    #videoModal .vmodal-screenshots {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
-    #videoModal .modal-content {
-        background: #000 !important;
+    #videoModal .vmodal-screenshots li img {
+        height: auto;
+        max-height: 280px;
     }
 
     /* Department page responsive */

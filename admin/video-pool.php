@@ -305,6 +305,35 @@ foreach ($videos as $v) {
         .empty-pool { text-align:center; padding:60px 20px; color:var(--text-muted); }
         .empty-pool i { font-size:48px; margin-bottom:15px; opacity:0.3; }
 
+        /* Credits Editor */
+        .credits-editor { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; }
+        @media(max-width:768px) { .credits-editor { grid-template-columns:1fr; } }
+        .credits-col { background:var(--bg-tertiary); border:1px solid var(--border-color); padding:16px; }
+        .credits-col-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid var(--border-color); }
+        .credits-col-header h4 { font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-primary); margin:0; }
+        .credits-col-header button { background:none; border:1px solid var(--border-color); color:var(--text-secondary); font-size:11px; padding:4px 10px; cursor:pointer; transition:all .15s; display:flex; align-items:center; gap:4px; }
+        .credits-col-header button:hover { border-color:var(--accent); color:var(--accent); }
+        .credits-lines { display:flex; flex-direction:column; gap:6px; }
+        .credit-line { display:flex; gap:6px; align-items:center; cursor:grab; }
+        .credit-line.dragging { opacity:.4; }
+        .credit-line.drag-over { border-top:2px solid var(--accent, #fff); margin-top:-2px; }
+        .credit-line .credit-drag { flex-shrink:0; color:var(--text-muted); font-size:10px; cursor:grab; padding:4px 2px; opacity:.4; transition:opacity .15s; }
+        .credit-line:hover .credit-drag { opacity:1; }
+        .credit-line input { background:var(--bg-secondary); border:1px solid var(--border-color); color:var(--text-primary); font-size:12px; padding:7px 10px; flex:1; min-width:0; }
+        .credit-line input:focus { outline:none; border-color:var(--accent); }
+        .credit-line input.credit-role { flex:0 0 38%; }
+        .credit-line input.credit-name { flex:1; }
+        .credit-line .credit-remove { background:none; border:none; color:var(--text-muted); cursor:pointer; padding:4px 6px; font-size:11px; flex-shrink:0; transition:color .15s; }
+        .credit-line .credit-remove:hover { color:#e55; }
+        .credits-empty { text-align:center; padding:16px 8px; color:var(--text-muted); font-size:12px; }
+        .credits-role-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
+        .credits-role-tag { background:rgba(255,255,255,.06); border:1px solid var(--border-color); color:var(--text-secondary); font-size:10px; padding:3px 8px; cursor:pointer; transition:all .15s; white-space:nowrap; }
+        .credits-role-tag:hover { border-color:var(--accent); color:var(--accent); }
+        .credits-auto-btn { background:rgba(96,165,250,.1); border:1px solid rgba(96,165,250,.3); color:var(--info, #60a5fa); font-size:11px; padding:4px 10px; cursor:pointer; transition:all .15s; display:flex; align-items:center; gap:5px; }
+        .credits-auto-btn:hover { background:rgba(96,165,250,.2); border-color:rgba(96,165,250,.5); }
+        .credits-row-lower { display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:15px; }
+        .credits-row-lower .form-check { margin:0; }
+
         @media (max-width: 768px) { .video-pool-grid { grid-template-columns:1fr; } }
     </style>
 </head>
@@ -464,28 +493,49 @@ foreach ($videos as $v) {
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Simian Embed URL (Full Video)</label>
-                    <input type="text" class="form-control" name="videoLong" placeholder="https://apollo.gosimian.com/share/v/...">
+                    <label class="form-label">Simian Embed Code (Full Video)</label>
+                    <input type="text" class="form-control" name="videoLong" placeholder="Paste Simian embed code or URL...">
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Credits (HTML)</label>
-                        <textarea class="form-control" name="credits" rows="3" placeholder="<h3>Apollo</h3>..."></textarea>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="form-check mb-3 mt-4">
-                            <input type="checkbox" class="form-check-input" name="hasCredit" id="addHasCredit">
-                            <label class="form-check-label" for="addHasCredit">Show Credits</label>
+                <div class="section-divider" style="margin-top:20px;">
+                    <h3><i class="fas fa-align-left"></i> Credits</h3>
+                    <input type="hidden" name="credits" id="addCreditsHidden">
+                    <div class="credits-editor" id="addCreditsEditor">
+                        <div class="credits-col">
+                            <div class="credits-col-header">
+                                <h4>Apollo</h4>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="credits-auto-btn" onclick="autoPopulateCredits('addCreditsEditor','addForm')"><i class="fas fa-magic"></i> Auto-fill from Artists</button>
+                                    <button type="button" onclick="addCreditLine('addCreditsEditor','apollo')"><i class="fas fa-plus"></i> Add</button>
+                                </div>
+                            </div>
+                            <div class="credits-role-tags" data-editor="addCreditsEditor" data-section="apollo"></div>
+                            <div class="credits-lines" data-section="apollo"></div>
                         </div>
-                        <label class="form-label">Tags</label>
-                        <div class="tag-checkboxes">
-                            <?php foreach (CATEGORY_LABELS as $key => $label): ?>
-                                <label class="tag-check-item">
-                                    <input type="checkbox" name="tags[]" value="<?php echo $key; ?>">
-                                    <label><?php echo $key; ?></label>
-                                </label>
-                            <?php endforeach; ?>
+                        <div class="credits-col">
+                            <div class="credits-col-header">
+                                <h4>Production</h4>
+                                <button type="button" onclick="addCreditLine('addCreditsEditor','production')"><i class="fas fa-plus"></i> Add</button>
+                            </div>
+                            <div class="credits-role-tags" data-editor="addCreditsEditor" data-section="production"></div>
+                            <div class="credits-lines" data-section="production"></div>
+                        </div>
+                    </div>
+                    <div class="credits-row-lower">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="hasCredit" id="addHasCredit">
+                            <label class="form-check-label" for="addHasCredit">Show Credits on Video Page</label>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <label class="form-label" style="margin:0;font-size:13px;">Tags:</label>
+                            <div class="tag-checkboxes">
+                                <?php foreach (CATEGORY_LABELS as $key => $label): ?>
+                                    <label class="tag-check-item">
+                                        <input type="checkbox" name="tags[]" value="<?php echo $key; ?>">
+                                        <label><?php echo $key; ?></label>
+                                    </label>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -500,8 +550,8 @@ foreach ($videos as $v) {
                             <div class="assign-dept-label"><?php echo $dept; ?> (<?php echo CATEGORY_LABELS[$dept] ?? $dept; ?>s)</div>
                             <div class="assign-artist-list">
                                 <?php foreach ($dept_artists as $a): ?>
-                                <label class="assign-artist-item" onclick="this.classList.toggle('checked')">
-                                    <input type="checkbox" name="artist_ids[]" value="<?php echo htmlspecialchars($a['id']); ?>">
+                                <label class="assign-artist-item" onclick="this.classList.toggle('checked')" data-artist-name="<?php echo htmlspecialchars($a['name']); ?>" data-artist-dept="<?php echo htmlspecialchars($dept); ?>">
+                                    <input type="checkbox" name="artist_ids[]" value="<?php echo htmlspecialchars($a['id']); ?>" onchange="onArtistToggle(this,'addCreditsEditor')">
                                     <span><?php echo htmlspecialchars($a['name']); ?></span>
                                 </label>
                                 <?php endforeach; ?>
@@ -567,6 +617,11 @@ foreach ($videos as $v) {
             const div = document.createElement('div');
             div.textContent = str || '';
             return div.innerHTML;
+        }
+
+        function escapeAttr(str) {
+            if (!str) return '';
+            return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
         }
 
         function filterPool() {
@@ -681,6 +736,22 @@ foreach ($videos as $v) {
             xhr.send(fd);
         }
 
+        var _savedScrollY = 0;
+        function lockScroll() {
+            _savedScrollY = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = '-' + _savedScrollY + 'px';
+            document.body.style.width = '100%';
+        }
+        function unlockScroll() {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, _savedScrollY);
+        }
+
         function openAddModal() {
             document.getElementById('addForm').reset();
             const videoZone = document.getElementById('addVideoZone');
@@ -692,12 +763,13 @@ foreach ($videos as $v) {
             document.querySelectorAll('#addForm .assign-artist-item').forEach(el => el.classList.remove('checked'));
             document.getElementById('addLandingFields').classList.remove('visible');
             document.querySelectorAll('#addForm .landing-toggle').forEach(el => el.classList.remove('checked'));
+            populateCreditsEditor('addCreditsEditor', '');
             document.getElementById('addModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
+            lockScroll();
         }
         function closeAddModal() {
             document.getElementById('addModal').classList.remove('active');
-            document.body.style.overflow = '';
+            unlockScroll();
         }
 
         function openEditModal(videoId) {
@@ -731,8 +803,8 @@ foreach ($videos as $v) {
                 assignHtml += `<div class="assign-dept"><div class="assign-dept-label">${dept} (${categoryLabels[dept]||dept}s)</div><div class="assign-artist-list">`;
                 deptArtists.forEach(a => {
                     const isChecked = linkedArtistIds.includes(a.id);
-                    assignHtml += `<label class="assign-artist-item ${isChecked?'checked':''}" onclick="this.classList.toggle('checked')">
-                        <input type="checkbox" name="artist_ids[]" value="${escapeHtml(a.id)}" ${isChecked?'checked':''}>
+                    assignHtml += `<label class="assign-artist-item ${isChecked?'checked':''}" onclick="this.classList.toggle('checked')" data-artist-name="${escapeAttr(a.name)}" data-artist-dept="${escapeAttr(dept)}">
+                        <input type="checkbox" name="artist_ids[]" value="${escapeAttr(a.id)}" ${isChecked?'checked':''} onchange="onArtistToggle(this,'editCreditsEditor')">
                         <span>${escapeHtml(a.name)}</span></label>`;
                 });
                 assignHtml += `</div></div>`;
@@ -746,21 +818,21 @@ foreach ($videos as $v) {
                 ${previewHtml}
                 <form method="POST" id="editForm">
                     <input type="hidden" name="action" value="edit_video">
-                    <input type="hidden" name="video_id" value="${escapeHtml(video.id)}">
+                    <input type="hidden" name="video_id" value="${escapeAttr(video.id)}">
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Title *</label>
-                            <input type="text" class="form-control" name="title" value="${escapeHtml(video.title||'')}" required>
+                            <input type="text" class="form-control" name="title" value="${escapeAttr(video.title||'')}" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Subtitle</label>
-                            <input type="text" class="form-control" name="subtitle" value="${escapeHtml(video.subtitle||'')}">
+                            <input type="text" class="form-control" name="subtitle" value="${escapeAttr(video.subtitle||'')}">
                         </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Short Video Path</label>
                         <div style="display:flex;gap:10px;align-items:center;">
-                            <input type="text" class="form-control" name="videoShort" id="editVideoShort" value="${escapeHtml(video.videoShort||'')}" style="flex:1">
+                            <input type="text" class="form-control" name="videoShort" id="editVideoShort" value="${escapeAttr(video.videoShort||'')}" style="flex:1">
                             <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('editVideoFile').click()" style="white-space:nowrap;border-radius:0">
                                 <i class="fas fa-upload"></i> Upload</button>
                         </div>
@@ -773,7 +845,7 @@ foreach ($videos as $v) {
                     <div class="mb-3">
                         <label class="form-label">Poster Image Path</label>
                         <div style="display:flex;gap:10px;align-items:center;">
-                            <input type="text" class="form-control" name="poster" id="editPoster" value="${escapeHtml(video.poster||'')}" style="flex:1">
+                            <input type="text" class="form-control" name="poster" id="editPoster" value="${escapeAttr(video.poster||'')}" style="flex:1">
                             <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('editPosterFile').click()" style="white-space:nowrap;border-radius:0">
                                 <i class="fas fa-upload"></i> Upload</button>
                         </div>
@@ -784,21 +856,43 @@ foreach ($videos as $v) {
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Simian Embed URL (Full Video)</label>
-                        <input type="text" class="form-control" name="videoLong" value="${escapeHtml(video.videoLong||'')}">
+                        <label class="form-label">Simian Embed Code (Full Video)</label>
+                        <input type="text" class="form-control" name="videoLong" id="editVideoLong">
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Credits (HTML)</label>
-                            <textarea class="form-control" name="credits" rows="3">${escapeHtml(video.credits||'')}</textarea>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="form-check mb-3 mt-4">
-                                <input type="checkbox" class="form-check-input" name="hasCredit" id="editHasCredit" ${video.hasCredit?'checked':''}>
-                                <label class="form-check-label" for="editHasCredit">Show Credits</label>
+
+                    <div class="section-divider" style="margin-top:20px;">
+                        <h3><i class="fas fa-align-left"></i> Credits</h3>
+                        <input type="hidden" name="credits" id="editCreditsHidden">
+                        <div class="credits-editor" id="editCreditsEditor">
+                            <div class="credits-col">
+                                <div class="credits-col-header">
+                                    <h4>Apollo</h4>
+                                    <div style="display:flex;gap:6px;">
+                                        <button type="button" class="credits-auto-btn" onclick="autoPopulateCredits('editCreditsEditor','editForm')"><i class="fas fa-magic"></i> Auto-fill from Artists</button>
+                                        <button type="button" onclick="addCreditLine('editCreditsEditor','apollo')"><i class="fas fa-plus"></i> Add</button>
+                                    </div>
+                                </div>
+                                <div class="credits-role-tags" data-editor="editCreditsEditor" data-section="apollo"></div>
+                                <div class="credits-lines" data-section="apollo"></div>
                             </div>
-                            <label class="form-label">Tags</label>
-                            <div class="tag-checkboxes">${tagChecks}</div>
+                            <div class="credits-col">
+                                <div class="credits-col-header">
+                                    <h4>Production</h4>
+                                    <button type="button" onclick="addCreditLine('editCreditsEditor','production')"><i class="fas fa-plus"></i> Add</button>
+                                </div>
+                                <div class="credits-role-tags" data-editor="editCreditsEditor" data-section="production"></div>
+                                <div class="credits-lines" data-section="production"></div>
+                            </div>
+                        </div>
+                        <div class="credits-row-lower">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="hasCredit" id="editHasCredit" ${video.hasCredit?'checked':''}>
+                                <label class="form-check-label" for="editHasCredit">Show Credits on Video Page</label>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:12px;">
+                                <label class="form-label" style="margin:0;font-size:13px;">Tags:</label>
+                                <div class="tag-checkboxes">${tagChecks}</div>
+                            </div>
                         </div>
                     </div>
 
@@ -818,11 +912,11 @@ foreach ($videos as $v) {
                             <div class="row">
                                 <div class="col-md-6 mb-2">
                                     <label class="form-label" style="font-size:12px;">Title Override (optional)</label>
-                                    <input type="text" class="form-control" name="landing_title" value="${escapeHtml(landingTitle)}" placeholder="Leave blank to use video title">
+                                    <input type="text" class="form-control" name="landing_title" value="${escapeAttr(landingTitle)}" placeholder="Leave blank to use video title">
                                 </div>
                                 <div class="col-md-6 mb-2">
                                     <label class="form-label" style="font-size:12px;">Subtitle Override (optional)</label>
-                                    <input type="text" class="form-control" name="landing_subtitle" value="${escapeHtml(landingSub)}" placeholder="Leave blank to use video subtitle">
+                                    <input type="text" class="form-control" name="landing_subtitle" value="${escapeAttr(landingSub)}" placeholder="Leave blank to use video subtitle">
                                 </div>
                             </div>
                         </div>
@@ -830,18 +924,21 @@ foreach ($videos as $v) {
 
                     <div class="form-actions" style="margin-top:20px;">
                         <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save All Changes</button>
-                        <button type="button" class="btn btn-danger" onclick="confirmDelete('${escapeHtml(video.id)}')" style="border-radius:0">
+                        <button type="button" class="btn btn-danger" onclick="confirmDelete('${escapeAttr(video.id)}')" style="border-radius:0">
                             <i class="fas fa-trash"></i> Delete</button>
                         <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
                     </div>
                 </form>`;
 
+            document.getElementById('editVideoLong').value = video.videoLong || '';
+            populateCreditsEditor('editCreditsEditor', video.credits || '');
+
             document.getElementById('editModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
+            lockScroll();
         }
         function closeEditModal() {
             document.getElementById('editModal').classList.remove('active');
-            document.body.style.overflow = '';
+            unlockScroll();
             document.querySelectorAll('#editModal video').forEach(v => { v.pause(); v.currentTime = 0; });
         }
 
@@ -876,6 +973,218 @@ foreach ($videos as $v) {
 
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') { closeAddModal(); closeEditModal(); closeDeleteModal(); }
+        });
+
+        // ── Credits Editor ──
+
+        var apolloRoleTags = ['Post Producer', 'Post Supervisor', 'Color Producer', 'Editor', 'Colorist', 'Sound Designer', 'VFX'];
+        var productionRoleTags = ['Production Company', 'Director', 'Executive Producer', 'Producer', 'DP'];
+        var deptToRole = { EDIT: 'Editor', COLOR: 'Colorist', SOUND: 'Sound Designer', VFX: 'VFX Artist' };
+
+        function parseCreditsHtml(html) {
+            var result = { apollo: [], production: [] };
+            if (!html) return result;
+            var text = html.replace(/<br\s*\/?>/gi, '\n').replace(/<\/?b>/gi, '').replace(/&nbsp;/gi, ' ');
+            var sections = text.split(/<h3[^>]*>/i);
+            for (var i = 0; i < sections.length; i++) {
+                var part = sections[i];
+                var target = null;
+                if (/^apollo/i.test(part.trim())) target = 'apollo';
+                else if (/^production/i.test(part.trim())) target = 'production';
+                if (!target) continue;
+                part = part.replace(/<\/h3>/i, '').replace(/^(apollo|production):?\s*/i, '');
+                var lines = part.split('\n');
+                for (var j = 0; j < lines.length; j++) {
+                    var line = lines[j].replace(/<[^>]*>/g, '').trim();
+                    if (!line) continue;
+                    var colonIdx = line.indexOf(':');
+                    if (colonIdx > 0 && colonIdx < 40) {
+                        result[target].push({
+                            role: line.substring(0, colonIdx).trim(),
+                            name: line.substring(colonIdx + 1).trim()
+                        });
+                    } else {
+                        result[target].push({ role: '', name: line });
+                    }
+                }
+            }
+            return result;
+        }
+
+        function buildCreditLineHtml(role, name) {
+            return '<div class="credit-line" draggable="true">' +
+                '<span class="credit-drag"><i class="fas fa-grip-vertical"></i></span>' +
+                '<input type="text" class="credit-role" placeholder="Role (e.g. Editor)" value="' + escapeAttr(role) + '">' +
+                '<input type="text" class="credit-name" placeholder="Name" value="' + escapeAttr(name) + '">' +
+                '<button type="button" class="credit-remove" onclick="this.parentNode.remove()" title="Remove"><i class="fas fa-times"></i></button>' +
+                '</div>';
+        }
+
+        function addCreditLine(editorId, section, role, name) {
+            var editor = document.getElementById(editorId);
+            var container = editor.querySelector('.credits-lines[data-section="' + section + '"]');
+            container.insertAdjacentHTML('beforeend', buildCreditLineHtml(role || '', name || ''));
+            initCreditDrag(container);
+        }
+
+        function renderRoleTags(editorId) {
+            var tagContainers = document.querySelectorAll('.credits-role-tags[data-editor="' + editorId + '"]');
+            tagContainers.forEach(function(container) {
+                var section = container.dataset.section;
+                var tags = section === 'production' ? productionRoleTags : apolloRoleTags;
+                container.innerHTML = tags.map(function(role) {
+                    return '<span class="credits-role-tag" onclick="addCreditLine(\'' + editorId + '\',\'' + section + '\',\'' + escapeAttr(role) + '\',\'\')">' + escapeHtml(role) + '</span>';
+                }).join('');
+            });
+        }
+
+        function populateCreditsEditor(editorId, html) {
+            var data = parseCreditsHtml(html);
+            var editor = document.getElementById(editorId);
+            editor.querySelector('.credits-lines[data-section="apollo"]').innerHTML = '';
+            editor.querySelector('.credits-lines[data-section="production"]').innerHTML = '';
+            data.apollo.forEach(function(c) { addCreditLine(editorId, 'apollo', c.role, c.name); });
+            data.production.forEach(function(c) { addCreditLine(editorId, 'production', c.role, c.name); });
+            renderRoleTags(editorId);
+        }
+
+        function onArtistToggle(checkbox, editorId) {
+            var label = checkbox.closest('.assign-artist-item');
+            var name = label.dataset.artistName || '';
+            var dept = label.dataset.artistDept || '';
+            var role = deptToRole[dept] || dept;
+            var editor = document.getElementById(editorId);
+            var container = editor.querySelector('.credits-lines[data-section="apollo"]');
+
+            if (checkbox.checked) {
+                var exists = false;
+                container.querySelectorAll('.credit-line').forEach(function(line) {
+                    if (line.querySelector('.credit-name').value.trim().toLowerCase() === name.toLowerCase()) {
+                        exists = true;
+                    }
+                });
+                if (!exists) {
+                    addCreditLine(editorId, 'apollo', role, name);
+                }
+            } else {
+                container.querySelectorAll('.credit-line').forEach(function(line) {
+                    if (line.querySelector('.credit-name').value.trim().toLowerCase() === name.toLowerCase()) {
+                        line.remove();
+                    }
+                });
+            }
+        }
+
+        function autoPopulateCredits(editorId, formId) {
+            var form = document.getElementById(formId);
+            var checkedArtists = form.querySelectorAll('.assign-artist-item input[type="checkbox"]:checked');
+            if (checkedArtists.length === 0) {
+                alert('No artists are assigned to this video. Please assign artists first, then click Auto-fill.');
+                return;
+            }
+            var existing = [];
+            var editor = document.getElementById(editorId);
+            editor.querySelectorAll('.credits-lines[data-section="apollo"] .credit-line').forEach(function(line) {
+                var n = line.querySelector('.credit-name').value.trim().toLowerCase();
+                if (n) existing.push(n);
+            });
+            checkedArtists.forEach(function(cb) {
+                var artistId = cb.value;
+                var artistName = '';
+                var artistDept = '';
+                for (var dept in artistsByDept) {
+                    for (var j = 0; j < artistsByDept[dept].length; j++) {
+                        if (artistsByDept[dept][j].id === artistId) {
+                            artistName = artistsByDept[dept][j].name;
+                            artistDept = dept;
+                            break;
+                        }
+                    }
+                    if (artistName) break;
+                }
+                if (!artistName) return;
+                if (existing.indexOf(artistName.toLowerCase()) !== -1) return;
+                var role = deptToRole[artistDept] || artistDept;
+                addCreditLine(editorId, 'apollo', role, artistName);
+                existing.push(artistName.toLowerCase());
+            });
+        }
+
+        function gatherCreditsHtml(editorId) {
+            var editor = document.getElementById(editorId);
+            var html = '';
+            ['apollo', 'production'].forEach(function(section) {
+                var lines = editor.querySelectorAll('.credits-lines[data-section="' + section + '"] .credit-line');
+                var entries = [];
+                lines.forEach(function(line) {
+                    var role = line.querySelector('.credit-role').value.trim();
+                    var name = line.querySelector('.credit-name').value.trim();
+                    if (role || name) {
+                        entries.push(role ? ('<b>' + escapeHtml(role) + ':</b> ' + escapeHtml(name)) : escapeHtml(name));
+                    }
+                });
+                if (entries.length > 0) {
+                    var heading = section === 'apollo' ? 'Apollo' : 'Production';
+                    html += '<h3>' + heading + '</h3>' + entries.join('<br>');
+                    html += '<br><br>';
+                }
+            });
+            return html;
+        }
+
+        // Drag-to-reorder credit lines
+        function initCreditDrag(container) {
+            var lines = container.querySelectorAll('.credit-line');
+            lines.forEach(function(line) {
+                if (line._dragInit) return;
+                line._dragInit = true;
+                line.addEventListener('dragstart', function(e) {
+                    line.classList.add('dragging');
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/plain', '');
+                });
+                line.addEventListener('dragend', function() {
+                    line.classList.remove('dragging');
+                    container.querySelectorAll('.credit-line').forEach(function(l) { l.classList.remove('drag-over'); });
+                });
+                line.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                    container.querySelectorAll('.credit-line').forEach(function(l) { l.classList.remove('drag-over'); });
+                    var dragging = container.querySelector('.credit-line.dragging');
+                    if (dragging && line !== dragging) line.classList.add('drag-over');
+                });
+                line.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    var dragging = container.querySelector('.credit-line.dragging');
+                    if (dragging && line !== dragging) {
+                        var allLines = Array.from(container.querySelectorAll('.credit-line'));
+                        var fromIdx = allLines.indexOf(dragging);
+                        var toIdx = allLines.indexOf(line);
+                        if (fromIdx < toIdx) {
+                            container.insertBefore(dragging, line.nextSibling);
+                        } else {
+                            container.insertBefore(dragging, line);
+                        }
+                    }
+                    container.querySelectorAll('.credit-line').forEach(function(l) { l.classList.remove('drag-over'); });
+                });
+            });
+        }
+
+        // Hook into form submissions to gather credits
+        document.addEventListener('submit', function(e) {
+            var form = e.target;
+            if (form.id === 'addForm') {
+                document.getElementById('addCreditsHidden').value = gatherCreditsHtml('addCreditsEditor');
+            } else if (form.id === 'editForm') {
+                document.getElementById('editCreditsHidden').value = gatherCreditsHtml('editCreditsEditor');
+            }
+        });
+
+        // Initialize role tags on page load for the add modal
+        document.addEventListener('DOMContentLoaded', function() {
+            renderRoleTags('addCreditsEditor');
         });
     </script>
 </body>

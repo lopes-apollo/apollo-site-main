@@ -10,7 +10,7 @@ usort($visible_projects, function($a, $b) { return ($a['order'] ?? 999) <=> ($b[
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> 
-    <link rel="stylesheet" type="text/css" href="home-new/style-new.css?v=10.1.2">
+    <link rel="stylesheet" type="text/css" href="home-new/style-new.css?v=10.2.0">
     <style>
     .videoPlayOverlay {
         height: 100vh !important;
@@ -156,7 +156,12 @@ foreach ($visible_projects as $project):
     </ul>
     <div class="allLists detailedBox" style="display:none;">
         <ul>
-            <?php foreach ($visible_projects as $project): ?>
+            <?php foreach ($visible_projects as $project):
+                $list_vl = $project['video_long'];
+                if (strpos($list_vl, '<iframe') === false && strpos($list_vl, 'http') === 0) {
+                    $list_vl = '<div style="width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;"><iframe src="' . htmlspecialchars($list_vl) . '" name="SimianEmbed" scrolling="no" style="position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000" frameborder="0" allowFullScreen webkitAllowFullScreen></iframe></div>';
+                }
+            ?>
             <li>
                 <a class="openModelItem" 
                    data-image='<?php echo htmlspecialchars($project['image_class']); ?>' 
@@ -166,7 +171,7 @@ foreach ($visible_projects as $project):
                    data-prev4="<?php echo htmlspecialchars($project['preview_images'][3] ?? ''); ?>" 
                    data-prev5="<?php echo htmlspecialchars($project['preview_images'][4] ?? ''); ?>" 
                    data-prev6="<?php echo htmlspecialchars($project['preview_images'][5] ?? ''); ?>" 
-                   data-long="<?php echo htmlspecialchars($video_long); ?>" 
+                   data-long="<?php echo htmlspecialchars($list_vl); ?>" 
                    data-author="<?php echo htmlspecialchars($project['author']); ?>" 
                    data-title="<?php echo htmlspecialchars($project['title']); ?>" 
                    data-subtitle="<?php echo htmlspecialchars($project['subtitle']); ?>" 
@@ -180,35 +185,23 @@ foreach ($visible_projects as $project):
     </div>
 </div>
 
-<div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog"> 
+<div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+      <button type="button" class="vmodal-close" data-bs-dismiss="modal" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1L19 19M19 1L1 19" stroke="#fff" stroke-width="1.5"/></svg>
+      </button>
       <div class="modal-body">
-        <div class="videoSupport">
-            <div class="popupVideo" style="display:none;">
-                <iframe src="" frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
-                <h3></h3>
-                <h4></h4>
-                <h5></h5>
-            </div>
-            <div class="creditPopupVideo" style="display:none;">
-                <div class="creditDetail">
-                    <div class="leftSide">
-                        <h3></h3>
-                        <iframe src="" frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="rightSide"></div>
-                </div>
-            </div> 
+        <div class="vmodal-info">
+          <h2 class="vmodal-title"></h2>
+          <p class="vmodal-subtitle"></p>
+          <div class="vmodal-tags"></div>
         </div>
-        <ul class="screenshots">
-            <li class="preview1">
-                <img src="https://appollo.360cloudcenter.com/griffin-olis/mlsepisode2/vlcsnap-2024-06-06-04h16m58s466.jpg">
-            </li>
-        </ul>
+        <div class="vmodal-player"></div>
+        <div class="vmodal-credits-bar" style="display:none;">
+          <div class="vmodal-credits-content"></div>
+        </div>
+        <ul class="vmodal-screenshots"></ul>
       </div>
     </div>
   </div>
@@ -219,57 +212,57 @@ foreach ($visible_projects as $project):
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 $(document).on('click','a.openModelItem',function(){
-    var author = $(this).attr('data-author');
-    var prev1 = $(this).attr('data-prev1');
-    var prev2 = $(this).attr('data-prev2');
-    var prev3 = $(this).attr('data-prev3');
-    var prev4 = $(this).attr('data-prev4');
-    var prev5 = $(this).attr('data-prev5');
-    var prev6 = $(this).attr('data-prev6');
-    var longVideo = $(this).attr('data-long');
-    var title = $(this).attr('data-title');
-    var subtitle = $(this).attr('data-subtitle');
+    var author = $(this).attr('data-author') || '';
+    var prevs = [];
+    for (var i = 1; i <= 6; i++) {
+        var p = $(this).attr('data-prev' + i);
+        if (p) prevs.push(p);
+    }
+    var longVideo = $(this).attr('data-long') || '';
+    var title = $(this).attr('data-title') || '';
+    var subtitle = $(this).attr('data-subtitle') || '';
     var credit = $(this).attr('data-credit');
-    var credits = $(this).attr('data-credits');
-    $('div#videoModalPopup ul.screenshots').html('');
-    if(prev1!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview1"> <img src="'+prev1+'"> </li>');
+    var credits = $(this).attr('data-credits') || '';
+
+    var $modal = $('#videoModalPopup');
+    $modal.find('.vmodal-player').html('');
+    $modal.find('.vmodal-screenshots').html('');
+
+    var displayTitle = subtitle ? title + ' \u2014 ' + subtitle : title;
+    $modal.find('.vmodal-title').text(displayTitle);
+
+    var $tags = $modal.find('.vmodal-tags').empty();
+    if (author) {
+        author.split(',').forEach(function(tag) {
+            tag = tag.trim();
+            if (tag) $tags.append('<span class="vmodal-tag">' + tag + '</span>');
+        });
     }
-    if(prev2!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview2"> <img src="'+prev2+'"> </li>');
+
+    if (longVideo && longVideo.indexOf('<') !== -1) {
+        $modal.find('.vmodal-player').html(longVideo);
+    } else if (longVideo && longVideo.indexOf('http') === 0) {
+        $modal.find('.vmodal-player').html(
+            '<div style="width:100%;height:0;position:relative;padding-bottom:56.25%;"><iframe src="' + longVideo + '" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay" allowfullscreen></iframe></div>'
+        );
     }
-    if(prev3!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview3"> <img src="'+prev3+'"> </li>');
+
+    if (credit === 'yes' && credits) {
+        $modal.find('.vmodal-credits-content').html(credits);
+        $modal.find('.vmodal-credits-bar').show();
+    } else {
+        $modal.find('.vmodal-credits-bar').hide();
     }
-    if(prev4!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview4"> <img src="'+prev4+'"> </li>');
-    }
-    if(prev5!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview5"> <img src="'+prev5+'"> </li>');
-    }
-    if(prev6!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview6"> <img src="'+prev6+'"> </li>');
-    }
-    $('#videoModalPopup iframe').attr('src','');
-    if(credit=='yes'){
-        $('#videoModalPopup div.creditPopupVideo iframe').attr('src',longVideo);
-        $('#videoModalPopup div.creditPopupVideo h3').text(title+' - '+subtitle);
-        $('#videoModalPopup div.creditPopupVideo div.rightSide').html(credits);
-        $('#videoModalPopup div.popupVideo').hide();
-        $('#videoModalPopup div.creditPopupVideo').show();
-    }else{
-        $('#videoModalPopup div.popupVideo iframe').attr('src',longVideo);
-        $('#videoModalPopup div.popupVideo h3').text(title);
-        $('#videoModalPopup div.popupVideo h4').text(subtitle);
-        $('#videoModalPopup div.popupVideo h5').text(author);
-        $('#videoModalPopup div.creditPopupVideo').hide();
-        $('#videoModalPopup div.popupVideo').show();
-    }
-    $('div#videoModalPopup').modal('show');
+
+    prevs.forEach(function(src) {
+        $modal.find('.vmodal-screenshots').append('<li><img src="' + src + '" loading="lazy"></li>');
+    });
+
+    $modal.modal('show');
 });
 
-$('div#videoModalPopup').on('hidden.bs.modal', function () {
-    $('#videoModalPopup iframe').attr('src', '');
+$('#videoModalPopup').on('hidden.bs.modal', function () {
+    $('#videoModalPopup .vmodal-player').html('');
 });
 
 $(document).ready(function(){

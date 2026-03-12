@@ -72,6 +72,11 @@ $unique_videos = [];
 foreach ($video_ids as $vid) {
     if (!isset($videos_by_id[$vid])) continue;
     $pool_video = $videos_by_id[$vid];
+    $vlong = $pool_video['videoLong'] ?? '';
+    $aspect = 'landscape';
+    if (preg_match('/padding-bottom:([\d.]+)%/', $vlong, $_pb) && floatval($_pb[1]) > 100) {
+        $aspect = 'portrait';
+    }
     $video = [
         'videoName'     => $pool_video['title'] ?? '',
         'videoSubName'  => $pool_video['subtitle'] ?? '',
@@ -80,6 +85,8 @@ foreach ($video_ids as $vid) {
         'hasCredit'     => $pool_video['hasCredit'] ?? false,
         'credits'       => $pool_video['credits'] ?? '',
         'previewImages' => $pool_video['previewImages'] ?? [],
+        '_aspect'       => $aspect,
+        '_videoLong'    => $vlong,
     ];
     $path = $video['videoShort'];
     if ($path && !isset($seen_paths[$path])) {
@@ -115,7 +122,7 @@ usort($sibling_artists, function($a, $b) {
     <title><?php echo htmlspecialchars($current_artist['name']); ?> | APOLLO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/roster/style-v2.css?v=7.1.0">
+    <link rel="stylesheet" href="/roster/style-v2.css?v=8.0.0">
 </head>
 <body class="page-artist">
 
@@ -169,7 +176,9 @@ $role_label = $dept_roles[$artist_dept] ?? $artist_dept;
          data-prev3="<?php echo htmlspecialchars($preview_images[2] ?? ''); ?>"
          data-prev4="<?php echo htmlspecialchars($preview_images[3] ?? ''); ?>"
          data-prev5="<?php echo htmlspecialchars($preview_images[4] ?? ''); ?>"
-         data-prev6="<?php echo htmlspecialchars($preview_images[5] ?? ''); ?>">
+         data-prev6="<?php echo htmlspecialchars($preview_images[5] ?? ''); ?>"
+         data-aspect="<?php echo $video['_aspect'] ?? 'landscape'; ?>"
+         data-embed="<?php echo htmlspecialchars($video['_videoLong'] ?? ''); ?>">
         <video poster="/roster/<?php echo htmlspecialchars($poster); ?>"
                src="/roster/<?php echo htmlspecialchars($short_vid); ?>"
                muted autoplay loop playsinline webkit-playsinline></video>
@@ -186,27 +195,19 @@ $role_label = $dept_roles[$artist_dept] ?? $artist_dept;
 <div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <button type="button" class="vmodal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1L19 19M19 1L1 19" stroke="#fff" stroke-width="1.5"/></svg>
+            </button>
             <div class="modal-body">
-                <div class="modal-video-wrap">
-                    <div class="modal-simple" style="display:none;">
-                        <iframe src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-                        <h3 class="modal-title-main"></h3>
-                        <h4 class="modal-title-sub"></h4>
-                    </div>
-                    <div class="modal-credit" style="display:none;">
-                        <div class="credit-layout">
-                            <div class="credit-left">
-                                <h3 class="modal-title-main"></h3>
-                                <iframe src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-                            </div>
-                            <div class="credit-right"></div>
-                        </div>
-                    </div>
+                <div class="vmodal-info">
+                    <h2 class="vmodal-title"></h2>
+                    <div class="vmodal-tags"></div>
                 </div>
-                <ul class="modal-screenshots"></ul>
+                <div class="vmodal-player"></div>
+                <div class="vmodal-credits-bar" style="display:none;">
+                    <div class="vmodal-credits-content"></div>
+                </div>
+                <ul class="vmodal-screenshots"></ul>
             </div>
         </div>
     </div>
@@ -214,6 +215,6 @@ $role_label = $dept_roles[$artist_dept] ?? $artist_dept;
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/roster/app-v2.js?v=7.0.0"></script>
+<script src="/roster/app-v2.js?v=8.0.0"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> 
-    <link rel="stylesheet" type="text/css" href="home-new/style-new.css?v=10.1.2">
+    <link rel="stylesheet" type="text/css" href="home-new/style-new.css?v=10.2.0">
     <style>
     .videoPlayOverlay {
         height: 100vh !important;
@@ -112,7 +112,7 @@
        data-title="Travis Scott x Jumpman" 
        data-subtitle="TREXX" 
        data-credit="yes" 
-       data-credits="">
+       data-credits="&lt;h3&gt;Apollo&lt;/h3&gt;&lt;br&gt;Post Producer: Alex Peterson&lt;br&gt;Editor: Nasser Boulaich&lt;br&gt;VFX: Le Jumper&lt;br&gt;Sound: Ayo Douson&lt;br&gt;&lt;br&gt;&lt;h3&gt;Production&lt;/h3&gt;&lt;br&gt;Production Company: GameSeven&lt;br&gt;Director: Hannan Hussain&lt;br&gt;DP: Mike Koziel">
         <video src="videos/short/compressed/trexx cover-1080p.mp4" muted autoplay loop playsinline></video>
         <h3 style="display:none;">Travis Scott x Jumpman</h3>
         <p style="display:none;">TREXX</p>
@@ -187,7 +187,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/mk71YHvlAjqKmE2SMuihew/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="SOUND" 
        data-title="Terrace Martin &amp; Alex Isley" 
        data-subtitle="Paradise" 
@@ -207,7 +207,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/eHWf8zsSuiwys697NlDV3A/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="EDIT,SOUND" 
        data-title="Under Armour" 
        data-subtitle="The Unstoppable Collection" 
@@ -227,7 +227,7 @@
        data-prev4="images/colorist/penderdyn4.jpg" 
        data-prev5="images/colorist/penderdyn5.jpg" 
        data-prev6="images/colorist/penderdyn6.jpg" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/X9KW-za1rOfAhEgrYOvm-w/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding-top:4rem; !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="COLOR" 
        data-title="Penderdyn" 
        data-subtitle="Distillery" 
@@ -247,7 +247,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:67.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/Kj037VYYf3TRWAyj2X9grw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="EDIT" 
        data-title="OKEM" 
        data-subtitle="Short Film" 
@@ -267,7 +267,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/6jqEx2rQsXxfcIoiabqIvw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="EDIT,SOUND,COLOR,VFX" 
        data-title="Guinness" 
        data-subtitle="The Most Wonderful Pint" 
@@ -307,7 +307,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/_cBrDrn0LQod1q6m8cml6A/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="SOUND" 
        data-title="New Balance" 
        data-subtitle="Prosperity Be the Prize" 
@@ -327,7 +327,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:67.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/F-iBZ5QVpkJnpMEDcCBj0g/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="EDIT" 
        data-title="7uice" 
        data-subtitle="Vanson Leathers" 
@@ -347,7 +347,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/n0LFcwPS9X72xQRkpvugzw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="EDIT" 
        data-title="Kai Cenat" 
        data-subtitle="Going Professional" 
@@ -367,7 +367,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/NKUOtAvy-_d2e9dCv-bB5A/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="VFX" 
        data-title="The North Face" 
        data-subtitle="Fall/Winter 2024" 
@@ -387,7 +387,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/5jtkQ-J-7bk3e1C4p_1hwQ/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="EDIT,SOUND,VFX" 
        data-title="MLS &amp; Apple TV" 
        data-subtitle="Beyond the Pitch" 
@@ -407,7 +407,7 @@
        data-prev4="" 
        data-prev5="" 
        data-prev6="" 
-       data-long="&lt;div style=" 
+       data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/2RyALL3vM1bbYlXn6hEOjQ/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
        data-author="EDIT" 
        data-title="Brooks" 
        data-subtitle="Sounds of Trail Running" 
@@ -465,12 +465,12 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/tf0b2EFiRC3XnFSc1Qlj3w/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT,SOUND,VFX" 
                    data-title="Travis Scott x Jumpman" 
                    data-subtitle="TREXX" 
                    data-credit="yes" 
-                   data-credits="">
+                   data-credits="&lt;h3&gt;Apollo&lt;/h3&gt;&lt;br&gt;Post Producer: Alex Peterson&lt;br&gt;Editor: Nasser Boulaich&lt;br&gt;VFX: Le Jumper&lt;br&gt;Sound: Ayo Douson&lt;br&gt;&lt;br&gt;&lt;h3&gt;Production&lt;/h3&gt;&lt;br&gt;Production Company: GameSeven&lt;br&gt;Director: Hannan Hussain&lt;br&gt;DP: Mike Koziel">
                     Travis Scott x Jumpman - TREXX                </a> 
             </li>
                         <li>
@@ -482,7 +482,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/bxBkupgh_a-_FZxvkuCM5w/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="VFX" 
                    data-title="JID" 
                    data-subtitle="Jimmy Fallon" 
@@ -499,7 +499,7 @@
                    data-prev4="/roster/images/colorist/Arcteryx 4.jpg" 
                    data-prev5="/roster/images/colorist/Arcteryx 5.jpg" 
                    data-prev6="/roster/images/colorist/Arcteryx 6.jpg" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/HmR1n4iJqvPcP-fVDBwfgA/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="COLORIST" 
                    data-title="Arcteryx" 
                    data-subtitle="" 
@@ -516,7 +516,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/LEBuu0ZcM5vQKF9vyFajNA/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT" 
                    data-title="Nike" 
                    data-subtitle="Return to Football" 
@@ -533,7 +533,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/mk71YHvlAjqKmE2SMuihew/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="SOUND" 
                    data-title="Terrace Martin &amp; Alex Isley" 
                    data-subtitle="Paradise" 
@@ -550,7 +550,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/eHWf8zsSuiwys697NlDV3A/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT,SOUND" 
                    data-title="Under Armour" 
                    data-subtitle="The Unstoppable Collection" 
@@ -567,7 +567,7 @@
                    data-prev4="images/colorist/penderdyn4.jpg" 
                    data-prev5="images/colorist/penderdyn5.jpg" 
                    data-prev6="images/colorist/penderdyn6.jpg" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/X9KW-za1rOfAhEgrYOvm-w/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding-top:4rem; !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="COLOR" 
                    data-title="Penderdyn" 
                    data-subtitle="Distillery" 
@@ -584,7 +584,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:67.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/Kj037VYYf3TRWAyj2X9grw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT" 
                    data-title="OKEM" 
                    data-subtitle="Short Film" 
@@ -601,7 +601,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/6jqEx2rQsXxfcIoiabqIvw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT,SOUND,COLOR,VFX" 
                    data-title="Guinness" 
                    data-subtitle="The Most Wonderful Pint" 
@@ -618,7 +618,7 @@
                    data-prev4="/roster/images/colorist/Indio 4.jpg" 
                    data-prev5="/roster/images/colorist/Indio 5.jpg" 
                    data-prev6="/roster/images/colorist/Indio 6.jpg" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/BuQLAccOTNWLrBVmdRdZDw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="COLORIST" 
                    data-title="EvenOdd" 
                    data-subtitle="Remezcla - Cerveza Indio" 
@@ -635,7 +635,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/_cBrDrn0LQod1q6m8cml6A/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="SOUND" 
                    data-title="New Balance" 
                    data-subtitle="Prosperity Be the Prize" 
@@ -652,7 +652,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:67.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/F-iBZ5QVpkJnpMEDcCBj0g/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT" 
                    data-title="7uice" 
                    data-subtitle="Vanson Leathers" 
@@ -669,7 +669,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/n0LFcwPS9X72xQRkpvugzw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT" 
                    data-title="Kai Cenat" 
                    data-subtitle="Going Professional" 
@@ -686,7 +686,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/NKUOtAvy-_d2e9dCv-bB5A/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="VFX" 
                    data-title="The North Face" 
                    data-subtitle="Fall/Winter 2024" 
@@ -703,7 +703,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/5jtkQ-J-7bk3e1C4p_1hwQ/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT,SOUND,VFX" 
                    data-title="MLS &amp; Apple TV" 
                    data-subtitle="Beyond the Pitch" 
@@ -720,7 +720,7 @@
                    data-prev4="" 
                    data-prev5="" 
                    data-prev6="" 
-                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/8SNhuWKzlg6gCP60gUeDxw/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0; left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
+                   data-long="&lt;div style=&quot;width:100%;height:0;position: relative;padding-bottom:56.25000%;margin-bottom:10px;&quot;&gt;&lt;iframe src=&quot;https://apollo.gosimian.com/share/v/2RyALL3vM1bbYlXn6hEOjQ/false/auto/auto/ffffff/000000/&quot; name=&quot;SimianEmbed&quot; scrolling=&quot;no&quot; style=&quot;position: absolute;top: 0;        left: 0; width: 100%; height: 100%;padding:0 !important;margin:0 !important;background:#000000&quot; frameborder=&quot;0&quot; allowFullScreen webkitAllowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;" 
                    data-author="EDIT" 
                    data-title="Brooks" 
                    data-subtitle="Sounds of Trail Running" 
@@ -749,35 +749,23 @@
     </div>
 </div>
 
-<div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog"> 
+<div class="modal fade" id="videoModalPopup" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+      <button type="button" class="vmodal-close" data-bs-dismiss="modal" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1L19 19M19 1L1 19" stroke="#fff" stroke-width="1.5"/></svg>
+      </button>
       <div class="modal-body">
-        <div class="videoSupport">
-            <div class="popupVideo" style="display:none;">
-                <iframe src="" frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
-                <h3></h3>
-                <h4></h4>
-                <h5></h5>
-            </div>
-            <div class="creditPopupVideo" style="display:none;">
-                <div class="creditDetail">
-                    <div class="leftSide">
-                        <h3></h3>
-                        <iframe src="" frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="rightSide"></div>
-                </div>
-            </div> 
+        <div class="vmodal-info">
+          <h2 class="vmodal-title"></h2>
+          <p class="vmodal-subtitle"></p>
+          <div class="vmodal-tags"></div>
         </div>
-        <ul class="screenshots">
-            <li class="preview1">
-                <img src="https://appollo.360cloudcenter.com/griffin-olis/mlsepisode2/vlcsnap-2024-06-06-04h16m58s466.jpg">
-            </li>
-        </ul>
+        <div class="vmodal-player"></div>
+        <div class="vmodal-credits-bar" style="display:none;">
+          <div class="vmodal-credits-content"></div>
+        </div>
+        <ul class="vmodal-screenshots"></ul>
       </div>
     </div>
   </div>
@@ -788,57 +776,57 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 $(document).on('click','a.openModelItem',function(){
-    var author = $(this).attr('data-author');
-    var prev1 = $(this).attr('data-prev1');
-    var prev2 = $(this).attr('data-prev2');
-    var prev3 = $(this).attr('data-prev3');
-    var prev4 = $(this).attr('data-prev4');
-    var prev5 = $(this).attr('data-prev5');
-    var prev6 = $(this).attr('data-prev6');
-    var longVideo = $(this).attr('data-long');
-    var title = $(this).attr('data-title');
-    var subtitle = $(this).attr('data-subtitle');
+    var author = $(this).attr('data-author') || '';
+    var prevs = [];
+    for (var i = 1; i <= 6; i++) {
+        var p = $(this).attr('data-prev' + i);
+        if (p) prevs.push(p);
+    }
+    var longVideo = $(this).attr('data-long') || '';
+    var title = $(this).attr('data-title') || '';
+    var subtitle = $(this).attr('data-subtitle') || '';
     var credit = $(this).attr('data-credit');
-    var credits = $(this).attr('data-credits');
-    $('div#videoModalPopup ul.screenshots').html('');
-    if(prev1!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview1"> <img src="'+prev1+'"> </li>');
+    var credits = $(this).attr('data-credits') || '';
+
+    var $modal = $('#videoModalPopup');
+    $modal.find('.vmodal-player').html('');
+    $modal.find('.vmodal-screenshots').html('');
+
+    var displayTitle = subtitle ? title + ' \u2014 ' + subtitle : title;
+    $modal.find('.vmodal-title').text(displayTitle);
+
+    var $tags = $modal.find('.vmodal-tags').empty();
+    if (author) {
+        author.split(',').forEach(function(tag) {
+            tag = tag.trim();
+            if (tag) $tags.append('<span class="vmodal-tag">' + tag + '</span>');
+        });
     }
-    if(prev2!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview2"> <img src="'+prev2+'"> </li>');
+
+    if (longVideo && longVideo.indexOf('<') !== -1) {
+        $modal.find('.vmodal-player').html(longVideo);
+    } else if (longVideo && longVideo.indexOf('http') === 0) {
+        $modal.find('.vmodal-player').html(
+            '<div style="width:100%;height:0;position:relative;padding-bottom:56.25%;"><iframe src="' + longVideo + '" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay" allowfullscreen></iframe></div>'
+        );
     }
-    if(prev3!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview3"> <img src="'+prev3+'"> </li>');
+
+    if (credit === 'yes' && credits) {
+        $modal.find('.vmodal-credits-content').html(credits);
+        $modal.find('.vmodal-credits-bar').show();
+    } else {
+        $modal.find('.vmodal-credits-bar').hide();
     }
-    if(prev4!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview4"> <img src="'+prev4+'"> </li>');
-    }
-    if(prev5!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview5"> <img src="'+prev5+'"> </li>');
-    }
-    if(prev6!=''){
-        $('div#videoModalPopup ul.screenshots').append('<li class="preview6"> <img src="'+prev6+'"> </li>');
-    }
-    $('#videoModalPopup iframe').attr('src','');
-    if(credit=='yes'){
-        $('#videoModalPopup div.creditPopupVideo iframe').attr('src',longVideo);
-        $('#videoModalPopup div.creditPopupVideo h3').text(title+' - '+subtitle);
-        $('#videoModalPopup div.creditPopupVideo div.rightSide').html(credits);
-        $('#videoModalPopup div.popupVideo').hide();
-        $('#videoModalPopup div.creditPopupVideo').show();
-    }else{
-        $('#videoModalPopup div.popupVideo iframe').attr('src',longVideo);
-        $('#videoModalPopup div.popupVideo h3').text(title);
-        $('#videoModalPopup div.popupVideo h4').text(subtitle);
-        $('#videoModalPopup div.popupVideo h5').text(author);
-        $('#videoModalPopup div.creditPopupVideo').hide();
-        $('#videoModalPopup div.popupVideo').show();
-    }
-    $('div#videoModalPopup').modal('show');
+
+    prevs.forEach(function(src) {
+        $modal.find('.vmodal-screenshots').append('<li><img src="' + src + '" loading="lazy"></li>');
+    });
+
+    $modal.modal('show');
 });
 
-$('div#videoModalPopup').on('hidden.bs.modal', function () {
-    $('#videoModalPopup iframe').attr('src', '');
+$('#videoModalPopup').on('hidden.bs.modal', function () {
+    $('#videoModalPopup .vmodal-player').html('');
 });
 
 $(document).ready(function(){
