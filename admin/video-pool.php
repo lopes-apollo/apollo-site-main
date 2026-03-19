@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'poster' => trim($_POST['poster'] ?? ''),
             'hasCredit' => isset($_POST['hasCredit']),
             'credits' => $_POST['credits'] ?? '',
-            'previewImages' => ['', '', '', '', '', ''],
+            'previewImages' => array_map('trim', $_POST['previewImages'] ?? ['', '', '', '', '', '']),
             'tags' => $_POST['tags'] ?? [],
             'created_at' => date('Y-m-d')
         ];
@@ -87,6 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $videos[$key]['hasCredit'] = isset($_POST['hasCredit']);
                 $videos[$key]['credits'] = $_POST['credits'] ?? $video['credits'];
                 $videos[$key]['tags'] = $_POST['tags'] ?? [];
+                if (isset($_POST['previewImages'])) {
+                    $videos[$key]['previewImages'] = array_map('trim', $_POST['previewImages']);
+                }
                 break;
             }
         }
@@ -154,6 +157,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $lp_data = removeVideoFromLanding($video_id);
         saveLandingPageProjects($lp_data);
         savePendingChanges(['landing_page' => $lp_data]);
+        // Remove from roster featured
+        $rf = getRosterFeatured();
+        foreach ($rf as $dept => &$ids) {
+            $ids = array_values(array_filter($ids, fn($id) => $id !== $video_id));
+        }
+        unset($ids);
+        saveRosterFeatured($rf);
         // Remove from pool
         $videos = array_values(array_filter($videos, fn($v) => $v['id'] !== $video_id));
         saveVideos($videos);
@@ -268,6 +278,16 @@ foreach ($videos as $v) {
         .upload-progress .progress { height:6px; background:var(--bg-tertiary); border-radius:0; overflow:hidden; }
         .upload-progress .progress-bar { background:var(--accent); transition:width 0.3s ease; }
 
+        .upload-status { margin-top:8px; padding:10px 14px; font-size:13px; display:none; align-items:center; gap:9px; }
+        .upload-status.visible { display:flex; }
+        .upload-status.uploading { background:rgba(96,165,250,.1); border:1px solid rgba(96,165,250,.25); color:var(--info); }
+        .upload-status.success { background:rgba(74,222,128,.12); border:1px solid rgba(74,222,128,.3); color:var(--success); }
+        .upload-status.error { background:rgba(239,68,68,.1); border:1px solid rgba(239,68,68,.25); color:var(--danger); }
+        .upload-status i { font-size:15px; flex-shrink:0; }
+        .upload-status strong { font-weight:600; }
+        .upload-status-spinner { display:inline-block; width:15px; height:15px; border:2px solid rgba(96,165,250,.3); border-top-color:var(--info); border-radius:50%; animation:uploadSpin .6s linear infinite; flex-shrink:0; }
+        @keyframes uploadSpin { to { transform:rotate(360deg); } }
+
         .tag-checkboxes { display:flex; gap:15px; flex-wrap:wrap; }
         .tag-check-item { display:flex; align-items:center; gap:8px; cursor:pointer; }
         .tag-check-item input[type="checkbox"] { appearance:none; -webkit-appearance:none; width:18px; height:18px; border:2px solid var(--border-color); background:var(--bg-tertiary); border-radius:0; cursor:pointer; position:relative; flex-shrink:0; }
@@ -334,6 +354,29 @@ foreach ($videos as $v) {
         .credits-row-lower { display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:15px; }
         .credits-row-lower .form-check { margin:0; }
 
+        .stills-section { display:none; }
+        .stills-section.visible { display:block; }
+        .stills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+        @media(max-width:768px) { .stills-grid { grid-template-columns:repeat(2,1fr); } }
+        .still-slot { position:relative; border:2px dashed var(--border-color); background:var(--bg-tertiary); aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s ease; overflow:hidden; }
+        .still-slot:hover { border-color:var(--accent); background:var(--bg-hover); }
+        .still-slot.has-image { border-style:solid; border-color:var(--success); padding:0; }
+        .still-slot.has-image:hover { border-color:var(--accent); }
+        .still-slot img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+        .still-slot-placeholder { text-align:center; color:var(--text-muted); }
+        .still-slot-placeholder i { font-size:20px; display:block; margin-bottom:4px; }
+        .still-slot-placeholder span { font-size:10px; text-transform:uppercase; letter-spacing:0.5px; }
+        .still-slot-number { position:absolute; top:6px; left:8px; font-size:10px; font-weight:700; color:var(--text-muted); background:rgba(0,0,0,0.6); padding:2px 6px; z-index:2; }
+        .still-slot-actions { position:absolute; top:6px; right:6px; display:flex; gap:4px; z-index:2; opacity:0; transition:opacity 0.15s; }
+        .still-slot:hover .still-slot-actions { opacity:1; }
+        .still-slot-actions button { background:rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.15); color:var(--text-secondary); font-size:11px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.15s; padding:0; }
+        .still-slot-actions button:hover { background:rgba(239,68,68,0.8); color:#fff; border-color:rgba(239,68,68,0.6); }
+        .still-slot-info { position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.75); padding:4px 8px; font-size:10px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .stills-note { font-size:11px; color:var(--text-muted); margin-top:8px; display:flex; align-items:center; gap:6px; }
+        .stills-note i { color:var(--info); font-size:13px; }
+        .still-upload-progress { position:absolute; bottom:0; left:0; right:0; height:4px; background:var(--bg-tertiary); z-index:3; display:none; }
+        .still-upload-progress .bar { height:100%; background:var(--accent); transition:width 0.3s ease; }
+
         @media (max-width: 768px) { .video-pool-grid { grid-template-columns:1fr; } }
     </style>
 </head>
@@ -377,6 +420,17 @@ foreach ($videos as $v) {
                 <option value="SOUND">Sound</option>
                 <option value="VFX">VFX</option>
             </select>
+            <select class="filter-select" id="poolArtistFilter" onchange="filterPool()">
+                <option value="">All Artists</option>
+                <?php
+                    $sorted_artists = $artists;
+                    usort($sorted_artists, fn($a, $b) => strcasecmp($a['name'], $b['name']));
+                    foreach ($sorted_artists as $a):
+                ?>
+                    <option value="<?php echo htmlspecialchars($a['id']); ?>"><?php echo htmlspecialchars($a['name']); ?> (<?php echo count($a['video_ids'] ?? []); ?>)</option>
+                <?php endforeach; ?>
+                <option value="_none">No Artist Assigned</option>
+            </select>
             <select class="filter-select" id="poolLinkFilter" onchange="filterPool()">
                 <option value="">All Status</option>
                 <option value="linked">Linked</option>
@@ -399,16 +453,25 @@ foreach ($videos as $v) {
                     $tags = $video['tags'] ?? [];
                     $refs = $refs_map[$vid_id] ?? ['artists' => [], 'landing' => [], 'roster_depts' => []];
                     $ref_count = count($refs['artists']) + count($refs['landing']);
-                    $search_blob = strtolower(($video['title'] ?? '') . ' ' . ($video['subtitle'] ?? '') . ' ' . implode(' ', $tags));
+                    $artist_names = array_map(fn($a) => $a['name'], $refs['artists']);
+                    $artist_ids = array_map(fn($a) => $a['id'], $refs['artists']);
+                    $search_blob = strtolower(($video['title'] ?? '') . ' ' . ($video['subtitle'] ?? '') . ' ' . implode(' ', $tags) . ' ' . implode(' ', $artist_names));
                 ?>
                     <div class="pool-card"
+                         data-vid="<?php echo htmlspecialchars($vid_id); ?>"
                          data-search="<?php echo htmlspecialchars($search_blob); ?>"
                          data-tags="<?php echo htmlspecialchars(implode(',', $tags)); ?>"
+                         data-artists="<?php echo htmlspecialchars(implode(',', $artist_ids)); ?>"
                          data-linked="<?php echo $ref_count > 0 ? 'linked' : 'unlinked'; ?>"
                          onclick="openEditModal('<?php echo htmlspecialchars($vid_id); ?>')">
                         <div class="pool-card-thumb" data-video="<?php echo htmlspecialchars($thumb_src); ?>">
-                            <?php if ($poster_src): ?>
+                            <?php
+                                $is_poster_video = !empty($poster_src) && preg_match('/\.(mp4|mov|webm|m4v)$/i', $poster_src);
+                                if ($poster_src && !$is_poster_video):
+                            ?>
                                 <img src="<?php echo htmlspecialchars($poster_src); ?>" alt="" loading="lazy">
+                            <?php elseif ($poster_src && $is_poster_video): ?>
+                                <video src="<?php echo htmlspecialchars($poster_src); ?>#t=0.5" preload="metadata" muted playsinline></video>
                             <?php elseif ($thumb_src): ?>
                                 <video src="<?php echo htmlspecialchars($thumb_src); ?>#t=0.5" preload="metadata" muted playsinline></video>
                             <?php else: ?>
@@ -463,15 +526,16 @@ foreach ($videos as $v) {
                     <div class="upload-zone" id="addVideoZone" onclick="document.getElementById('addVideoFile').click()"
                          ondragover="event.preventDefault();this.classList.add('dragover')"
                          ondragleave="this.classList.remove('dragover')"
-                         ondrop="event.preventDefault();this.classList.remove('dragover');handleUpload(event.dataTransfer.files[0],'video','addVideoShort','addVideoZone','addVideoProgress')">
+                         ondrop="event.preventDefault();this.classList.remove('dragover');handleUpload(event.dataTransfer.files[0],'video','addVideoShort','addVideoZone','addVideoProgress','addVideoStatus')">
                         <i class="fas fa-cloud-upload-alt"></i>
                         <p>Click or drag to upload video (MP4, WebM, MOV)</p>
                     </div>
                     <div class="upload-progress" id="addVideoProgress">
                         <div class="progress"><div class="progress-bar" style="width:0%"></div></div>
                     </div>
+                    <div class="upload-status" id="addVideoStatus"></div>
                     <input type="file" id="addVideoFile" accept="video/*" style="display:none"
-                           onchange="handleUpload(this.files[0],'video','addVideoShort','addVideoZone','addVideoProgress')">
+                           onchange="handleUpload(this.files[0],'video','addVideoShort','addVideoZone','addVideoProgress','addVideoStatus')">
                     <input type="text" class="form-control mt-2" name="videoShort" id="addVideoShort" placeholder="Or paste path: videos/short/filename.mp4">
                 </div>
 
@@ -480,15 +544,16 @@ foreach ($videos as $v) {
                     <div class="upload-zone" id="addPosterZone" onclick="document.getElementById('addPosterFile').click()"
                          ondragover="event.preventDefault();this.classList.add('dragover')"
                          ondragleave="this.classList.remove('dragover')"
-                         ondrop="event.preventDefault();this.classList.remove('dragover');handleUpload(event.dataTransfer.files[0],'poster','addPoster','addPosterZone','addPosterProgress')">
+                         ondrop="event.preventDefault();this.classList.remove('dragover');handleUpload(event.dataTransfer.files[0],'poster','addPoster','addPosterZone','addPosterProgress','addPosterStatus')">
                         <i class="fas fa-image"></i>
                         <p>Click or drag to upload poster (JPG, PNG, WebP)</p>
                     </div>
                     <div class="upload-progress" id="addPosterProgress">
                         <div class="progress"><div class="progress-bar" style="width:0%"></div></div>
                     </div>
+                    <div class="upload-status" id="addPosterStatus"></div>
                     <input type="file" id="addPosterFile" accept="image/*" style="display:none"
-                           onchange="handleUpload(this.files[0],'poster','addPoster','addPosterZone','addPosterProgress')">
+                           onchange="handleUpload(this.files[0],'poster','addPoster','addPosterZone','addPosterProgress','addPosterStatus')">
                     <input type="text" class="form-control mt-2" name="poster" id="addPoster" placeholder="Or paste path: videos/images/poster.png">
                 </div>
 
@@ -538,6 +603,31 @@ foreach ($videos as $v) {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="section-divider stills-section" id="addStillsSection">
+                    <h3><i class="fas fa-images"></i> Colorist Stills</h3>
+                    <p style="font-size:12px; color:var(--text-muted); margin-bottom:15px;">Upload up to 6 stills for this video. These appear on colorist artist pages when viewers click into a video.</p>
+                    <div class="stills-grid" id="addStillsGrid">
+                        <?php for ($i = 0; $i < 6; $i++): ?>
+                        <div class="still-slot" id="addStillSlot<?php echo $i; ?>"
+                             onclick="document.getElementById('addStillFile<?php echo $i; ?>').click()"
+                             ondragover="event.preventDefault();this.classList.add('dragover')"
+                             ondragleave="this.classList.remove('dragover')"
+                             ondrop="event.preventDefault();this.classList.remove('dragover');handleStillUpload(event.dataTransfer.files[0],<?php echo $i; ?>,'add')">
+                            <span class="still-slot-number"><?php echo $i + 1; ?></span>
+                            <div class="still-slot-placeholder">
+                                <i class="fas fa-plus"></i>
+                                <span>Upload Still</span>
+                            </div>
+                            <div class="still-upload-progress"><div class="bar" style="width:0%"></div></div>
+                        </div>
+                        <input type="file" id="addStillFile<?php echo $i; ?>" accept="image/jpeg,image/png,image/webp" style="display:none"
+                               onchange="handleStillUpload(this.files[0],<?php echo $i; ?>,'add')">
+                        <input type="hidden" name="previewImages[]" id="addStillPath<?php echo $i; ?>" value="">
+                        <?php endfor; ?>
+                    </div>
+                    <div class="stills-note"><i class="fas fa-info-circle"></i> Stills are only displayed on colorist pages. Drag and drop or click to upload (JPG, PNG, WebP).</div>
                 </div>
 
                 <!-- STEP 2: Assignments -->
@@ -627,12 +717,23 @@ foreach ($videos as $v) {
         function filterPool() {
             const q = document.getElementById('poolSearch').value.toLowerCase();
             const tag = document.getElementById('poolTagFilter').value;
+            const artist = document.getElementById('poolArtistFilter').value;
             const link = document.getElementById('poolLinkFilter').value;
+            let shown = 0;
             document.querySelectorAll('.pool-card').forEach(card => {
                 const matchQ = !q || card.dataset.search.includes(q);
                 const matchTag = !tag || card.dataset.tags.split(',').includes(tag);
+                const cardArtists = card.dataset.artists || '';
+                let matchArtist = true;
+                if (artist === '_none') {
+                    matchArtist = cardArtists === '';
+                } else if (artist) {
+                    matchArtist = cardArtists.split(',').includes(artist);
+                }
                 const matchLink = !link || card.dataset.linked === link;
-                card.style.display = (matchQ && matchTag && matchLink) ? '' : 'none';
+                const visible = matchQ && matchTag && matchArtist && matchLink;
+                card.style.display = visible ? '' : 'none';
+                if (visible) shown++;
             });
         }
 
@@ -665,12 +766,22 @@ foreach ($videos as $v) {
             zone.innerHTML = '<i class="fas fa-exclamation-triangle"></i><p>' + escapeHtml(msg) + '</p><small style="color:var(--text-muted);font-size:11px;">Click to try again</small>';
         }
 
-        function handleUpload(file, type, inputId, zoneId, progressId) {
+        function setUploadStatus(el, type, html) {
+            if (!el) return;
+            el.className = 'upload-status ' + type + ' visible';
+            el.innerHTML = html;
+        }
+
+        function handleUpload(file, type, inputId, zoneId, progressId, statusId) {
             if (!file) return;
             const zone = zoneId ? document.getElementById(zoneId) : null;
             const progress = document.getElementById(progressId);
             const bar = progress.querySelector('.progress-bar');
             const input = document.getElementById(inputId);
+            const status = statusId ? document.getElementById(statusId) : null;
+
+            setUploadStatus(status, 'uploading', '<span class="upload-status-spinner"></span> Uploading <strong>' + escapeHtml(file.name) + '</strong>…');
+
             if (zone) {
                 zone.classList.remove('has-file', 'has-error');
                 const icon = type === 'video' ? 'fa-cloud-upload-alt' : 'fa-image';
@@ -682,19 +793,27 @@ foreach ($videos as $v) {
             fd.append('file', file);
             fd.append('type', type);
             const xhr = new XMLHttpRequest();
-            xhr.timeout = 120000;
+            xhr.timeout = 300000;
             xhr.upload.addEventListener('progress', e => {
-                if (e.lengthComputable) bar.style.width = Math.round(e.loaded / e.total * 100) + '%';
+                if (e.lengthComputable) {
+                    const pct = Math.round(e.loaded / e.total * 100);
+                    bar.style.width = pct + '%';
+                    setUploadStatus(status, 'uploading', '<span class="upload-status-spinner"></span> Uploading <strong>' + escapeHtml(file.name) + '</strong>… ' + pct + '%');
+                }
             });
             xhr.addEventListener('load', () => {
                 progress.style.display = 'none';
                 if (xhr.status !== 200) {
-                    showZoneError(zone, 'Server error (HTTP ' + xhr.status + '). The file may be too large.');
+                    var errMsg = 'Server error (HTTP ' + xhr.status + '). The file may be too large.';
+                    showZoneError(zone, errMsg);
+                    setUploadStatus(status, 'error', '<i class="fas fa-exclamation-circle"></i> ' + escapeHtml(errMsg));
                     return;
                 }
                 let res;
                 try { res = JSON.parse(xhr.responseText); } catch (e) {
-                    showZoneError(zone, 'Server returned an invalid response. Check PHP error logs.');
+                    var errMsg = 'Server returned an invalid response. Check PHP error logs.';
+                    showZoneError(zone, errMsg);
+                    setUploadStatus(status, 'error', '<i class="fas fa-exclamation-circle"></i> ' + escapeHtml(errMsg));
                     console.error('Upload response was not JSON:', xhr.responseText.substring(0, 500));
                     return;
                 }
@@ -716,21 +835,30 @@ foreach ($videos as $v) {
                                 '<small>Click to replace</small>' +
                             '</div>';
                     }
+                    setUploadStatus(status, 'success', '<i class="fas fa-check-circle"></i> <strong>' + escapeHtml(res.filename) + '</strong> uploaded successfully (' + res.size_formatted + ')');
                 } else {
-                    showZoneError(zone, res.error || 'Upload failed');
+                    var errMsg = res.error || 'Upload failed';
+                    showZoneError(zone, errMsg);
+                    setUploadStatus(status, 'error', '<i class="fas fa-exclamation-circle"></i> ' + escapeHtml(errMsg));
                 }
             });
             xhr.addEventListener('error', () => {
                 progress.style.display = 'none';
-                showZoneError(zone, 'Network error — connection to server failed.');
+                var errMsg = 'Network error — connection to server failed.';
+                showZoneError(zone, errMsg);
+                setUploadStatus(status, 'error', '<i class="fas fa-exclamation-circle"></i> ' + errMsg);
             });
             xhr.addEventListener('timeout', () => {
                 progress.style.display = 'none';
-                showZoneError(zone, 'Upload timed out. Try a smaller file or check your connection.');
+                var errMsg = 'Upload timed out. Try a smaller file or check your connection.';
+                showZoneError(zone, errMsg);
+                setUploadStatus(status, 'error', '<i class="fas fa-exclamation-circle"></i> ' + errMsg);
             });
             xhr.addEventListener('abort', () => {
                 progress.style.display = 'none';
-                showZoneError(zone, 'Upload was cancelled.');
+                var errMsg = 'Upload was cancelled.';
+                showZoneError(zone, errMsg);
+                setUploadStatus(status, 'error', '<i class="fas fa-exclamation-circle"></i> ' + errMsg);
             });
             xhr.open('POST', 'upload-video.php');
             xhr.send(fd);
@@ -760,10 +888,18 @@ foreach ($videos as $v) {
             videoZone.innerHTML = '<i class="fas fa-cloud-upload-alt"></i><p>Click or drag to upload video (MP4, WebM, MOV)</p>';
             posterZone.classList.remove('has-file', 'has-error');
             posterZone.innerHTML = '<i class="fas fa-image"></i><p>Click or drag to upload poster (JPG, PNG, WebP)</p>';
+            document.getElementById('addVideoStatus').className = 'upload-status';
+            document.getElementById('addPosterStatus').className = 'upload-status';
             document.querySelectorAll('#addForm .assign-artist-item').forEach(el => el.classList.remove('checked'));
             document.getElementById('addLandingFields').classList.remove('visible');
             document.querySelectorAll('#addForm .landing-toggle').forEach(el => el.classList.remove('checked'));
             populateCreditsEditor('addCreditsEditor', '');
+            // Reset stills
+            for (var i = 0; i < 6; i++) {
+                document.getElementById('addStillPath' + i).value = '';
+                renderStillSlot(i, 'add', '');
+            }
+            document.getElementById('addStillsSection').classList.remove('visible');
             document.getElementById('addModal').classList.add('active');
             lockScroll();
         }
@@ -783,6 +919,8 @@ foreach ($videos as $v) {
 
             const videoShort = video.videoShort ? '../roster/' + video.videoShort : '';
             const poster = video.poster ? '../roster/' + video.poster : '';
+            const hasExistingStills = (video.previewImages || []).some(p => p && p.trim() !== '');
+            const stillsSectionVisible = (tags.includes('COLOR') || hasExistingStills) ? 'visible' : '';
 
             let previewHtml = '';
             if (videoShort) {
@@ -837,10 +975,11 @@ foreach ($videos as $v) {
                                 <i class="fas fa-upload"></i> Upload</button>
                         </div>
                         <input type="file" id="editVideoFile" accept="video/*" style="display:none"
-                               onchange="handleUpload(this.files[0],'video','editVideoShort',null,'editVideoProgress')">
+                               onchange="handleUpload(this.files[0],'video','editVideoShort',null,'editVideoProgress','editVideoStatus')">
                         <div class="upload-progress" id="editVideoProgress">
                             <div class="progress"><div class="progress-bar" style="width:0%"></div></div>
                         </div>
+                        <div class="upload-status" id="editVideoStatus"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Poster Image Path</label>
@@ -850,10 +989,11 @@ foreach ($videos as $v) {
                                 <i class="fas fa-upload"></i> Upload</button>
                         </div>
                         <input type="file" id="editPosterFile" accept="image/*" style="display:none"
-                               onchange="handleUpload(this.files[0],'poster','editPoster',null,'editPosterProgress')">
+                               onchange="handleUpload(this.files[0],'poster','editPoster',null,'editPosterProgress','editPosterStatus')">
                         <div class="upload-progress" id="editPosterProgress">
                             <div class="progress"><div class="progress-bar" style="width:0%"></div></div>
                         </div>
+                        <div class="upload-status" id="editPosterStatus"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Simian Embed Code (Full Video)</label>
@@ -896,6 +1036,15 @@ foreach ($videos as $v) {
                         </div>
                     </div>
 
+                    <div class="section-divider stills-section ${stillsSectionVisible}" id="editStillsSection">
+                        <h3><i class="fas fa-images"></i> Colorist Stills</h3>
+                        <p style="font-size:12px;color:var(--text-muted);margin-bottom:15px;">Upload up to 6 stills for this video. These appear on colorist artist pages when viewers click into a video.</p>
+                        <div class="stills-grid" id="editStillsGrid">
+                            ${buildStillSlotsHtml(video, 'edit')}
+                        </div>
+                        <div class="stills-note"><i class="fas fa-info-circle"></i> Stills are only displayed on colorist pages. Drag and drop or click to upload (JPG, PNG, WebP).</div>
+                    </div>
+
                     <div class="section-divider">
                         <h3><i class="fas fa-link"></i> Assign to Artists</h3>
                         <p style="font-size:12px;color:var(--text-muted);margin-bottom:15px;">Check/uncheck artists. Changes are saved when you click Save.</p>
@@ -932,6 +1081,13 @@ foreach ($videos as $v) {
 
             document.getElementById('editVideoLong').value = video.videoLong || '';
             populateCreditsEditor('editCreditsEditor', video.credits || '');
+
+            // Bind COLOR tag toggles for stills visibility
+            document.querySelectorAll('#editForm .tag-checkboxes input[type="checkbox"]').forEach(function(cb) {
+                cb.addEventListener('change', function() {
+                    toggleStillsVisibility('edit', document.querySelectorAll('#editForm .tag-checkboxes input[type="checkbox"]'));
+                });
+            });
 
             document.getElementById('editModal').classList.add('active');
             lockScroll();
@@ -1182,9 +1338,169 @@ foreach ($videos as $v) {
             }
         });
 
+        // ── Stills Management ──
+
+        function resolveStillSrc(path) {
+            if (!path || path.trim() === '') return '';
+            if (path.startsWith('/')) return '..' + path;
+            return '../roster/' + path;
+        }
+
+        function buildStillSlotsHtml(video, prefix) {
+            var imgs = (video && video.previewImages) ? video.previewImages : ['','','','','',''];
+            while (imgs.length < 6) imgs.push('');
+            var html = '';
+            for (var i = 0; i < 6; i++) {
+                var src = imgs[i] || '';
+                var hasImg = src && src.trim() !== '';
+                var imgSrc = hasImg ? resolveStillSrc(src) : '';
+                var fname = hasImg ? src.split('/').pop() : '';
+                html += '<div class="still-slot' + (hasImg ? ' has-image' : '') + '" id="' + prefix + 'StillSlot' + i + '"' +
+                    ' onclick="document.getElementById(\'' + prefix + 'StillFile' + i + '\').click()"' +
+                    ' ondragover="event.preventDefault();this.classList.add(\'dragover\')"' +
+                    ' ondragleave="this.classList.remove(\'dragover\')"' +
+                    ' ondrop="event.preventDefault();this.classList.remove(\'dragover\');handleStillUpload(event.dataTransfer.files[0],' + i + ',\'' + prefix + '\')">';
+                html += '<span class="still-slot-number">' + (i+1) + '</span>';
+                if (hasImg) {
+                    html += '<img src="' + escapeHtml(imgSrc) + '" alt="Still ' + (i+1) + '">';
+                    html += '<div class="still-slot-actions">' +
+                        '<button type="button" onclick="event.stopPropagation();removeStill(' + i + ',\'' + prefix + '\')" title="Remove"><i class="fas fa-trash"></i></button>' +
+                        '</div>';
+                    html += '<div class="still-slot-info">' + escapeHtml(fname) + '</div>';
+                } else {
+                    html += '<div class="still-slot-placeholder"><i class="fas fa-plus"></i><span>Upload Still</span></div>';
+                }
+                html += '<div class="still-upload-progress"><div class="bar" style="width:0%"></div></div>';
+                html += '</div>';
+                html += '<input type="file" id="' + prefix + 'StillFile' + i + '" accept="image/jpeg,image/png,image/webp" style="display:none"' +
+                    ' onchange="handleStillUpload(this.files[0],' + i + ',\'' + prefix + '\')">';
+                html += '<input type="hidden" name="previewImages[]" id="' + prefix + 'StillPath' + i + '" value="' + escapeAttr(src) + '">';
+            }
+            return html;
+        }
+
+        function handleStillUpload(file, slotIndex, prefix) {
+            if (!file) return;
+            var slot = document.getElementById(prefix + 'StillSlot' + slotIndex);
+            var input = document.getElementById(prefix + 'StillPath' + slotIndex);
+            var progWrap = slot.querySelector('.still-upload-progress');
+            var progBar = progWrap.querySelector('.bar');
+
+            slot.classList.remove('has-image');
+            slot.innerHTML = '<span class="still-slot-number">' + (slotIndex+1) + '</span>' +
+                '<div class="still-slot-placeholder"><i class="fas fa-spinner fa-spin"></i><span>Uploading…</span></div>' +
+                '<div class="still-upload-progress" style="display:block"><div class="bar" style="width:0%"></div></div>';
+
+            var fd = new FormData();
+            fd.append('file', file);
+            fd.append('type', 'still');
+            var xhr = new XMLHttpRequest();
+            xhr.timeout = 120000;
+            xhr.upload.addEventListener('progress', function(e) {
+                if (e.lengthComputable) {
+                    var pct = Math.round(e.loaded / e.total * 100);
+                    var bar = slot.querySelector('.still-upload-progress .bar');
+                    if (bar) bar.style.width = pct + '%';
+                }
+            });
+            xhr.addEventListener('load', function() {
+                if (xhr.status !== 200) {
+                    renderStillSlot(slotIndex, prefix, '', 'Upload failed (HTTP ' + xhr.status + ')');
+                    return;
+                }
+                var res;
+                try { res = JSON.parse(xhr.responseText); } catch(e) {
+                    renderStillSlot(slotIndex, prefix, '', 'Invalid server response');
+                    return;
+                }
+                if (res.success) {
+                    input.value = res.path;
+                    renderStillSlot(slotIndex, prefix, res.path);
+                } else {
+                    renderStillSlot(slotIndex, prefix, '', res.error || 'Upload failed');
+                }
+            });
+            xhr.addEventListener('error', function() {
+                renderStillSlot(slotIndex, prefix, '', 'Network error');
+            });
+            xhr.addEventListener('timeout', function() {
+                renderStillSlot(slotIndex, prefix, '', 'Upload timed out');
+            });
+            xhr.open('POST', 'upload-video.php');
+            xhr.send(fd);
+        }
+
+        function renderStillSlot(slotIndex, prefix, path, error) {
+            var slot = document.getElementById(prefix + 'StillSlot' + slotIndex);
+            var hasImg = path && path.trim() !== '';
+            var fname = hasImg ? path.split('/').pop() : '';
+            var inner = '<span class="still-slot-number">' + (slotIndex+1) + '</span>';
+            if (error) {
+                inner += '<div class="still-slot-placeholder" style="color:var(--danger)"><i class="fas fa-exclamation-triangle"></i><span>' + escapeHtml(error) + '</span></div>';
+                slot.classList.remove('has-image');
+            } else if (hasImg) {
+                inner += '<img src="' + escapeHtml(resolveStillSrc(path)) + '" alt="Still ' + (slotIndex+1) + '">';
+                inner += '<div class="still-slot-actions"><button type="button" onclick="event.stopPropagation();removeStill(' + slotIndex + ',\'' + prefix + '\')" title="Remove"><i class="fas fa-trash"></i></button></div>';
+                inner += '<div class="still-slot-info">' + escapeHtml(fname) + '</div>';
+                slot.classList.add('has-image');
+            } else {
+                inner += '<div class="still-slot-placeholder"><i class="fas fa-plus"></i><span>Upload Still</span></div>';
+                slot.classList.remove('has-image');
+            }
+            inner += '<div class="still-upload-progress"><div class="bar" style="width:0%"></div></div>';
+            slot.innerHTML = inner;
+        }
+
+        function removeStill(slotIndex, prefix) {
+            var input = document.getElementById(prefix + 'StillPath' + slotIndex);
+            input.value = '';
+            renderStillSlot(slotIndex, prefix, '');
+        }
+
+        function toggleStillsVisibility(formPrefix, tagCheckboxes) {
+            var section = document.getElementById(formPrefix + 'StillsSection');
+            if (!section) return;
+            var hasColor = false;
+            tagCheckboxes.forEach(function(cb) {
+                if (cb.value === 'COLOR' && cb.checked) hasColor = true;
+            });
+            // Also keep visible if any stills already have paths
+            var hasStills = false;
+            for (var i = 0; i < 6; i++) {
+                var input = document.getElementById(formPrefix + 'StillPath' + i);
+                if (input && input.value && input.value.trim() !== '') { hasStills = true; break; }
+            }
+            if (hasColor || hasStills) {
+                section.classList.add('visible');
+            } else {
+                section.classList.remove('visible');
+            }
+        }
+
         // Initialize role tags on page load for the add modal
         document.addEventListener('DOMContentLoaded', function() {
             renderRoleTags('addCreditsEditor');
+
+            // Bind COLOR tag checkbox toggles for stills visibility in Add modal
+            document.querySelectorAll('#addForm .tag-checkboxes input[type="checkbox"]').forEach(function(cb) {
+                cb.addEventListener('change', function() {
+                    toggleStillsVisibility('add', document.querySelectorAll('#addForm .tag-checkboxes input[type="checkbox"]'));
+                });
+            });
+
+            // Auto-open edit modal if ?highlight= param is set (from Roster Videos page)
+            var params = new URLSearchParams(window.location.search);
+            var highlightId = params.get('highlight');
+            if (highlightId) {
+                var card = document.querySelector('.pool-card[data-vid="' + highlightId + '"]');
+                if (card) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.style.outline = '2px solid rgba(255,255,255,0.3)';
+                    setTimeout(function() { openEditModal(highlightId); }, 400);
+                } else {
+                    openEditModal(highlightId);
+                }
+            }
         });
     </script>
 </body>

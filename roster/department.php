@@ -19,30 +19,6 @@ foreach ($videos_pool as $vp) {
     $videos_by_id[$vp['id']] = $vp;
 }
 
-function extractSimianUrls() {
-    $urls = [];
-    $pages = [
-        __DIR__ . '/../roster/edit.php',
-        __DIR__ . '/../roster/color.php',
-        __DIR__ . '/../roster/sound.php',
-        __DIR__ . '/../roster/vfx.php',
-    ];
-    foreach ($pages as $page) {
-        if (!file_exists($page)) continue;
-        $content = file_get_contents($page);
-        preg_match_all(
-            '/data-longVideo=[\'"].*?apollo\.gosimian\.com\/share\/v\/([^\/\s"\']+).*?data-videoName="([^"]+)".*?data-videoSubName="([^"]*?)"/s',
-            $content, $matches, PREG_SET_ORDER
-        );
-        foreach ($matches as $m) {
-            $key = $m[2] . '|' . $m[3];
-            $urls[$key] = 'https://apollo.gosimian.com/share/v/' . $m[1] . '/false/auto/auto/ffffff/000000/';
-        }
-    }
-    return $urls;
-}
-
-$simian_urls = extractSimianUrls();
 
 $artists_by_id = [];
 foreach ($artists_data as $artist) {
@@ -186,7 +162,7 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
     <title>ROSTER | APOLLO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/roster/style-v2.css?v=8.0.0">
+    <link rel="stylesheet" href="/roster/style-v2.css?v=11.0.0">
 </head>
 <body class="page-department" data-start-dept="<?php echo $start_dept; ?>">
 
@@ -243,16 +219,16 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
 
         <div class="dept-section" data-dept="<?php echo $dept; ?>">
             <?php foreach ($videos as $i => $video):
-                $video_key = ($video['videoName'] ?? '') . '|' . ($video['videoSubName'] ?? '');
-                $simian_url = $simian_urls[$video_key] ?? '';
                 $poster = $video['poster'] ?? '';
                 $short_vid = $video['videoShort'] ?? '';
-                $preview_images = $video['previewImages'] ?? ['','','','','',''];
+                $preview_images = ($dept === 'COLOR') ? ($video['previewImages'] ?? ['','','','','','']) : ['','','','','',''];
                 $name = $video['videoName'] ?? '';
                 $sub  = $video['videoSubName'] ?? '';
                 $title = htmlspecialchars($sub ? "$name - $sub" : $name);
                 $wsize = $h_sizes[$global_card_index % count($h_sizes)];
                 $voffset = $offsets[$i] ?? 15;
+                $max_offset_by_size = ['w-xl' => 5, 'w-lg' => 12, 'w-md' => 20, 'w-sm' => 25];
+                $voffset = min($voffset, $max_offset_by_size[$wsize] ?? 15);
                 $global_card_index++;
             ?>
             <div class="hcard <?php echo $wsize; ?>" style="margin-top: <?php echo $voffset; ?>vh;"
@@ -260,7 +236,6 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
                  data-artist-name="<?php echo htmlspecialchars($video['_artist_name']); ?>"
                  data-video-name="<?php echo htmlspecialchars($video['videoName'] ?? ''); ?>"
                  data-video-subname="<?php echo htmlspecialchars($video['videoSubName'] ?? ''); ?>"
-                 data-simian-url="<?php echo htmlspecialchars($simian_url); ?>"
                  data-has-credit="<?php echo (!empty($video['hasCredit'])) ? 'yes' : 'no'; ?>"
                  data-credits="<?php echo htmlspecialchars($video['credits'] ?? ''); ?>"
                  data-prev1="<?php echo htmlspecialchars($preview_images[0] ?? ''); ?>"
@@ -272,8 +247,9 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
                  data-aspect="<?php echo $video['_aspect'] ?? 'landscape'; ?>"
                  data-embed="<?php echo htmlspecialchars($video['_videoLong'] ?? ''); ?>">
                 <video poster="/roster/<?php echo htmlspecialchars($poster); ?>"
-                       <?php if ($global_card_index <= 8): ?>src="/roster/<?php echo htmlspecialchars($short_vid); ?>"<?php endif; ?>
+                       <?php if ($global_card_index <= 2): ?>src="/roster/<?php echo htmlspecialchars($short_vid); ?>"<?php endif; ?>
                        data-src="/roster/<?php echo htmlspecialchars($short_vid); ?>"
+                       data-card-index="<?php echo $global_card_index; ?>"
                        muted autoplay loop playsinline webkit-playsinline></video>
                 <div class="hcard-overlay">
                     <span class="hcard-title"><?php echo $title; ?></span>
@@ -284,6 +260,14 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
         </div>
         <?php endforeach; ?>
     </div>
+</div>
+
+<!-- Scroll hint (mobile only) -->
+<div class="mobile-scroll-hint" id="mobileScrollHint">
+    <span>Swipe to explore</span>
+    <svg width="40" height="12" viewBox="0 0 40 12" fill="none">
+        <path d="M0 6H38M38 6L32 1M38 6L32 11" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+    </svg>
 </div>
 
 <!-- Modal (shared) -->
@@ -310,6 +294,6 @@ if (!in_array($start_dept, $valid_depts)) $start_dept = 'EDIT';
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/roster/app-v2.js?v=8.0.0"></script>
+<script src="/roster/app-v2.js?v=11.1.0"></script>
 </body>
 </html>

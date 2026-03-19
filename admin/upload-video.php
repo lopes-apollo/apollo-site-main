@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $type = $_POST['type'] ?? '';
-$allowed_types = ['video', 'poster'];
+$allowed_types = ['video', 'poster', 'still'];
 
 if (!in_array($type, $allowed_types)) {
     echo json_encode(['success' => false, 'error' => 'Invalid upload type']);
@@ -45,6 +45,11 @@ if ($type === 'video') {
     $allowed_mimes = ['video/mp4', 'video/webm', 'video/quicktime'];
     $upload_dir = __DIR__ . '/../roster/videos/short/';
     $path_prefix = 'videos/short/';
+} elseif ($type === 'still') {
+    $allowed_extensions = ['jpg', 'jpeg', 'png', 'webp'];
+    $allowed_mimes = ['image/jpeg', 'image/png', 'image/webp'];
+    $upload_dir = __DIR__ . '/../roster/images/colorist/';
+    $path_prefix = 'images/colorist/';
 } else {
     $allowed_extensions = ['jpg', 'jpeg', 'png', 'webp'];
     $allowed_mimes = ['image/jpeg', 'image/png', 'image/webp'];
